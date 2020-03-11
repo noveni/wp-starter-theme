@@ -1,7 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head></head>
-<body>
-	<h1>Coucou !</h1>
-</body>
-</html>
+<?php
+get_header();
+?>
+<main id="site-content" role="main">
+</main>
+<?php
+get_footer();
