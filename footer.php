@@ -4,7 +4,7 @@
                     <?php
                     echo date_i18n(
                         /* translators: Copyright date format, see https://secure.php.net/date */
-                        _x( 'Y', 'copyright date format', 'twentytwenty' )
+                        _x( 'Y', 'copyright date format', 'mythemename' )
                     );
                     ?>
                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>

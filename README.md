@@ -7,6 +7,7 @@ Based on TwentyTwenty Theme
 
 - [ ] Add Webpack Assets Builder
 - [ ] Handle no-js in HTML attributess element
+- [ ] Search Part
 
 ## Build With
 
