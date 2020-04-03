@@ -1,0 +1,13 @@
+{
+    "name": "ecrannoir/wp-ecrannoir-theme",
+    "type": "wordpress-theme",
+    "keywords": [
+        "wordpress",
+        "theme",
+        "starter theme"
+    ],
+    "require": {},
+    "require-dev": {
+        "filp/whoops": "^2.7"
+    }
+}
