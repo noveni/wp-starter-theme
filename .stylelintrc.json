@@ -1,0 +1,27 @@
+{
+	"extends": [
+		"stylelint-config-wordpress"
+	],
+	"plugins": ["stylelint-a11y"],
+	"rules": {
+		"no-empty-source": null,
+		"max-empty-lines": 2,
+		"font-family-no-missing-generic-family-keyword": null,
+		"no-descending-specificity": null,
+		"a11y/no-outline-none": true,
+		"a11y/selector-pseudo-class-focus": null,
+		"function-url-quotes": "always",
+		"color-hex-length": "long",
+		"font-family-name-quotes": "always-where-recommended",
+		"value-keyword-case":[ "lower", {
+			"ignoreKeywords": [
+				"Helvetica",
+				"Arial",
+				"TimesNewRoman",
+				"Times",
+				"Baskerville",
+				"Georgia"
+			]
+		}]
+	}
+}

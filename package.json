@@ -1,0 +1,63 @@
+{
+  "name": "wp-starter-theme",
+  "version": "1.0.0",
+  "description": "Wordpress Starter Theme, **Project to define hahaha**. Based on TwentyTwenty Theme",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode=production --config webpack.config.js --progress",
+    "dev": "webpack --watch --info-verbosity verbose --mode=development --config webpack.config.js",
+    "i18n:textdomain": "wpi18n addtextdomain --exclude=dist,docs,node_modules,src,vendor --textdomain=ecrannoir",
+    "i18n:pot": "wpi18n makepot --exclude=dist,docs,node_modules,src,vendor --main-file=style.css --domain-path=languages/ --pot-file=ecrannoir.pot --type=wp-theme --textdomain=ecrannoir",
+    "i18n:mo": "msgfmt -o languages/nl_BE.mo languages/nl_BE.po"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noveni/wp-starter-theme.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/noveni/wp-starter-theme/issues"
+  },
+  "homepage": "https://github.com/noveni/wp-starter-theme#readme",
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-react": "^7.9.4",
+    "@wordpress/block-editor": "^3.8.0",
+    "@wordpress/components": "^9.3.0",
+    "@wordpress/dependency-extraction-webpack-plugin": "^2.4.0",
+    "@wordpress/element": "^2.12.0",
+    "autoprefixer": "^9.7.3",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.4.0",
+    "file-loader": "^5.0.2",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.13.0",
+    "node-wp-i18n": "^1.2.3",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^8.0.0",
+    "stylelint": "^12.0.1",
+    "stylelint-a11y": "^1.2.2",
+    "stylelint-config-wordpress": "^15.0.0",
+    "stylelint-webpack-plugin": "^1.1.2",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "@glidejs/glide": "^3.4.1",
+    "hamburgers": "^1.1.3",
+    "imagesloaded": "^4.1.4",
+    "lazysizes": "^5.2.0"
+  },
+  "browserslist": [
+    ">1%",
+    "last 4 versions",
+    "Firefox ESR",
+    "not ie < 11"
+  ]
+}
