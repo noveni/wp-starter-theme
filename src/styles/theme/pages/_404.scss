@@ -1,0 +1,22 @@
+/* -------------------------------------------------------------------------- */
+
+/*	14. Error 404
+/* -------------------------------------------------------------------------- */
+
+
+.error404 #site-content {
+	padding-top: 4rem;
+
+	@media (min-width: $br-m) {
+		padding-top: 8rem;
+	}
+}
+
+.error404-content {
+	text-align: center;
+}
+
+.error404 #site-content .search-form {
+	justify-content: center;
+	margin-top: 3rem;
+}

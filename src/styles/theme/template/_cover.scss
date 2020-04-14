@@ -1,0 +1,120 @@
+/* -------------------------------------------------------------------------- */
+
+/*	7a. Template: Cover Template
+/* -------------------------------------------------------------------------- */
+
+
+.cover-header {
+	display: flex;
+	overflow: hidden;
+}
+
+.cover-header-inner-wrapper {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	justify-content: flex-end;
+	width: 100%;
+}
+
+.cover-header-inner {
+	padding: 10rem 0 5rem 0;
+	width: 100%;
+
+	@media (min-width: $br-m) {
+		padding: 18rem 0 8rem 0;
+	}
+}
+
+.cover-color-overlay,
+.cover-color-overlay::before {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: 0;
+}
+
+.cover-color-overlay::before {
+	background: currentColor;
+	content: "";
+	display: block;
+}
+
+.cover-header .entry-header {
+	position: relative;
+	width: 100%;
+	z-index: 1;
+}
+
+.cover-header .entry-header * {
+	color: $white;
+}
+
+body.template-cover .entry-header {
+	background: transparent;
+	padding: 0;
+}
+
+.cover-header h1,
+.cover-header h2,
+.cover-header h3,
+.cover-header h4,
+.cover-header h5,
+.cover-header h6,
+.cover-header .faux-heading {
+	color: inherit;
+}
+
+.cover-header .entry-header a {
+	color: inherit;
+}
+
+.cover-header + .post-inner {
+
+	@media (min-width: $br-xl) {
+		padding-top: 10rem;
+	}
+}
+
+/* To The Content ---------------------------- */
+
+.to-the-content-wrapper {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: calc(100% + 0.5rem);
+
+	@media (min-width: $br-m) {
+		top: calc(100% + 1.8rem);
+	}
+}
+
+.to-the-content {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	height: 4rem;
+	text-decoration: none;
+
+	@media (min-width: $br-m) {
+		height: 6rem;
+	}
+}
+
+.to-the-content svg {
+	height: 2rem;
+	transition: transform 0.15s linear;
+	transform: translateY(0);
+	width: 1.767rem;
+
+	@media (min-width: $br-m) {
+		height: 2.4rem;
+		width: 2.12rem;
+	}
+}
+
+.to-the-content:focus svg,
+.to-the-content:hover svg {
+	transform: translateY(20%);
+}

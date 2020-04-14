@@ -1,0 +1,129 @@
+body.home {
+
+	.entry-content > div:nth-child(2) {
+		position: relative;
+
+		&::before {
+			content: "";
+			position: absolute;
+			width: 120%;
+			height: 120%;
+			top: -10%;
+			bottom: 0;
+			right: 0;
+			left: -10%;
+			// background: url("~img/bg-wt-illu-sect1.svg") no-repeat;
+
+		}
+	}
+
+	.entry-content > div:nth-child(4) {
+		position: relative;
+
+		@media (min-width: $br-m) {
+
+			&::before {
+				content: "";
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				left: 0;
+				// background: url("~img/bg-wt-illu-sect2.svg") no-repeat;
+			}
+		}
+	}
+}
+
+body.latelier-singulier,
+body.latelier-des-mots {
+
+	.entry-content {
+
+		@media (min-width: $br-m) {
+			position: relative;
+			padding-bottom: 4rem;
+
+			&::before {
+				content: "";
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				left: 0;
+				background-position: center;
+			}
+		}
+	}
+}
+
+body.latelier-singulier .entry-content::before {
+	// background: url("~img/bg-wt-illu-page-singulier.svg") 100% 100% no-repeat;
+}
+
+body.latelier-des-mots .entry-content::before {
+	// background: url("~img/bg-wt-illu-page-mots.svg") 100% 100% no-repeat;
+}
+
+body.qui-suis-je {
+
+	.entry-content > div:nth-child(1) {
+		position: relative;
+
+		&::before {
+			content: "";
+			position: absolute;
+			width: 120%;
+			height: 120%;
+			top: -10%;
+			bottom: 0;
+			right: 0;
+			left: -10%;
+			// background: center url("~img/bg-wt-illu-page-qui.svg") no-repeat;
+		}
+	}
+
+	.entry-content > div:nth-child(2) {
+		position: relative;
+
+		&::before {
+			content: "";
+			position: absolute;
+			width: 120%;
+			height: 120%;
+			top: -10%;
+			bottom: 0;
+			right: 0;
+			left: -10%;
+			// background: center url("~img/bg-wt-illu-page-qui-sect2.svg") no-repeat;
+		}
+	}
+}
+
+body.contact {
+
+	.entry-content > div:nth-child(1) {
+
+		@media (min-width: $br-m) {
+			position: relative;
+			padding-bottom: 4rem;
+
+			&::before {
+				content: "";
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				left: 0;
+				// background: center url("~img/bg-wt-illu-page-contact.svg") no-repeat;
+				z-index: 1;
+			}
+		}
+	}
+}

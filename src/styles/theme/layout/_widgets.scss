@@ -1,0 +1,308 @@
+/* -------------------------------------------------------------------------- */
+
+/*	15.	Widgets
+/* -------------------------------------------------------------------------- */
+
+
+/* Widget Base ------------------------------- */
+
+.widget {
+	margin-top: 3rem;
+}
+
+.widget:first-child {
+	margin-top: 0;
+}
+
+.widget-content {
+
+	@media (min-width: $br-xl) {
+		font-size: 2.1rem;
+	}
+}
+
+.widget-content > div:not(.section-inner) > *:first-child {
+	margin-top: 0;
+}
+
+.widget-content > div:not(.section-inner) > *:last-child {
+	margin-bottom: 0;
+}
+
+.widget .widget-title {
+	margin: 0 0 2rem;
+
+	@media (min-width: $br-m) {
+		margin-bottom: 3rem;
+	}
+}
+
+.widget li {
+	margin: 2rem 0 0 0;
+}
+
+.widget li:first-child,
+.widget li > ul,
+.widget li > ol {
+	margin-top: 0;
+}
+
+.widget table,
+.widget table * {
+	border-color: $grey;
+}
+
+.widget table caption {
+	background-color: $grey;
+}
+
+.widget .post-date,
+.widget .rss-date {
+	color: $grey;
+	display: block;
+	font-size: 0.85em;
+	font-weight: 500;
+	margin-top: 0.2rem;
+}
+
+.widget select {
+	max-width: 100%;
+}
+
+/* Font Families ----------------------------- */
+
+.widget_text p,
+.widget_text ol,
+.widget_text ul,
+.widget_text dl,
+.widget_text dt,
+.widget-content .rssSummary {
+	font-family: $font-primary;
+	letter-spacing: normal;
+}
+
+.widget-content cite,
+.widget-content figcaption,
+.widget-content .wp-caption-text {
+	font-family: $font-primary;
+}
+
+/* Base List Widget -------------------------- */
+
+.widget_archive ul,
+.widget_categories ul,
+.widget_pages ul,
+.widget_meta ul,
+.widget_nav_menu ul,
+.widget_recent_comments ul,
+.widget_recent_entries ul,
+.widget_rss ul {
+	list-style: none;
+	margin: 0;
+}
+
+.widget_archive li,
+.widget_categories li,
+.widget_pages li,
+.widget_meta li,
+.widget_nav_menu li {
+	color: $grey;
+	margin: 0.3rem 0;
+}
+
+.widget_archive li li,
+.widget_categories li li,
+.widget_pages li li,
+.widget_meta li li,
+.widget_nav_menu li li {
+	margin-left: 2rem;
+}
+
+.widget_archive a,
+.widget_categories a,
+.widget_pages a,
+.widget_meta a,
+.widget_nav_menu a {
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.widget_archive a:focus,
+.widget_archive a:hover,
+.widget_categories a:focus,
+.widget_categories a:hover,
+.widget_pages a:focus,
+.widget_pages a:hover,
+.widget_meta a:focus,
+.widget_meta a:hover,
+.widget_nav_menu a:focus,
+.widget_nav_menu a:hover {
+	text-decoration: underline;
+}
+
+/* Widget: Calendar -------------------------- */
+
+.calendar_wrap {
+	font-size: 2.4rem;
+}
+
+.calendar_wrap th,
+.calendar_wrap td {
+	font-size: 1em;
+	font-weight: 500;
+	line-height: 1;
+	padding: 2.5% 2.5% 1.75% 2.5%;
+	text-align: center;
+}
+
+.calendar_wrap tfoot td {
+	border-bottom: none;
+}
+
+.calendar_wrap tfoot a {
+	text-decoration: none;
+}
+
+.calendar_wrap tfoot #prev {
+	text-align: left;
+}
+
+.calendar_wrap tfoot #next {
+	text-align: right;
+}
+
+/* Widget: Image ----------------------------- */
+
+/* Widget: Gallery --------------------------- */
+
+.widget_media_gallery .gallery {
+	margin: 0 -0.4em -0.8em -0.4em;
+	width: calc(100% + 0.8em);
+}
+
+.widget_media_gallery .gallery-item {
+	margin: 0 0 0 0;
+	padding: 0;
+	max-width: 50%;
+
+}
+
+/* Widget: Nav Menu -------------------------- */
+
+.widget_nav_menu .widget-content > div > ul {
+	margin-left: 0;
+}
+
+/* Widget: Recent Comments ------------------- */
+
+.widget_recent_comments li {
+	font-weight: 700;
+}
+
+.widget_recent_comments a {
+	text-decoration: none;
+}
+
+.widget_recent_comments a:focus,
+.widget_recent_comments a:hover {
+	text-decoration: underline;
+}
+
+/* Widget: Recent Entries -------------------- */
+
+.widget_recent_entries a {
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.widget_recent_entries a:focus,
+.widget_recent_entries a:hover {
+	text-decoration: underline;
+}
+
+/* Widget: RSS ------------------------------- */
+
+.widget_rss .widget-title a.rsswidget:first-of-type {
+	display: none;
+}
+
+.widget_rss .rsswidget {
+	font-weight: 700;
+}
+
+.widget_rss a {
+	text-decoration: none;
+}
+
+.widget_rss a:focus,
+.widget_rss a:hover {
+	text-decoration: underline;
+}
+
+.widget_rss .rssSummary {
+	margin-top: 0.5rem;
+}
+
+.widget_rss cite::before {
+	content: "— ";
+}
+
+/* Widget: Search ---------------------------- */
+
+.widget_search .search-field {
+	border-color: $grey;
+}
+
+/* Widget: Tag Cloud ------------------------- */
+
+.widget_tag_cloud a {
+	font-weight: 700;
+	margin-right: 0.5rem;
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+.widget_tag_cloud a:focus,
+.widget_tag_cloud a:hover {
+	text-decoration: underline;
+}
+
+/* Widget: Text ------------------------------ */
+
+
+@media (min-width: $br-m) {
+
+	/* VANILLA GALLERIES */
+
+	.gallery-columns-2 .gallery-item {
+		max-width: 50%;
+	}
+
+	.gallery-columns-3 .gallery-item {
+		max-width: 33.33%;
+	}
+
+	.gallery-columns-4 .gallery-item {
+		max-width: 25%;
+	}
+
+	.gallery-columns-5 .gallery-item {
+		max-width: 20%;
+	}
+
+	.gallery-columns-6 .gallery-item {
+		max-width: 16.66%;
+	}
+
+	.gallery-columns-7 .gallery-item {
+		max-width: 14.28%;
+	}
+
+	.gallery-columns-8 .gallery-item {
+		max-width: 12.5%;
+	}
+
+	.gallery-columns-9 .gallery-item {
+		max-width: 11.11%;
+	}
+}

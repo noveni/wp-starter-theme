@@ -1,0 +1,336 @@
+// Butler Font
+body {
+	font-family: $font-primary;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.faux-heading {
+	font-family: $font-secondary;
+	font-feature-settings: "lnum";
+	font-variant-numeric: lining-nums;
+	font-weight: 400;
+	letter-spacing: 0;
+	line-height: 1.2;
+	margin: 3.5rem 0 2rem;
+}
+
+h1,
+.heading-size-1,
+h2,
+.heading-size-2,
+h3,
+.heading-size-3 {
+
+	@media (min-width: $br-m) {
+		margin: 6rem auto 3rem;
+	}
+}
+
+h4,
+.heading-size-4,
+h5,
+.heading-size-5,
+h6,
+.heading-size-6 {
+
+	@media (min-width: $br-m) {
+		margin: 4.5rem auto 2.5rem;
+	}
+}
+
+h1,
+.heading-size-1 {
+	font-family: $font-secondary;
+	font-size: 3.6rem;
+	font-weight: 400;
+	line-height: 1;
+	letter-spacing: 0;
+
+	@media (min-width: $br-m) {
+		font-size: 3.7rem;
+	}
+
+	@media (min-width: $br-xl) {
+		// font-size: 8.4rem;
+	}
+
+	& > p {
+		font-family: $font-primary;
+		font-size: 1.5rem;
+		color: $primary;
+		letter-spacing: 0;
+		line-height: 2;
+	}
+}
+
+h2,
+.heading-size-2 {
+	font-size: 1.6rem;
+
+	@media (min-width: $br-m) {
+		font-size: 3.7rem;
+	}
+}
+
+h3,
+.heading-size-3 {
+	font-size: 1.1rem;
+	font-family: $font-secondary;
+	color: $primary;
+	letter-spacing: 0;
+	font-weight: 400;
+
+	@media (min-width: $br-m) {
+		font-size: 3rem;
+	}
+}
+
+h4,
+.heading-size-4 {
+	font-size: 2.4rem;
+
+	@media (min-width: $br-m) {
+		font-size: 3.2rem;
+	}
+}
+
+h5,
+.heading-size-5 {
+	font-size: 2.1rem;
+
+	@media (min-width: $br-m) {
+		font-size: 2.4rem;
+	}
+}
+
+h6,
+.heading-size-6 {
+	font-size: 1.6rem;
+	text-transform: uppercase;
+
+	@media (min-width: $br-m) {
+		font-size: 1.8rem;
+	}
+}
+
+p {
+	line-height: 1.5;
+	margin: 0 0 1em 0;
+}
+
+em,
+i,
+q,
+dfn {
+	font-style: italic;
+}
+
+em em,
+em i,
+i em,
+i i,
+cite em,
+cite i {
+	font-weight: bolder;
+}
+
+big {
+	font-size: 1.2em;
+}
+
+small {
+	font-size: 0.75em;
+}
+
+b,
+strong {
+	font-weight: 700;
+}
+
+ins {
+	text-decoration: underline;
+}
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+abbr,
+acronym {
+	cursor: help;
+}
+
+address {
+	line-height: 1.5;
+	margin: 0 0 2rem 0;
+}
+
+hr {
+	border-style: solid;
+	border-width: 0.1rem 0 0 0;
+	border-color: #dcd7ca;
+	margin: 4rem 0;
+
+	@media ( min-width: 700px ) {
+		margin: 8rem auto;
+	}
+}
+
+.entry-content hr,
+hr.styled-separator {
+	background: linear-gradient(to left, currentColor calc(50% - 16px), transparent calc(50% - 16px), transparent calc(50% + 16px), currentColor calc(50% + 16px));
+	background-color: transparent !important;
+	border: none;
+	height: 0.1rem;
+	overflow: visible;
+	position: relative;
+}
+
+.entry-content hr:not(.has-background),
+hr.styled-separator {
+	color: $grey;
+}
+
+.entry-content hr::before,
+.entry-content hr::after,
+hr.styled-separator::before,
+hr.styled-separator::after {
+	background: currentColor;
+	content: "";
+	display: block;
+	height: 1.6rem;
+	position: absolute;
+	top: calc(50% - 0.8rem);
+	transform: rotate(22.5deg);
+	width: 0.1rem;
+}
+
+.entry-content hr::before,
+hr.styled-separator::before {
+	left: calc(50% - 0.5rem);
+}
+
+.entry-content hr::after,
+hr.styled-separator::after {
+	right: calc(50% - 0.5rem);
+}
+
+a {
+	color: $primary;
+	text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+	text-decoration: none;
+}
+
+.modal-menu {
+
+	li {
+		line-height: 1.2;
+	}
+
+	& > li > a,
+	& > li > .ancestor-wrapper > a {
+		font-size: 1.2rem;
+		font-weight: 600;
+		text-transform: uppercase;
+
+		@media (min-width: $br-m) {
+			font-size: 2.4rem;
+			padding: 2.5rem 0;
+		}
+	}
+
+	a {
+		color: $white;
+		text-decoration: none;
+	}
+
+	& a:focus,
+	& a:hover,
+	& li.current-menu-item > .ancestor-wrapper > a,
+	& li.current_page_ancestor > .ancestor-wrapper > a {
+		text-decoration: underline;
+	}
+
+	ul li a {
+		font-size: 1.2rem;
+		line-height: 1.5;
+		color: $white;
+		font-weight: 500;
+		font-style: italic;
+	}
+}
+
+.primary-menu a {
+	font-size: 1.2rem;
+	line-height: 1.3;
+	text-decoration: none;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.primary-menu ul {
+	color: $primary;
+	font-size: 1.2rem;
+	font-style: italic;
+	font-weight: 500;
+	letter-spacing: 0;
+}
+
+.primary-menu ul a {
+	text-transform: none;
+	font-weight: 500;
+	font-size: 1.2rem;
+}
+
+ul.secondary-menu {
+	font-size: 1.3rem;
+	font-weight: 500;
+	letter-spacing: 0;
+	color: $primary;
+}
+
+.secondary-menu a {
+	font-size: 1.3rem;
+	text-decoration: none;
+}
+
+.footer-widgets-wrapper .widget-content {
+	font-family: $font-primary;
+	color: $primary;
+	letter-spacing: 0;
+
+	p {
+		font-size: 1rem;
+		line-height: 1.9;
+		margin-bottom: 0;
+
+		@media (min-width: $br-m) {
+			font-size: 1.2rem;
+		}
+
+		@media (min-width: $br-l) {
+			font-size: 1.5rem;
+		}
+	}
+}

@@ -1,0 +1,447 @@
+/* -------------------------------------------------------------------------- */
+
+/*	3. Helper Classes
+/* -------------------------------------------------------------------------- */
+
+
+/* Layout ------------------------------------ */
+
+.no-margin {
+	margin: 0;
+}
+
+.no-padding {
+	padding: 0;
+}
+
+.screen-height {
+	min-height: 100vh;
+}
+
+.admin-bar .screen-height {
+	min-height: calc(100vh - 32px);
+}
+
+@media (max-width: 782px) {
+
+	.admin-bar .screen-height {
+		min-height: calc(100vh - 46px);
+	}
+}
+
+.screen-width {
+	position: relative;
+	left: calc(50% - 50vw);
+	width: 100vw;
+}
+
+/* Sections ---------------------------------- */
+
+section {
+	padding: 5rem 0;
+	width: 100%;
+
+	@media (min-width: $br-m) {
+		padding: 8rem 0;
+	}
+}
+
+.section-inner {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 120rem;
+	width: calc(100% - 4rem);
+
+	@media (min-width: $br-m) {
+		width: calc(100% - 8rem);
+	}
+}
+
+.section-inner.max-percentage {
+	width: 100%;
+}
+
+.section-inner.thin {
+	max-width: 58rem;
+}
+
+.section-inner.small {
+	max-width: 80rem;
+}
+
+.section-inner.medium {
+	max-width: 100rem;
+}
+
+.section-inner.no-margin {
+	margin: 0;
+}
+
+
+/* Toggles ----------------------------------- */
+
+.toggle {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	color: inherit;
+	cursor: pointer;
+	font-family: inherit;
+	position: relative;
+	text-align: inherit;
+	user-select: none;
+}
+
+button.toggle {
+	background: none;
+	border: none;
+	box-shadow: none;
+	border-radius: 0;
+	font-size: inherit;
+	font-weight: 400;
+	letter-spacing: inherit;
+	padding: 0;
+	text-transform: none;
+}
+
+/* Hiding and Showing ------------------------ */
+
+.js .show-js {
+	display: block !important;
+}
+
+.js .hide-js {
+	display: none !important;
+}
+
+.no-js .show-no-js {
+	display: block !important;
+}
+
+.no-js .hide-no-js {
+	display: none !important;
+}
+
+
+/* Typography -------------------------------- */
+
+.font-size-xl {
+	font-size: 1.25em;
+}
+
+.font-size-xs {
+	font-size: 0.8em;
+}
+
+.no-select {
+	user-select: none;
+}
+
+
+/* Colors ------------------------------------ */
+
+/* COLOR */
+
+.color-accent,
+.color-accent-hover:focus,
+.color-accent-hover:hover {
+	color: $red;
+}
+
+/* BACKGROUND COLOR */
+
+.bg-accent,
+.bg-accent-hover:focus,
+.bg-accent-hover:hover {
+	background-color: $red;
+}
+
+/* BORDER COLOR */
+
+.border-color-accent,
+.border-color-accent-hover:focus,
+.border-color-accent-hover:hover {
+	border-color: $red;
+}
+
+/* FILL COLOR */
+
+.fill-children-accent,
+.fill-children-accent * {
+	fill: $red;
+}
+
+.fill-children-current-color,
+.fill-children-current-color * {
+	fill: currentColor;
+}
+
+/* GENERAL COLORS */
+
+.has-black-background-color {
+	background-color: $black;
+	color: $white;
+}
+
+.has-white-background-color {
+	background-color: $white;
+	color: $black;
+}
+
+.has-black-color {
+	color: $black;
+}
+
+.has-white-color {
+	color: $white;
+}
+
+/* Opacity ----------------------------------- */
+
+.opacity-0 {
+	opacity: 0;
+}
+
+.opacity-5 {
+	opacity: 0.05;
+}
+
+.opacity-10 {
+	opacity: 0.1;
+}
+
+.opacity-15 {
+	opacity: 0.15;
+}
+
+.opacity-20 {
+	opacity: 0.2;
+}
+
+.opacity-25 {
+	opacity: 0.25;
+}
+
+.opacity-30 {
+	opacity: 0.3;
+}
+
+.opacity-35 {
+	opacity: 0.35;
+}
+
+.opacity-40 {
+	opacity: 0.4;
+}
+
+.opacity-45 {
+	opacity: 0.45;
+}
+
+.opacity-50 {
+	opacity: 0.5;
+}
+
+.opacity-55 {
+	opacity: 0.55;
+}
+
+.opacity-60 {
+	opacity: 0.6;
+}
+
+.opacity-65 {
+	opacity: 0.65;
+}
+
+.opacity-70 {
+	opacity: 0.7;
+}
+
+.opacity-75 {
+	opacity: 0.75;
+}
+
+.opacity-80 {
+	opacity: 0.8;
+}
+
+.opacity-85 {
+	opacity: 0.85;
+}
+
+.opacity-90 {
+	opacity: 0.9;
+}
+
+.blend-mode-exclusion {
+	mix-blend-mode: exclusion;
+}
+
+.blend-mode-hue {
+	mix-blend-mode: hue;
+}
+
+.blend-mode-saturation {
+	mix-blend-mode: saturation;
+}
+
+.blend-mode-color {
+	mix-blend-mode: color;
+}
+
+.blend-mode-luminosity {
+	mix-blend-mode: luminosity;
+}
+
+
+/* Image Classes ----------------------------- */
+
+.bg-image {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.bg-attachment-fixed {
+	background-attachment: fixed;
+}
+
+@supports ( -webkit-overflow-scrolling: touch ) {
+
+	.bg-attachment-fixed {
+		background-attachment: scroll;
+	}
+}
+
+@media ( prefers-reduced-motion: reduce ) {
+
+	.bg-attachment-fixed {
+		background-attachment: scroll;
+	}
+}
+
+.wp-block-image.is-resized {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Search Form ------------------------------- */
+
+.search-form {
+	align-items: stretch;
+	display: flex;
+	flex-wrap: nowrap;
+	margin: 0 0 -0.8rem -0.8rem;
+}
+
+.search-form .search-field,
+.search-form .search-submit {
+	margin: 0 0 0.8rem 0.8rem;
+}
+
+.search-form label {
+	align-items: stretch;
+	display: flex;
+	font-size: inherit;
+	margin: 0;
+	width: 100%;
+}
+
+.search-form .search-field {
+	width: 100%;
+}
+
+.search-form .search-submit {
+	flex-shrink: 0;
+}
+
+.search-form .search-submit:focus,
+.search-form .search-submit:hover {
+	text-decoration: none;
+}
+
+
+/* Social Icons ------------------------------ */
+
+ul.social-icons {
+	display: flex;
+	flex-wrap: wrap;
+	margin: -0.9rem 0 0 -0.9rem;
+	width: calc(100% + 0.9rem);
+}
+
+ul.social-icons li {
+	margin: 0.9rem 0 0 0.9rem;
+}
+
+.social-icons a {
+	align-items: center;
+	color: $primary;
+	display: flex;
+	height: $social-icon-size;
+	justify-content: center;
+	padding: 0;
+	text-decoration: none;
+	transition: transform 0.15s ease-in-out;
+	width: $social-icon-size;
+}
+
+.social-icons a:focus,
+.social-icons a:hover {
+	transform: scale(1.1);
+	text-decoration: none;
+}
+
+
+/* Cover Modals ------------------------------ */
+
+.cover-modal {
+	display: none;
+	-ms-overflow-style: none;
+	overflow: -moz-scrollbars-none;
+}
+
+.cover-modal::-webkit-scrollbar {
+	display: none !important;
+}
+
+.cover-modal.show-modal {
+	display: block;
+	cursor: pointer;
+}
+
+.cover-modal.show-modal > * {
+	cursor: default;
+}
+
+/* Ecran Noir Column Flex Helper -------------- */
+// Three in row item
+// Two on mobile
+
+.en_flex_blocks {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+
+	@media (min-width: $br-m) {
+		flex-wrap: wrap;
+	}
+
+	& > * {
+		flex: 1 1 auto;
+
+		@media (min-width: $br-m) {
+			flex: 0 1 auto;
+		}
+	}
+
+	li {
+		flex-basis: 50%;
+		padding: 1rem;
+
+		@media (min-width: $br-m) {
+			flex-basis: 33.33%;
+		}
+	}
+}

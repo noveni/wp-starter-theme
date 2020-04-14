@@ -1,0 +1,16 @@
+/* Font Families ----------------------------- */
+
+.entry-content p,
+.entry-content ol,
+.entry-content ul,
+.entry-content dl,
+.entry-content dt {
+	font-family: $font-primary;
+	letter-spacing: normal;
+}
+
+.entry-content cite,
+.entry-content figcaption,
+.entry-content .wp-caption-text {
+	font-family: $font-primary;
+}

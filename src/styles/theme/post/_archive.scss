@@ -1,0 +1,151 @@
+/* -------------------------------------------------------------------------- */
+
+/*	8. Post: Archive
+/* -------------------------------------------------------------------------- */
+
+
+/* Archive Header ---------------------------- */
+
+.archive-header {
+	background-color: $white;
+	padding: 4rem 0;
+
+	@media (min-width: $br-m) {
+		padding: 8rem 0;
+	}
+}
+
+.reduced-spacing .archive-header {
+	padding-bottom: 2rem;
+
+	@media (min-width: $br-m) {
+		padding-bottom: 3rem;
+	}
+}
+
+.archive-title {
+	font-size: 2.4rem;
+	font-weight: 700;
+	letter-spacing: -0.026666667em;
+	margin: 0;
+
+	@media (min-width: $br-m) {
+		font-size: 3.2rem;
+	}
+}
+
+.archive-subtitle p:last-child {
+	margin-bottom: 0;
+}
+
+
+/* Posts ------------------------------------- */
+
+body:not(.singular) main > article:first-of-type {
+	padding: 4rem 0 0;
+
+	@media (min-width: $br-m) {
+		padding: 0 0 0;
+	}
+}
+
+h2.entry-title {
+	margin: 0 auto 1.25em;
+	// @media (min-width: $br-m) {
+	// 	font-size: 6.4rem;
+	// }
+}
+
+
+/* Search Results ---------------------------- */
+
+.no-search-results-form {
+	padding-top: 5rem;
+
+	@media (min-width: $br-m) {
+		padding-top: 8rem;
+	}
+}
+
+/* Filter ------------------------------------- */
+
+.posts-filter-link-wrapper {
+
+	width: 80%;
+	margin: 0 auto;
+
+	a {
+		text-decoration: none;
+		padding: 0 0 0.3rem 0;
+		position: relative;
+
+		&:hover,
+		&:focus {
+			text-decoration: none;
+		}
+
+		&::after {
+			content: "";
+			width: 100%;
+			height: 1px;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+
+			transition: opacity 0.15s linear, transform 0.15s linear;
+			background: $primary;
+
+			opacity: 0;
+			visibility: hidden;
+			transform: translateY(10px);
+		}
+
+		&:hover::after,
+		&.filter-active::after {
+			opacity: 1;
+			visibility: visible;
+			transform: translateY(0);
+		}
+
+		&:hover.filter-active::after {
+			opacity: 0.2;
+		}
+	}
+
+
+	@media (min-width: $br-m) {
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+/* Archive Latest Post Grid ------------------- */
+
+.archive-latest-posts {
+
+	a {
+		text-decoration: none;
+	}
+
+	h2 {
+		margin-top: 0;
+		margin-bottom: 1rem;
+	}
+
+	.post-meta {
+		margin: 0 auto 1rem;
+	}
+
+	.wp-block-button {
+		margin-top: 0;
+	}
+}
+
+.excerpt-content {
+	font-style: italic;
+	font-weight: 300;
+
+	p {
+		line-height: 1.5;
+	}
+}

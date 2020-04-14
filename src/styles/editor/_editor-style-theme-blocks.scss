@@ -1,0 +1,36 @@
+.editor-styles-wrapper {
+
+	.wp-block-ecrannoir-blocks-date {
+
+		& > div:first-child {
+			display: inline-block;
+			background-color: $red;
+			color: $white;
+			font-style: italic;
+			font-weight: 300;
+			font-size: 1rem;
+			padding: 0.7rem 1.3rem;
+			line-height: 2;
+		}
+	}
+
+	.wp-block-ecrannoir-blocks-lieu {
+		color: $primary;
+		font-weight: 500;
+		font-size: 1rem;
+		line-height: 1.7;
+
+		.locationAddress {
+			font-weight: 300;
+			font-style: italic;
+			display: block;
+		}
+	}
+
+	.wp-block-ecrannoir-blocks-prix {
+		color: $primary;
+		font-weight: 500;
+		font-size: 1rem;
+		line-height: 1.1;
+	}
+}
