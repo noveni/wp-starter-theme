@@ -1,0 +1,19 @@
+/* Block: Image ------------------------------ */
+
+.wp-block-image .alignleft {
+
+	@media (min-width: $br-l) {
+
+		/*rtl:ignore*/
+		margin-right: 0;
+	}
+}
+
+.wp-block-image .alignright {
+
+	@media (min-width: $br-l) {
+
+		/*rtl:ignore*/
+		margin-left: 0;
+	}
+}

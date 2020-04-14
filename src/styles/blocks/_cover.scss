@@ -1,0 +1,31 @@
+/* Block: Cover ------------------------------ */
+
+.wp-block-cover-image .wp-block-cover__inner-container,
+.wp-block-cover .wp-block-cover__inner-container {
+	width: calc(100% - 4rem);
+	padding: 2rem 0;
+
+	@media (min-width: $br-m) {
+		width: calc(100% - 8rem);
+		padding: 4rem 0;
+	}
+}
+
+.wp-block-cover-image .wp-block-cover-image-text,
+.wp-block-cover-image .wp-block-cover-text,
+.wp-block-cover-image h2,
+.wp-block-cover .wp-block-cover-image-text,
+.wp-block-cover .wp-block-cover-text,
+.wp-block-cover h2 {
+	max-width: 100%;
+	padding: 0;
+}
+
+.wp-block-cover-image h2,
+.wp-block-cover h2 {
+	font-size: 3.2rem;
+
+	@media (min-width: $br-m) {
+		font-size: 4.8rem;
+	}
+}

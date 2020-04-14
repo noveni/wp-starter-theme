@@ -1,0 +1,52 @@
+/* Block: Quote ------------------------------ */
+
+.wp-block-quote p,
+.wp-block-quote cite {
+	text-align: inherit;
+}
+
+.wp-block-quote[style="text-align:center"] {
+	border-width: 0;
+	padding: 0;
+}
+
+.wp-block-quote[style="text-align:right"] {
+
+	/*rtl:begin:ignore*/
+	border-width: 0 0.2rem 0 0;
+	padding: 0 2rem 0 0;
+
+	/*rtl:end:ignore*/
+}
+
+/* STYLE: LARGE */
+
+.wp-block-quote.is-large,
+.wp-block-quote.is-style-large {
+	border: none;
+	padding: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-block-quote.is-large p,
+.wp-block-quote.is-style-large p {
+	font-family: inherit;
+	font-size: 2.4rem;
+	font-style: normal;
+	font-weight: 700;
+	letter-spacing: -0.02em;
+	line-height: 1.285;
+
+	@media (min-width: $br-m) {
+		font-size: 2.8rem;
+	}
+}
+
+.wp-block-quote.is-large cite,
+.wp-block-quote.is-large footer,
+.wp-block-quote.is-style-large cite,
+.wp-block-quote.is-style-large footer {
+	font-size: 1.6rem;
+	text-align: inherit;
+}

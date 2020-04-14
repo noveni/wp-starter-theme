@@ -1,0 +1,40 @@
+/* Block: Embed ------------------------------ */
+
+/* Block: File ------------------------------- */
+
+.wp-block-file {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.wp-block-file a:not(.wp-block-file__button) {
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.wp-block-file a:not(.wp-block-file__button):not(:last-child) {
+	margin-right: 1rem;
+}
+
+.wp-block-file a:not(.wp-block-file__button):focus,
+.wp-block-file a:not(.wp-block-file__button):hover {
+	text-decoration: underline;
+}
+
+.wp-block-file .wp-block-file__button {
+	font-size: 1.5rem;
+	padding: 1em 1.25em;
+}
+
+.wp-block-file a.wp-block-file__button:visited {
+	opacity: 1;
+}
+
+.wp-block-file a.wp-block-file__button:active,
+.wp-block-file a.wp-block-file__button:focus,
+.wp-block-file a.wp-block-file__button:hover {
+	opacity: 1;
+	text-decoration: underline;
+}

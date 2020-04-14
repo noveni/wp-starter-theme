@@ -1,0 +1,93 @@
+/* -------------------------------------------------------------------------- */
+
+/*	10. Blocks
+/* -------------------------------------------------------------------------- */
+
+
+/* Block Colors ------------------------------ */
+
+.has-text-color a {
+	color: inherit;
+}
+
+/* CUSTOM COLORS */
+
+:root .has-accent-color {
+	color: $red;
+}
+
+:root .has-accent-background-color {
+	background-color: $red;
+	color: $white;
+}
+
+:root .has-primary-color {
+	color: $primary;
+}
+
+:root .has-primary-background-color {
+	background-color: $primary;
+	color: $white;
+}
+
+:root .has-secondary-color {
+	color: $grey;
+}
+
+:root .has-secondary-background-color {
+	background-color: $grey;
+	color: $white;
+}
+
+:root .has-subtle-background-color {
+	color: #dcd7ca;
+}
+
+:root .has-subtle-background-background-color {
+	background-color: #dcd7ca;
+	color: $primary;
+}
+
+:root .has-background-color {
+	color: $white;
+}
+
+:root .has-background-background-color {
+	background-color: $white;
+	color: $primary;
+}
+
+
+/* Block Typography Classes ------------------ */
+
+.has-text-align-left {
+
+	/*rtl:ignore*/
+	text-align: left;
+}
+
+.has-text-align-center {
+	text-align: center;
+}
+
+.has-text-align-right {
+	text-align: right;
+}
+
+.has-drop-cap:not(:focus)::first-letter {
+	color: $red;
+	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 5.1em;
+	font-weight: 800;
+	margin: 0.05em 0.1em 0 0;
+}
+
+.has-drop-cap:not(:focus)::first-letter::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.has-drop-cap:not(:focus)::after {
+	padding: 0;
+}
