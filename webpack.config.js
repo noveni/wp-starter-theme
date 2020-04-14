@@ -14,7 +14,7 @@ const devMode = process.env.NODE_ENV !== 'production';
 module.exports = {
   context: __dirname,
   entry: {
-    main: './src/scripts/theme/index.js',
+    theme: './src/scripts/theme/index.js',
     admin: './src/scripts/admin/index.js',
     editor: './src/scripts/editor/index.js',
     login: './src/scripts/login/index.js',
