@@ -23,7 +23,7 @@
 @import "modal/search";
 @import "template/cover";
 @import "template/full-width";
-@import "layout/blocks";
+@import "../blocks/main";
 @import "entry/content";
 @import "entry/header";
 @import "post/archive";
@@ -34,6 +34,5 @@
 @import "layout/widgets";
 @import "layout/footer";
 @import "pages/home";
-@import "pages/bg-sect";
 @import "pages/pages";
 @import "animation";
