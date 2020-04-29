@@ -8,10 +8,10 @@
             "green": "#3aaa35"
         },
         "fontSize": {
-            "xs": "1em",
-            "s": "1.2em",
-            "m": "1.6em",
-            "l": "2em"
+            "xs": 10,
+            "s": 12,
+            "m": 16,
+            "l": 20
         },
         "breakpoints": {
             "xs": 0,

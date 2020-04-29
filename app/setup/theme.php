@@ -71,85 +71,29 @@ add_action('after_setup_theme', function () {
 
 
     
-    // Block Editor Palette.
-    add_theme_support( 'editor-color-palette',
-		array(
-            array(
-                'name' => 'black',
-                'slug' => 'black',
-                'color' => '#000000'
-            ),
-            array(
-                'name' => 'white',
-                'slug' => 'white',
-                'color' => '#ffffff'
-            ),
-            array(
-                'name' => 'grey',
-                'slug' => 'grey',
-                'color' => '#888888',
-            ),
-            array(
-                'name' => 'blue-tone',
-                'slug' => 'blue-tone',
-                'color' => '#0d6ae0',
-            ),
-            array(
-                'name' => 'blue-deep',
-                'slug' => 'blue-deep',
-                'color' => '#1b243d',
-            ),
-            array(
-                'name' => 'blue-flash',
-                'slug' => 'blue-flash',
-                'color' => '#009fe3',
-            ),
-            array(
-                'name' => 'blue-electric',
-                'slug' => 'blue-electric',
-                'color' => '#006ae8',
-            ),
-            array(
-                'name' => 'red',
-                'slug' => 'red',
-                'color' => '#e30613',
-            ),
-            array(
-                'name' => 'green',
-                'slug' => 'green',
-                'color' => '#3aaa35',
-            ),
-            array(
-                'name' => 'orange',
-                'slug' => 'orange',
-                'color' => '#f39200',
-            ),
-		)
-    );
+    
+    $editorColor = getConfigValue('color');
+    $editorColorPalette = [];
+    foreach ($editorColor as $colorName => $colorHex) {
+        $editorColorPalette[] = array(
+            'name' => $colorName,
+            'slug' => $colorName,
+            'color' => $colorHex,
+        );
+    }
+    add_theme_support( 'editor-color-palette', $editorColorPalette );
 
     add_theme_support( 'disable-custom-colors' );
     
-    add_theme_support(
-        'editor-font-sizes',
-        array(
-            array(
-                'name' => 'Small',
-                'shortName' => 'S',
-                'size' => 12,
-                'slug' => 'small'
-            ),
-            array(
-                'name' => 'Regular',
-                'shortName' => 'M',
-                'size' => 15,
-                'slug' => 'normal'
-            ),
-            array(
-                'name' => 'Large',
-                'shortName' => 'L',
-                'size' => 21,
-                'slug' => 'large'
-            ),
-         )
-    );
+    $configFontSizes = getConfigValue('fontSize');
+    $editorFontSizes = [];
+    foreach ($configFontSizes as $fontSizeName => $fontSizeValue) {
+        $editorFontSizes[] = array(
+            'name' => $fontSizeName,
+            'shortName' => $fontSizeName,
+            'size' => $fontSizeValue,
+            'slug' => $fontSizeName,
+        );
+    }
+    add_theme_support( 'editor-font-sizes', $editorFontSizes );
 });

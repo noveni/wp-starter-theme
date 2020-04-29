@@ -65,3 +65,27 @@ function ecrannoir_filter_login_headerurl() {
 function ecrannoir_filter_login_headertext() {
 	return get_bloginfo( 'name' );
 }
+
+
+/**
+ * Get Config Path File
+ */
+function getConfigData() {
+    return (array) json_decode(utf8_encode(file_get_contents(get_template_directory() . '/themeConfig.json')), true);
+}
+
+/**
+ * Get config value
+ */
+function getConfigValue($key = false) {
+    $configData = getConfigData();
+    $return_value = $configData['variables'];
+
+    if ($key) {
+        if (key_exists($key, $configData['variables'])) {
+            $return_value = $configData['variables'][$key];
+        }
+    }
+
+    return $return_value;
+}
