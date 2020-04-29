@@ -58,7 +58,7 @@ array_map(function ($file) use ($en_error) {
     if (!locate_template($file, true, true)) {
         $en_error(sprintf('Error locating <code>%s</code> for inclusion.', $file), 'File not found');
     }
-}, ['assets', 'blocks', 'config', 'svg-icons', 'content', 'meta', 'title']);
+}, ['assets', 'blocks', 'clean', 'config', 'svg-icons', 'content', 'meta', 'title']);
 
 /**
  * EcranNoir Modules files

@@ -39,20 +39,13 @@ function ecrannoir_theme_filter_body_class(array $classes) {
     //     $classes[] = 'sidebar-primary';
     // }
 
-    /** Clean up class names for custom templates */
-    // $classes = array_map(function ($class) {
-    //     return preg_replace(['/-blade(-php)?$/', '/^page-template-views/'], '', $class);
-    // }, $classes);
-
-    // return array_filter($classes);
-
-    // // Remove unnecessary classes
-    // $home_id_class = 'page-id-' . get_option('page_on_front');
-    // $remove_classes = [
-    //     'page-template-default',
-    //     $home_id_class
-    // ];
-    // $classes = array_diff($classes, $remove_classes);
+    // Remove unnecessary classes
+    $home_id_class = 'page-id-' . get_option('page_on_front');
+    $remove_classes = [
+        'page-template-default',
+        $home_id_class
+    ];
+    $classes = array_diff($classes, $remove_classes);
 
     return $classes;
 }
