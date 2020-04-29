@@ -1,21 +1,39 @@
+/* Default Color ------------------------------------- */
+$white:     #ffffff !default;
+$black:     #000000 !default;
+$grey:      #979797 !default;
+$red:       #a6554d !default;
+
+/* Default Breakpoints ------------------------------- */
+$br-xs:     0;
+$br-s:      600;
+$br-m:      960;
+$br-l:      1280;
+$br-xl:     1920;
+
+/* Config file Injection ----------------------------- */
+$themeVariables: $variables;
+$themeColor: map_get($themeVariables, color);
+$breakpoints: map_get($themeVariables, breakpoints);
 
 /* Color ------------------------------------- */
-$white:     #ffffff;
-$black:     #000000;
-$grey:      #979797;
-$red:       #a6554d;
+$white:     map_get($themeColor, white); /* stylelint-disable-line */
+$black:     map_get($themeColor, black); /* stylelint-disable-line */
+$grey:      map_get($themeColor, grey); /* stylelint-disable-line */
+$red:       map_get($themeColor, red); /* stylelint-disable-line */
+$green:     map_get($themeColor, green); /* stylelint-disable-line */
 
 $primary:     $black;
 $secondary:   $grey;
 $body-background:  $white;
 
-/* Size */
-$social-icon-size: 1.8rem; //18px
 
-/* Breakpoints */
-$br-m:      700px;
-$br-l:      1000px;
-$br-xl:     1220px;
+/* Breakpoints ------------------------------- */
+$br-xs:     #{map_get($breakpoints, xs)}px;
+$br-s:      #{map_get($breakpoints, s)}px;
+$br-m:      #{map_get($breakpoints, m)}px;
+$br-l:      #{map_get($breakpoints, l)}px;
+$br-xl:     #{map_get($breakpoints, xl)}px;
 
 /* Z-index */
 $menu-modal-zindex: 99;
@@ -31,3 +49,7 @@ $hamburger-layer-border-radius : 5px;
 $hamburger-hover-opacity       : 0.7;
 $hamburger-active-layer-color  : $hamburger-layer-color;
 $hamburger-active-hover-opacity: $hamburger-hover-opacity;
+
+
+/* Size */
+$social-icon-size: 1.8rem; //18px

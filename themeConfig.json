@@ -1,0 +1,24 @@
+{
+    "variables": {
+        "color": {
+            "black": "#000000",
+            "white": "#ffffff",
+            "grey": "#979797",
+            "red": "#a6554d",
+            "green": "#3aaa35"
+        },
+        "fontSize": {
+            "xs": "1em",
+            "s": "1.2em",
+            "m": "1.6em",
+            "l": "2em"
+        },
+        "breakpoints": {
+            "xs": 0,
+            "s": 600,
+            "m": 960,
+            "l": 1280,
+            "xl": 1920
+        }
+    }
+}

@@ -85,6 +85,17 @@ module.exports = {
               sourceMap: true,
             }
           },
+          // Reads Sass vars from files or inlined in the options property
+          { 
+            loader: "@epegzz/sass-vars-loader", 
+            options: {
+              syntax: 'scss',
+              files: [
+                // Option 2) Load vars from JSON file
+                path.resolve(__dirname, 'themeConfig.json')
+              ]
+            }
+          }
         ]
       },
       {

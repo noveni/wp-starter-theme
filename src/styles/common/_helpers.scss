@@ -195,6 +195,14 @@ button.toggle {
 	color: $white;
 }
 
+@each $colorName, $colorValue in $themeColor {
+
+	.has-#{$colorName}-color {
+		color: $colorValue;
+	}
+}
+
+
 /* Opacity ----------------------------------- */
 
 .opacity-0 {
