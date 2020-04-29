@@ -15,6 +15,7 @@ $br-xl:     1920;
 $themeVariables: $variables;
 $themeColor: map_get($themeVariables, color);
 $breakpoints: map_get($themeVariables, breakpoints);
+$editorFontSize: map_get($themeVariables, fontSize); /* stylelint-disable-line */
 
 /* Color ------------------------------------- */
 $white:     map_get($themeColor, white); /* stylelint-disable-line */

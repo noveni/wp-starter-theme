@@ -136,6 +136,13 @@ button.toggle {
 	user-select: none;
 }
 
+@each $fontSizeSlug, $fontSizeValue in $editorFontSize {
+
+	.has-#{$fontSizeSlug}-font-size {
+		font-size: #{($fontSizeValue / 10)}em;
+	}
+}
+
 
 /* Colors ------------------------------------ */
 
