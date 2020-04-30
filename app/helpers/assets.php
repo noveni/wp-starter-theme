@@ -96,7 +96,7 @@ function ecrannoir_theme_filter_upload_mimes($mimes) {
 function ecrannoir_theme_walker_nav_menu_start_el($item_output, $item, $depth, $args) {
     // Change SVG icon inside social links menu if there is supported URL.
     if ( 'social' === $args->theme_location ) {
-		$svg = EcranNoir_SVG_Icons::get_social_link_svg( $item->url );
+		$svg = Icons::get_social_link_svg( $item->url );
 		if ( empty( $svg ) ) {
 			$svg = ecrannoir_get_theme_svg( 'link' );
 		}

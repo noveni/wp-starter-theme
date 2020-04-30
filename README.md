@@ -12,8 +12,8 @@ Based on TwentyTwenty Theme
   - [ ] Make Modal Menu agnostic
 - [ ] Add CSS Framework
 - [ ] Make Theme Fn in OOP
-  - [ ] Make Main Class and Namespace
-  - [ ] Make Class to handle Script
+  - [x] Make Main Class and Namespace
+  - [x] Make Class to handle Script
   - [ ] Make defines file to store constant
 - [ ] Add Twig Templating
 - [ ] Make theme accessible with API

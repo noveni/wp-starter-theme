@@ -1,7 +1,8 @@
 <?php
+
+namespace Assets;
+
 /**
- * 
- *
  * 
  *
  * @package WordPress
@@ -9,12 +10,9 @@
  * @since 1.0.0
  */
 
-if ( ! class_exists( 'EcranNoir_Image_Tag' ) ) {
+if ( ! class_exists( 'Assets\Image' ) ) {
 
-    add_filter( 'wp_get_attachment_image_attributes', [EcranNoir_Image_Tag::class, 'filterGetAttachmentImgAttributes']);
-    add_filter('the_content', [EcranNoir_Image_Tag::class, 'filterTheContent'], 15);
-
-    class EcranNoir_Image_Tag {
+    class Image {
 
         /**
          * Filter attachment for archive pages
@@ -59,7 +57,7 @@ if ( ! class_exists( 'EcranNoir_Image_Tag' ) ) {
             libxml_use_internal_errors(true);
 
             
-            $dom = new DOMDocument();
+            $dom = new \DOMDocument();
             $dom->loadHTML($the_content);
             // $post->loadHTML($encoded_content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
 

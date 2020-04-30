@@ -1,4 +1,7 @@
 <?php
+
+namespace Assets;
+
 /**
  * Javascript Loader Class
  *
@@ -11,9 +14,9 @@
  * @since 1.0.0
  */
 
-if ( ! class_exists( 'EcranNoir_Meta_Tag' ) ) {
+if ( ! class_exists( 'Assets\Meta' ) ) {
 
-    class EcranNoir_Meta_Tag {
+    class Meta {
 
         /**
          * List of default directories.
@@ -21,7 +24,7 @@ if ( ! class_exists( 'EcranNoir_Meta_Tag' ) ) {
          * @since 2.8.0
          * @var array
          */
-        public static $default_cpt = ['post', 'atelier-photos', 'workshops'];
+        public static $default_cpt = ['post'];
 
         public static function print_meta()
         {
@@ -93,7 +96,7 @@ if ( ! class_exists( 'EcranNoir_Meta_Tag' ) ) {
         public static function getOgImages()
         {
             $default_image = array(
-                'url' => get_template_directory_uri() . '/dist/img/logo.png',
+                'url' => get_template_directory_uri() . '/dist/img/logo.svg',
                 'height' => 1080,
                 'width' => 1080,
                 'type' => 'image/png'
@@ -218,5 +221,4 @@ if ( ! class_exists( 'EcranNoir_Meta_Tag' ) ) {
        
     }
     
-    add_action( 'wp_head', [EcranNoir_Meta_Tag::class, 'print_meta'], 5);
 }
