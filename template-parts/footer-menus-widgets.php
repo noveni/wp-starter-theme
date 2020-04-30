@@ -11,11 +11,12 @@
 $has_footer_menu = has_nav_menu( 'footer' );
 $has_social_menu = has_nav_menu( 'social' );
 
-$has_sidebar_1 = is_active_sidebar( 'sidebar-1' );
-$has_sidebar_2 = is_active_sidebar( 'sidebar-2' );
+$widget_footer_top = is_active_sidebar( 'widget-footer-top' );
+$widget_footer_left = is_active_sidebar( 'widget-footer-left' );
+$widget_footer_right = is_active_sidebar( 'widget-footer-right' );
 
 // Only output the container if there are elements to display.
-if ( $has_footer_menu || $has_social_menu || $has_sidebar_1 || $has_sidebar_2 ) {
+if ( $has_footer_menu || $has_social_menu || $widget_footer_top || $widget_footer_left || $widget_footer_right ) {
 	?>
 
 	<div class="footer-nav-widgets-wrapper header-footer-group">
@@ -29,7 +30,7 @@ if ( $has_footer_menu || $has_social_menu || $has_sidebar_1 || $has_sidebar_2 ) 
 			$footer_top_classes .= $has_footer_menu ? ' has-footer-menu' : '';
 			$footer_top_classes .= $has_social_menu ? ' has-social-menu' : '';
 
-			if ( $has_footer_menu || $has_social_menu ) {
+			if ( $has_footer_menu || $has_social_menu || $widget_footer_top) {
 				?>
 				<div class="footer-top<?php echo $footer_top_classes; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static output ?>">
 					<?php if ( $has_footer_menu ) { ?>
@@ -80,28 +81,35 @@ if ( $has_footer_menu || $has_social_menu || $has_sidebar_1 || $has_sidebar_2 ) 
 						</nav><!-- .footer-social-wrapper -->
 
 					<?php } ?>
+					<?php if ( $widget_footer_top) { ?>
+						<div class="footer-widgets-wrapper">
+							<div class="footer-widgets">
+								<?php dynamic_sidebar( 'widget-footer-top' ); ?>
+							</div>
+						</div>
+					<?php } ?>
 				</div><!-- .footer-top -->
 
 			<?php } ?>
 
-			<?php if ( $has_sidebar_1 || $has_sidebar_2 ) { ?>
+			<?php if ( $widget_footer_left || $widget_footer_right ) { ?>
 
 				<aside class="footer-widgets-outer-wrapper" role="complementary">
 
 					<div class="footer-widgets-wrapper">
 
-						<?php if ( $has_sidebar_1 ) { ?>
+						<?php if ( $widget_footer_left ) { ?>
 
 							<div class="footer-widgets column-one grid-item">
-								<?php dynamic_sidebar( 'sidebar-1' ); ?>
+								<?php dynamic_sidebar( 'widget-footer-left' ); ?>
 							</div>
 
 						<?php } ?>
 
-						<?php if ( $has_sidebar_2 ) { ?>
+						<?php if ( $widget_footer_right ) { ?>
 
 							<div class="footer-widgets column-two grid-item">
-								<?php dynamic_sidebar( 'sidebar-2' ); ?>
+								<?php dynamic_sidebar( 'widget-footer-right' ); ?>
 							</div>
 
 						<?php } ?>

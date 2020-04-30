@@ -20,7 +20,7 @@ function ecrannoir_theme_redirect() {
 function ecrannoir_theme_maintenance_mode(){
     if(!current_user_can('edit_themes') || !is_user_logged_in()){
         $site_title = get_bloginfo( 'name' );
-        wp_die('<div style="text-align:center"><h1 style="color:black">' + $site_title + '</h1><p>Nous effectuons une maintenance. Nous serons de retour en ligne sous peu!</p></div>');
+        wp_die('<div style="text-align:center"><h1 style="color:black">' . $site_title . '</h1><p>Nous effectuons une maintenance. Nous serons de retour en ligne sous peu!</p></div>');
     }
 }
 

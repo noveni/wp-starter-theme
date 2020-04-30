@@ -3,9 +3,11 @@
  * Twenty Twenty SVG Icon helper functions
  *
  * @package WordPress
- 
  * @since 1.0.0
  */
+
+use Assets\Icons;
+
 
 if ( ! function_exists( 'ecrannoir_the_theme_svg' ) ) {
 	/**
@@ -34,7 +36,7 @@ if ( ! function_exists( 'ecrannoir_get_theme_svg' ) ) {
 
 		// Make sure that only our allowed tags and attributes are included.
 		$svg = wp_kses(
-			EcranNoir_SVG_Icons::get_svg( $svg_name, $group, $color ),
+			Icons::get_svg( $svg_name, $group, $color ),
 			array(
 				'svg'     => array(
 					'class'       => true,

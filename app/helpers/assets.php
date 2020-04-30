@@ -3,6 +3,8 @@
  * Asset helpers.
  */
 
+use Assets\Icons;
+
 /**
  * Displays the site logo, either text or image.
  *
@@ -28,7 +30,7 @@ function ecrannoir_theme_site_logo( $args = array(), $echo = true, $color = fals
     );
     
     if (!has_custom_logo()) {
-        $logo = EcranNoir_SVG_Icons::get_svg('logo', 'brand', $color);
+        $logo = Icons::get_svg('logo', 'brand', $color);
     }
 
 	$args = wp_parse_args( $args, $defaults );
