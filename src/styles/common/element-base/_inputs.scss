@@ -175,8 +175,6 @@ input[type="submit"] {
 	text-align: center;
 	text-decoration: none;
 	text-transform: none;
-	transition: opacity 0.15s linear;
-	// position: relative;
 
 	@media (min-width: $br-m) {
 		font-size: 1.5rem;
@@ -185,19 +183,6 @@ input[type="submit"] {
 	@media (min-width: 782px) {
 		font-size: 1.7rem;
 	}
-
-	// &:not(.hamburger):not(.btn-noline)::after {
-	// 	position: relative;
-	// 	content: "";
-	// 	display: block;
-	// 	bottom: 0;
-	// 	width: 60%;
-	// 	max-width: 77px;
-	// 	height: 1px;
-	// 	background-color: $primary;
-	// 	margin: 0 auto;
-	// 	transform: translateY(10px);
-	// }
 }
 
 button:focus,
