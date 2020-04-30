@@ -5,10 +5,16 @@ Based on TwentyTwenty Theme
 
 ## Roadmap
 
-- [ ] Refactor TwentyTwenty Javacscript
+- [x] Refactor TwentyTwenty Javacscript
 - [ ] Let away TwentyTwenty Theme Markup and Style
+  - [ ] Make Footer agnostic from TwentyTwenty
+  - [ ] Make Header agnostic from TwentyTwenty
+  - [ ] Make Modal Menu agnostic
 - [ ] Add CSS Framework
 - [ ] Make Theme Fn in OOP
+  - [ ] Make Main Class and Namespace
+  - [ ] Make Class to handle Script
+  - [ ] Make defines file to store constant
 - [ ] Add Twig Templating
 - [ ] Make theme accessible with API
 - [ ] Add Admin Page Control
