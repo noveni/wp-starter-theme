@@ -6,6 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 use Assets\Scripts;
 use Admin\Admin;
+use PostType\ExampleCpt;
 use WP_Error as WP_Error;
 
 
@@ -83,6 +84,8 @@ class EcrannoirWPTheme
 			require_once __DIR__ . '/setup/menu.php';
 
 		});
+
+		ExampleCpt::instance();
 
 		$this::enqueueScripts();
 
