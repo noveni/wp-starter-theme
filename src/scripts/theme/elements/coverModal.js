@@ -1,6 +1,9 @@
 
 export default {
-  init: function() {
+  clickedEl: false,
+  init: function( togglesClickedEl ) {
+    this.clickedEl = togglesClickedEl;
+    
     if ( document.querySelector( '.cover-modal' ) ) {
       // Handle cover modals when they're toggled
       this.onToggle();
@@ -94,7 +97,7 @@ export default {
       };
     }
     // Show the modal
-    modals.forEach( function( modal ) {
+    modals.forEach( ( modal ) => {
 
       modal.addEventListener( 'toggle-target-before-inactive', function( event ) {
         var styles = htmlStyles(),
@@ -128,13 +131,14 @@ export default {
       } );
 
       // Hide the modal after a delay, so animations have time to play out
-      modal.addEventListener( 'toggle-target-after-inactive', function( event ) {
+      modal.addEventListener( 'toggle-target-after-inactive', ( event ) => {
         if ( event.target !== modal ) {
           return;
         }
 
-        setTimeout( function() {
-          var clickedEl = ecrannoir.toggles.clickedEl;
+        
+        setTimeout( () => {
+          var clickedEl = this.clickedEl;
 
           modal.classList.remove( 'show-modal' );
 

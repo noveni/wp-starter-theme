@@ -2,8 +2,9 @@
 import { ecrannoirFindParents } from '../../utils/dom'
 
 export default {
-
-  init: function() {
+  clickedEl: false,
+  init: function(togglesClickedEl) {
+    this.clickedEl = togglesClickedEl;
     // If the current menu item is in a sub level, expand all the levels higher up on load
     this.expandLevel();
     this.keepFocusInModal();
@@ -28,10 +29,10 @@ export default {
 
   keepFocusInModal: function() {
     var _doc = document;
-
-    _doc.addEventListener( 'keydown', function( event ) {
+    
+    _doc.addEventListener( 'keydown', ( event ) => {
       var toggleTarget, modal, selectors, elements, menuType, bottomMenu, activeEl, lastEl, firstEl, tabKey, shiftKey,
-        clickedEl = ecrannoir.toggles.clickedEl;
+        clickedEl = this.clickedEl;
 
       if ( clickedEl && _doc.body.classList.contains( 'showing-modal' ) ) {
         toggleTarget = clickedEl.dataset.toggleTarget;

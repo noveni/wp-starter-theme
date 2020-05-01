@@ -17,9 +17,9 @@ export default {
 			document.documentElement.classList.remove('no-js');
 			window.ecrannoir = ecrannoir;
 			toggles.init();	// Handle toggles
-			coverModals.init();	// Handle cover modals
+			coverModals.init(toggles.clickedEl);	// Handle cover modals
 			intrinsicRatioVideos();	// Retain aspect ratio of videos on window resize
-			modalMenu.init();	// Modal Menu
+			modalMenu.init(toggles.clickedEl);	// Modal Menu
 			primaryMenu();	// Primary Menu
 			touchEnabled();	// Add class to body if device is touch-enabled
 		} );
