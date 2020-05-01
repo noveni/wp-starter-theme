@@ -82,7 +82,7 @@ if ( ! class_exists( 'Admin\Admin' ) ) {
             // Comments
             remove_menu_page('edit-comments.php');
             // Appearance
-            remove_menu_page('themes.php');
+            // remove_menu_page('themes.php');
             remove_submenu_page('themes.php', 'theme-editor.php');
             // Plugins
             /* remove_menu_page('plugins.php');
