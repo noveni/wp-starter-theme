@@ -8,7 +8,7 @@
  * @since 1.0
  */
 
-get_header();
+ecrannoir_get_theme_header();
 ?>
 
 <main id="site-content" role="main">
@@ -20,7 +20,7 @@ get_header();
 		while ( have_posts() ) {
 			the_post();
 
-			get_template_part( 'template-parts/content-cover' );
+			get_template_part( 'templates/template-parts/content-cover' );
 		}
 	}
 
@@ -28,6 +28,6 @@ get_header();
 
 </main><!-- #site-content -->
 
-<?php get_template_part( 'template-parts/footer-menus-widgets' ); ?>
+<?php get_template_part( 'templates/template-parts/footer-menus-widgets' ); ?>
 
-<?php get_footer(); ?>
+<?php ecrannoir_get_theme_header(); ?>

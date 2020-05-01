@@ -6,42 +6,85 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 use Assets\Scripts;
 use Admin\Admin;
+use WP_Error as WP_Error;
 
 
-class WPTheme
+class EcrannoirWPTheme
 {
+	/**
+     * Determines whether a class has already been instanciated.
+     *
+     * @access private
+     */
+	private static $instance = null;   
+	
+	/** 
+     * Constructor. This allows the class to be only initialized once.
+     */
+    private function __construct() {
+        $this->init();
+    }
 
-	public static function init() {
 
-		require_once __DIR__ . '/helpers/config.php';
+	public static function instance()
+	{
+		$class = get_called_class();
+        if ( ! isset(self::$instance[$class]) ) {
+            self::$instance[$class] = new $class();
+        }
+
+        return self::$instance[$class];
+	}
+	
+	public function init() {
+
+		/**
+         * Loads our translations before loading anything else
+         */
+        if( is_dir( get_stylesheet_directory() . '/languages' ) ) {
+            $path = get_stylesheet_directory() . '/languages';
+        } else {
+            $path = get_template_directory() . '/languages'; 
+        }
+
+		load_theme_textdomain('ecrannoir', $path);
+
+		// Load Utilities
+		require_once (__DIR__ . '/helpers/config.php');
 		require_once __DIR__ . '/helpers/assets.php';
 		require_once __DIR__ . '/helpers/svg-icons.php';
 		require_once __DIR__ . '/helpers/meta.php';
 		require_once __DIR__ . '/helpers/blocks.php';
 		require_once __DIR__ . '/helpers/content.php';
 
-		self::setup();
-		self::adminSetup();
+		$this->setup();
+		$this->adminSetup();
 
-		self::generalActions();
+		/**
+         * Flush our rewrite rules for new posts
+         */
+        add_action('after_switch_theme', function() { 
+            flush_rewrite_rules(); 
+        });
 
-		self::actions();
-		self::filters();
+		$this::generalActions();
+
+		$this::actions();
+		$this::filters();
+
+		$this->view();
 	}
 
-	public static function setup() {
+	public function setup() {
 
 		add_action('after_setup_theme', function () {
-
-			load_theme_textdomain('ecrannoir', get_template_directory() . '/languages');
-
 			require_once __DIR__ . '/setup/clean.php';
 			require_once __DIR__ . '/setup/theme.php';
 			require_once __DIR__ . '/setup/menu.php';
 
 		});
 
-		self::enqueueScripts();
+		$this::enqueueScripts();
 
 		add_action('widgets_init', function() {
 			require_once __DIR__ . '/setup/widgets.php';
@@ -111,7 +154,7 @@ class WPTheme
 
 	}
 
-	public static function adminSetup() {
+	public function adminSetup() {
 		Admin::init();
 	}
 
@@ -182,6 +225,24 @@ class WPTheme
 			return __('Not Found', 'ecrannoir');
 		}
 		return get_the_title();
+	}
+
+	public function view() {
+		$files = ['index','404','archive','author','category','tag','taxonomy','date’, ’embed','home','frontpage','privacypolicy','page','paged','search','single','singular','attachment'];
+		
+		foreach( $files as $type ) {
+            add_action("{$type}_template_hierarchy", function($templates) {
+                
+                $return = [];
+                
+                foreach($templates as $template) {
+                    $return[] = 'templates/' . $template;    
+                }
+                
+                return $return;
+                
+            });
+        }   
 	}
 
 }

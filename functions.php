@@ -61,4 +61,4 @@ if ( file_exists( './vendor/autoload.php' ) ) {
 }
 
 
-WPTheme::init();
+$theme = EcrannoirWPTheme::instance();

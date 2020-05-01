@@ -148,7 +148,7 @@
 
 		if ( is_single() ) {
 
-			get_template_part( 'template-parts/entry-author-bio' );
+			get_template_part( 'templates/template-parts/entry-author-bio' );
 
 		}
 		?>
@@ -159,7 +159,7 @@
 
 	if ( is_single() ) {
 
-		get_template_part( 'template-parts/navigation' );
+		get_template_part( 'templates/template-parts/navigation' );
 	}
 
 	/**

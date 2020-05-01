@@ -6,7 +6,7 @@
  * @since 1.0.0
  */
 
-get_header();
+ecrannoir_get_theme_header();
 ?>
 
 <main id="site-content" role="main">
@@ -70,7 +70,7 @@ get_header();
 			}
 			the_post();
 
-			get_template_part( 'template-parts/content', get_post_type() );
+			get_template_part( 'templates/template-parts/content', get_post_type() );
 
 		}
 	} elseif ( is_search() ) {
@@ -92,11 +92,11 @@ get_header();
 	}
 	?>
 
-	<?php get_template_part( 'template-parts/pagination' ); ?>
+	<?php get_template_part( 'templates/template-parts/pagination' ); ?>
 
 </main><!-- #site-content -->
 
-<?php get_template_part( 'template-parts/footer-menus-widgets' ); ?>
+<?php get_template_part( 'templates/template-parts/footer-menus-widgets' ); ?>
 
 <?php
-get_footer();
+ecrannoir_get_theme_footer();

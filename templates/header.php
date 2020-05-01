@@ -171,7 +171,7 @@
         <?php
         // Output the search modal (if it is activated in the customizer).
         if ( true === $enable_header_search ) {
-            get_template_part( 'template-parts/modal-search' );
+            get_template_part( 'templates/template-parts/modal-search' );
         }
         ?>
 
@@ -179,4 +179,4 @@
     
     <?php
     // Output the menu modal.
-    get_template_part( 'template-parts/modal-menu' );
+    get_template_part( 'templates/template-parts/modal-menu' );
