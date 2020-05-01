@@ -3,11 +3,11 @@
 hr.wp-block-separator {
 	margin: 3rem 0;
 
-	@media (min-width: $br-m) {
+	@media (min-width: $br-s) {
 		margin: 6rem auto;
 	}
 
-	@media (min-width: $br-l) {
+	@media (min-width: $br-m) {
 		margin: 8rem auto;
 	}
 }
@@ -19,13 +19,13 @@ hr.wp-block-separator {
 	position: relative;
 	width: 100%;
 
-	@media (min-width: $br-m) {
+	@media (min-width: $br-s) {
 		max-width: calc(100vw - 8rem);
 	}
 
-	@media ( min-width: 1280px ) {
-		max-width: 120rem;
-		width: 120rem;
+	@media ( min-width: $br-l ) {
+		max-width: $wide-width;
+		width: $wide-width;
 	}
 }
 

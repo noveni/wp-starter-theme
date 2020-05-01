@@ -5,7 +5,7 @@
 	margin-bottom: 0;
 	margin-top: 0;
 
-	@media (min-width: $br-m) {
+	@media (min-width: $br-s) {
 		padding: 4rem;
 		margin-top: 0;
 		margin-bottom: 0;
@@ -26,7 +26,7 @@
 	padding-left: 2rem;
 	padding-right: 2rem;
 
-	@media (min-width: $br-m) {
+	@media (min-width: $br-s) {
 		padding-left: 0;
 		padding-right: 0;
 	}
@@ -35,7 +35,7 @@
 .entry-content > .wp-block-group.alignwide.has-background,
 .entry-content > .wp-block-group.alignfull.has-background {
 
-	@media (min-width: $br-l) {
+	@media (min-width: $br-m) {
 		padding: 8rem 4rem;
 		margin-bottom: 0;
 		margin-top: 0;

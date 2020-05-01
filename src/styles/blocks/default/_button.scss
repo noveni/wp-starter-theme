@@ -138,7 +138,7 @@
 	color: $primary;
 	text-align: center;
 
-	@media (min-width: $br-m) {
+	@media (min-width: $br-s) {
 		text-align: left;
 	}
 }
@@ -157,7 +157,7 @@
 	background: none;
 	position: relative;
 
-	@media (min-width: $br-m) {
+	@media (min-width: $br-s) {
 		padding: 1.1em 2em;
 		overflow: hidden;
 	}
@@ -165,7 +165,7 @@
 	& span {
 		display: block;
 
-		@media (min-width: $br-m) {
+		@media (min-width: $br-s) {
 			padding: 1.1rem 2rem;
 		}
 	}
@@ -252,7 +252,7 @@
 		transform: translateX(0);
 	}
 
-	@media (min-width: $br-m) {
+	@media (min-width: $br-s) {
 
 		& span {
 			display: block;

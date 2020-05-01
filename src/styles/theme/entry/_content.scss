@@ -7,7 +7,7 @@
 	line-height: 1.5;
 	font-size: 1rem;
 
-	@media (min-width: $br-m) {
+	@media (min-width: $br-s) {
 		font-size: 1.5rem;
 	}
 }
@@ -40,7 +40,7 @@
 .entry-content li {
 	line-height: 2;
 
-	@media (min-width: $br-m) {
+	@media (min-width: $br-s) {
 		line-height: 2;
 	}
 }
@@ -58,7 +58,7 @@
 .entry-content h2,
 .entry-content h3 {
 
-	@media (min-width: $br-m) {
+	@media (min-width: $br-s) {
 		margin: 6rem auto 3rem;
 	}
 }
@@ -67,7 +67,7 @@
 .entry-content h5,
 .entry-content h6 {
 
-	@media (min-width: $br-m) {
+	@media (min-width: $br-s) {
 		margin: 4.5rem auto 2.5rem;
 	}
 }
@@ -83,7 +83,7 @@
 	font-style: italic;
 	font-weight: 300;
 
-	@media (min-width: $br-m) {
+	@media (min-width: $br-s) {
 		font-size: 1.5rem;
 	}
 }

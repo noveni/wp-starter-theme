@@ -2,3 +2,19 @@ main {
 	display: block;
 }
 
+
+address {
+	line-height: 1.5;
+	margin: 0 0 2rem 0;
+}
+
+hr {
+	border-style: solid;
+	border-width: 0.1rem 0 0 0;
+	border-color: #dcd7ca;
+	margin: 4rem 0;
+
+	@media ( min-width: $br-s ) {
+		margin: 8rem auto;
+	}
+}

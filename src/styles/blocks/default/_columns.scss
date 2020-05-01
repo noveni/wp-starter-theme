@@ -13,7 +13,7 @@
 		margin-top: -4rem;
 	}
 
-	@media (min-width: $br-m) {
+	@media (min-width: $br-s) {
 		margin-top: -6rem;
 	}
 
@@ -21,7 +21,7 @@
 		margin-top: -2.8rem;
 	}
 
-	@media (min-width: $br-l) {
+	@media (min-width: $br-m) {
 		margin-top: -4.8rem;
 	}
 
@@ -41,7 +41,7 @@
 .entry-content .wp-block-columns h5,
 .entry-content .wp-block-columns h6 {
 
-	@media (min-width: $br-m) {
+	@media (min-width: $br-s) {
 		margin: 3.5rem 0 2rem;
 	}
 }
@@ -83,12 +83,12 @@
 
 		& *:last-child {
 
-			@media (min-width: $br-m) {
+			@media (min-width: $br-s) {
 				margin-top: 0;
 			}
 		}
 
-		@media (min-width: $br-m) {
+		@media (min-width: $br-s) {
 			display: flex;
 			flex-direction: column;
 			margin-right: 0;
@@ -103,7 +103,7 @@
 	.wp-block-image {
 		margin-bottom: 1rem;
 
-		@media (min-width: $br-m) {
+		@media (min-width: $br-s) {
 			margin-bottom: 1rem;
 		}
 	}
@@ -113,7 +113,7 @@
 		margin-top: 1rem;
 		margin-bottom: 1rem;
 
-		@media (min-width: $br-m) {
+		@media (min-width: $br-s) {
 			margin-top: 3.5rem;
 			margin-bottom: 2rem;
 		}
@@ -123,14 +123,14 @@
 		display: none;
 		visibility: hidden;
 
-		@media (min-width: $br-m) {
+		@media (min-width: $br-s) {
 			display: block;
 			visibility: visible;
 			flex-grow: 1;
 		}
 	}
 
-	@media (max-width: $br-m - 1) {
+	@media (max-width: $br-s - 1) {
 
 		.wp-block-button {
 			margin: 0;

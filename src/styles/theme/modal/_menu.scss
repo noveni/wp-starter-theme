@@ -3,9 +3,10 @@
 /*	5. Menu Modal
 /* -------------------------------------------------------------------------- */
 
+$background-modal-color: $white;
 
 .menu-modal {
-	background: $red;
+	background: $background-modal-color;
 	display: none;
 	opacity: 0;
 	overflow-y: auto;
@@ -18,7 +19,7 @@
 	transition: opacity 0.25s ease-in, left 0s 0.25s, right 0s 0.25s;
 	z-index: $menu-modal-zindex;
 
-	@media (min-width: $br-l) {
+	@media (min-width: $br-m) {
 		opacity: 1;
 		justify-content: flex-end;
 		padding: 0;
@@ -35,8 +36,8 @@
 
 	&.cover-modal {
 
-		@media (min-width: $br-l) {
-			background: rgba(0, 0, 0, 0);
+		@media (min-width: $br-m) {
+			background: $totaly-black;
 		}
 	}
 
@@ -50,21 +51,21 @@
 		right: 0;
 		transition: opacity 0.25s ease-out;
 
-		@media (min-width: $br-l) {
-			background: rgba(0, 0, 0, 0.2);
+		@media (min-width: $br-m) {
+			background: $almost-black;
 			transition: background-color 0.3s ease-out;
 		}
 	}
 }
 
 .menu-modal-inner {
-	background: $red;
+	background: $background-modal-color;
 	display: flex;
 	justify-content: stretch;
 	overflow: auto;
 	width: 100%;
 
-	@media (min-width: $br-l) {
+	@media (min-width: $br-m) {
 		box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.1);
 		opacity: 0;
 		padding: 0;
@@ -75,7 +76,7 @@
 
 	.menu-modal.active & {
 
-		@media (min-width: $br-l) {
+		@media (min-width: $br-m) {
 			opacity: 1;
 			transform: translateX(0);
 			transition-timing-function: ease-out;
@@ -91,9 +92,69 @@
 
 	.section-inner {
 
-		@media (min-width: $br-l) {
+		@media (min-width: $br-m) {
 			width: calc(100% - 8rem);
 		}
+	}
+
+	/* Main menu animation ----------------------- */
+	.menu-item {
+		position: relative;
+	}
+
+	.active {
+		display: block;
+	}
+
+	&.is-toggling {
+		pointer-events: none;
+
+		.menu-item {
+			position: absolute;
+			top: 0;
+			left: 0;
+			margin: 0;
+			width: 100%;
+		}
+
+		.menu-bottom .social-menu .menu-item {
+			width: auto;
+		}
+
+		.toggling-target {
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 1;
+		}
+
+		.modal-menu > li:last-child li {
+			border-top-color: transparent;
+			border-bottom-width: 0.1rem;
+		}
+	}
+
+	&.is-animating .menu-item,
+	&.is-animating .toggling-target {
+		transition-duration: 250ms;
+	}
+
+	&.is-animating .menu-item {
+		transition-property: transform;
+	}
+
+	&.is-animating.is-toggling .toggling-target.active {
+		opacity: 1;
+	}
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+	.menu-wrapper.is-animating .menu-item,
+	.menu-wrapper.is-animating .toggling-target {
+		transition-duration: 1ms !important;
 	}
 }
 
@@ -106,7 +167,7 @@ button.close-nav-toggle {
 	padding: 3.1rem 0;
 	width: 100%;
 
-	@media (min-width: $br-m) {
+	@media (min-width: $br-s) {
 		font-size: 1.8rem;
 		padding: 4rem 0;
 	}
@@ -115,7 +176,7 @@ button.close-nav-toggle {
 		height: 1.6rem;
 		width: 1.6rem;
 
-		@media (min-width: $br-m) {
+		@media (min-width: $br-s) {
 			height: 2rem;
 			width: 2rem;
 		}
@@ -124,7 +185,7 @@ button.close-nav-toggle {
 	.toggle-text {
 		margin-right: 1.6rem;
 
-		@media (min-width: $br-m) {
+		@media (min-width: $br-s) {
 			margin-right: 2.1rem;
 		}
 	}
@@ -132,17 +193,19 @@ button.close-nav-toggle {
 }
 
 .menu-modal .menu-top {
-	flex-grow: 1;
-	display: flex;
-	flex-direction: column;
+
+	flex-shrink: 0;
+	// flex-grow: 1;
+	// display: flex;
+	// flex-direction: column;
 
 
-	.mobile-menu {
-		flex-grow: 1;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-	}
+	// .mobile-menu {
+	// 	flex-grow: 1;
+	// 	display: flex;
+	// 	flex-direction: column;
+	// 	justify-content: center;
+	// }
 }
 
 
@@ -153,24 +216,32 @@ button.close-nav-toggle {
 	left: calc(50% - 50vw);
 	width: 100vw;
 
-	@media (min-width: $br-m) {
+	@media (min-width: $br-s) {
 		left: auto;
 		width: 100%;
 	}
 
 	li {
-		border: none;
+		border-color: #dedfdf;
+		border-style: solid;
+		border-width: 0.1rem 0 0 0;
 		display: flex;
 		flex-wrap: wrap;
+		line-height: 1;
 		justify-content: flex-start;
 		margin: 0;
 	}
 
 	& > li > a,
 	& > li > .ancestor-wrapper > a {
-		// font-size: 2rem;
-		// font-weight: 700;
+		font-size: 2rem;
+		font-weight: 700;
 		letter-spacing: 0;
+
+		@media (min-width: $br-s) {
+			font-size: 2.4rem;
+			padding: 2.5rem 0;
+		}
 	}
 
 	& > li:last-child {
@@ -185,7 +256,7 @@ button.close-nav-toggle {
 
 	a {
 		display: block;
-		padding: 0.8rem 2.5rem;
+		padding: 2rem 2.5rem;
 		text-align: center;
 		width: 100%;
 	}
@@ -199,32 +270,34 @@ button.close-nav-toggle {
 
 	& > li > .ancestor-wrapper > button.sub-menu-toggle {
 
-		@media (min-width: $br-m) {
+		@media (min-width: $br-s) {
 			padding: 0 3rem;
 		}
 	}
 
 	& > li > .ancestor-wrapper > button.sub-menu-toggle svg {
 
-		@media (min-width: $br-m) {
+		@media (min-width: $br-s) {
 			height: 1.1rem;
 			width: 1.8rem;
 		}
 	}
 
 	ul {
-		margin: 0 0 1.1rem 0;
+		display: none;
+		margin: 0;
 		width: 100%;
 
 		li {
 			border-left-width: 1rem;
 
-			@media (min-width: $br-m) {
+			@media (min-width: $br-s) {
 				border-left-color: transparent;
 			}
 
 			a {
-				padding: 0.4rem;
+				color: inherit;
+				font-weight: 500;
 			}
 		}
 	}
@@ -248,84 +321,13 @@ button.sub-menu-toggle.active svg {
 	transform: rotate(180deg);
 }
 
-/* Main menu animation ----------------------- */
-
-.menu-wrapper .menu-item {
-	position: relative;
-}
-
-.menu-wrapper .active {
-	display: block;
-}
-
-.menu-wrapper.is-toggling {
-	pointer-events: none;
-}
-
-.menu-wrapper.is-toggling .menu-item {
-	position: absolute;
-	top: 0;
-	left: 0;
-	margin: 0;
-	width: 100%;
-}
-
-.menu-wrapper.is-toggling .menu-bottom .social-menu .menu-item {
-	width: auto;
-}
-
-.menu-wrapper.is-animating .menu-item,
-.menu-wrapper.is-animating .toggling-target {
-	transition-duration: 250ms;
-}
-
-.menu-wrapper.is-animating .menu-item {
-	transition-property: transform;
-}
-
-.menu-wrapper.is-toggling .toggling-target {
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	opacity: 1;
-}
-
-.menu-wrapper.is-toggling .toggling-target.active {
-	opacity: 0;
-}
-
-.menu-wrapper.is-animating.is-toggling .toggling-target {
-	display: block;
-	transition-property: opacity;
-	opacity: 0;
-}
-
-.menu-wrapper.is-animating.is-toggling .toggling-target.active {
-	opacity: 1;
-}
-
-.menu-wrapper.is-toggling .modal-menu > li:last-child li {
-	border-top-color: transparent;
-	border-bottom-width: 0.1rem;
-}
-
-@media (prefers-reduced-motion: reduce) {
-
-	.menu-wrapper.is-animating .menu-item,
-	.menu-wrapper.is-animating .toggling-target {
-		transition-duration: 1ms !important;
-	}
-
-}
-
 
 /* Expanded Menu ----------------------------- */
 
 .expanded-menu {
 	display: none;
 
-	@media (min-width: $br-l) {
+	@media (min-width: $br-m) {
 		display: block;
 	}
 }
@@ -333,7 +335,7 @@ button.sub-menu-toggle.active svg {
 .mobile-menu {
 	display: block;
 
-	@media (min-width: $br-l) {
+	@media (min-width: $br-m) {
 		display: none;
 	}
 }
@@ -345,28 +347,36 @@ button.sub-menu-toggle.active svg {
 	flex-shrink: 0;
 	padding: 4rem 0;
 
-	@media (min-width: $br-m) {
+	@media (min-width: $br-s) {
 		align-items: center;
 		display: flex;
 		justify-content: space-between;
 		padding: 4.4rem 0;
 	}
 
-	@media (min-width: $br-l) {
+	@media (min-width: $br-m) {
 		padding: 6rem 0;
+	}
+
+	nav {
+		width: 100%;
+
+		li {
+			padding: 0.7rem;
+			margin: 0;
+		}
+	}
+
+	.social-menu {
+		justify-content: center;
+
+		@media (min-width: $br-m) {
+			justify-content: flex-start;
+		}
 	}
 
 	ul.social-icons {
 		width: 100%;
-		margin: 0;
-	}
-}
-
-.menu-bottom nav {
-	width: 100%;
-
-	li {
-		padding: 0.7rem;
 		margin: 0;
 	}
 }
@@ -377,22 +387,14 @@ button.sub-menu-toggle.active svg {
 	font-weight: 500;
 	margin: 0;
 
-	@media (min-width: $br-m) {
+	@media (min-width: $br-s) {
 		display: block;
 		flex-shrink: 0;
 		margin-right: 4rem;
 	}
-}
 
-.menu-copyright a:focus,
-.menu-copyright a:hover {
-	text-decoration: underline;
-}
-
-.menu-bottom .social-menu {
-	justify-content: center;
-
-	@media (min-width: $br-l) {
-		justify-content: flex-start;
+	a:focus,
+	a:hover {
+		text-decoration: underline;
 	}
 }

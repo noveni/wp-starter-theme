@@ -11,6 +11,13 @@ $br-m:      960;
 $br-l:      1280;
 $br-xl:     1920;
 
+/* Default Wp Theme Support -------------------------- */
+$wide-width:			120rem;
+$thin-width: 			58rem;
+$section-thin: 		$thin-width;
+$section-small: 	80rem;
+$section-medium: 	100rem;
+
 /* Config file Injection ----------------------------- */
 $themeVariables: $variables;
 $themeColor: map_get($themeVariables, color);
@@ -28,6 +35,8 @@ $primary:     $black;
 $secondary:   $grey;
 $body-background:  $white;
 
+$almost-black: rgba(0, 0, 0, 0.2);
+$totaly-black: rgba(0, 0, 0, 0);
 
 /* Breakpoints ------------------------------- */
 $br-xs:     #{map_get($breakpoints, xs)}px;

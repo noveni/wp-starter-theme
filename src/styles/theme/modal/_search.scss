@@ -5,7 +5,7 @@
 
 
 .search-modal {
-	background: rgba(0, 0, 0, 0.2);
+	background: $almost-black;
 	display: none;
 	opacity: 0;
 	position: fixed;
@@ -15,6 +15,12 @@
 	transition: opacity 0.2s linear, left 0s 0.2s linear;
 	width: 100%;
 	z-index: 999;
+
+	&.active {
+		left: 0;
+		opacity: 1;
+		transition: opacity 0.2s linear;
+	}
 }
 
 .admin-bar .search-modal.active {
@@ -32,24 +38,18 @@
 	background: $white;
 	transform: translateY(-100%);
 	transition: transform 0.15s linear, box-shadow 0.15s linear;
-}
 
-.search-modal-inner .section-inner {
-	display: flex;
-	justify-content: space-between;
-	max-width: 168rem;
-}
+	.section-inner {
+		display: flex;
+		justify-content: space-between;
+		max-width: 168rem;
+	}
 
-.search-modal.active {
-	left: 0;
-	opacity: 1;
-	transition: opacity 0.2s linear;
-}
-
-.search-modal.active .search-modal-inner {
-	box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.08);
-	transform: translateY(0);
-	transition: transform 0.25s ease-in-out, box-shadow 0.1s 0.25s linear;
+	.search-modal.active & {
+		box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.08);
+		transform: translateY(0);
+		transition: transform 0.25s ease-in-out, box-shadow 0.1s 0.25s linear;
+	}
 }
 
 button.search-untoggle {
@@ -59,11 +59,12 @@ button.search-untoggle {
 	justify-content: center;
 	margin-right: -2.5rem;
 	padding: 0 2.5rem;
+
+	.search-modal & {
+		color: inherit;
+	}
 }
 
-.search-modal button.search-untoggle {
-	color: inherit;
-}
 
 .search-modal.active .search-untoggle {
 	animation: popIn both 0.3s 0.2s;
@@ -73,6 +74,11 @@ button.search-untoggle {
 	height: 1.5rem;
 	transition: transform 0.15s ease-in-out;
 	width: 1.5rem;
+
+	@media (min-width: $br-s) {
+		height: 2.5rem;
+		width: 2.5rem;
+	}
 }
 
 .search-untoggle:focus svg,
@@ -87,6 +93,11 @@ button.search-untoggle {
 	margin: 0;
 	position: relative;
 	width: 100%;
+
+	@media (min-width: $br-s) {
+		position: relative;
+		width: 100%;
+	}
 }
 
 .search-modal .search-field {
@@ -101,6 +112,12 @@ button.search-untoggle {
 	max-width: calc(100% + 2rem);
 	padding: 0 0 0 2rem;
 	width: calc(100% + 2rem);
+
+	@media (min-width: $br-s) {
+		border: none;
+		font-size: 3.2rem;
+		height: 14rem;
+	}
 }
 
 .search-modal .search-field::-webkit-input-placeholder {
@@ -114,6 +131,10 @@ button.search-untoggle {
 .search-modal .search-field::-moz-placeholder {
 	color: inherit;
 	line-height: 4;
+
+	@media (min-width: $br-s) {
+		line-height: 4.375;
+	}
 }
 
 .search-modal .search-submit {

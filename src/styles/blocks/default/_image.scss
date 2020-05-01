@@ -2,7 +2,7 @@
 
 .wp-block-image .alignleft {
 
-	@media (min-width: $br-l) {
+	@media (min-width: $br-m) {
 
 		/*rtl:ignore*/
 		margin-right: 0;
@@ -11,7 +11,7 @@
 
 .wp-block-image .alignright {
 
-	@media (min-width: $br-l) {
+	@media (min-width: $br-m) {
 
 		/*rtl:ignore*/
 		margin-left: 0;

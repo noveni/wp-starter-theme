@@ -7,6 +7,42 @@
 .cover-header {
 	display: flex;
 	overflow: hidden;
+
+	.entry-header {
+		position: relative;
+		width: 100%;
+		z-index: 1;
+
+		* {
+			color: $white;
+		}
+
+		a {
+			color: inherit;
+		}
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	.faux-heading {
+		color: inherit;
+	}
+
+	& + .post-inner {
+
+		@media (min-width: $br-xl) {
+			padding-top: 10rem;
+		}
+	}
+}
+
+body.template-cover .entry-header {
+	background: transparent;
+	padding: 0;
 }
 
 .cover-header-inner-wrapper {
@@ -21,7 +57,7 @@
 	padding: 10rem 0 5rem 0;
 	width: 100%;
 
-	@media (min-width: $br-m) {
+	@media (min-width: $br-s) {
 		padding: 18rem 0 8rem 0;
 	}
 }
@@ -41,42 +77,6 @@
 	display: block;
 }
 
-.cover-header .entry-header {
-	position: relative;
-	width: 100%;
-	z-index: 1;
-}
-
-.cover-header .entry-header * {
-	color: $white;
-}
-
-body.template-cover .entry-header {
-	background: transparent;
-	padding: 0;
-}
-
-.cover-header h1,
-.cover-header h2,
-.cover-header h3,
-.cover-header h4,
-.cover-header h5,
-.cover-header h6,
-.cover-header .faux-heading {
-	color: inherit;
-}
-
-.cover-header .entry-header a {
-	color: inherit;
-}
-
-.cover-header + .post-inner {
-
-	@media (min-width: $br-xl) {
-		padding-top: 10rem;
-	}
-}
-
 /* To The Content ---------------------------- */
 
 .to-the-content-wrapper {
@@ -85,7 +85,7 @@ body.template-cover .entry-header {
 	right: 0;
 	top: calc(100% + 0.5rem);
 
-	@media (min-width: $br-m) {
+	@media (min-width: $br-s) {
 		top: calc(100% + 1.8rem);
 	}
 }
@@ -97,24 +97,24 @@ body.template-cover .entry-header {
 	height: 4rem;
 	text-decoration: none;
 
-	@media (min-width: $br-m) {
+	@media (min-width: $br-s) {
 		height: 6rem;
 	}
-}
 
-.to-the-content svg {
-	height: 2rem;
-	transition: transform 0.15s linear;
-	transform: translateY(0);
-	width: 1.767rem;
+	svg {
+		height: 2rem;
+		transition: transform 0.15s linear;
+		transform: translateY(0);
+		width: 1.767rem;
 
-	@media (min-width: $br-m) {
-		height: 2.4rem;
-		width: 2.12rem;
+		@media (min-width: $br-s) {
+			height: 2.4rem;
+			width: 2.12rem;
+		}
 	}
-}
 
-.to-the-content:focus svg,
-.to-the-content:hover svg {
-	transform: translateY(20%);
+	&:focus svg,
+	&:hover svg {
+		transform: translateY(20%);
+	}
 }

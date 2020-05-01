@@ -13,13 +13,13 @@
 	margin: -1.5rem 0 0 -2.5rem;
 	width: calc(100% + 2.5rem);
 
-	@media (min-width: $br-m) {
+	@media (min-width: $br-s) {
 		font-size: 2.4rem;
 		font-weight: 700;
 		margin: -2.5rem 0 0 -4rem;
 	}
 
-	@media (min-width: $br-l) {
+	@media (min-width: $br-m) {
 		justify-content: space-between;
 		margin: 0;
 		width: 100%;
@@ -29,7 +29,7 @@
 .pagination-separator {
 	margin: 5rem 0;
 
-	@media (min-width: $br-m) {
+	@media (min-width: $br-s) {
 		margin: 8rem 0;
 	}
 }
@@ -37,11 +37,11 @@
 .nav-links > * {
 	margin: 1.5rem 0 0 2.5rem;
 
-	@media (min-width: $br-m) {
+	@media (min-width: $br-s) {
 		margin: 2.5rem 0 0 4rem;
 	}
 
-	@media (min-width: $br-l) {
+	@media (min-width: $br-m) {
 		margin: 0 2rem;
 	}
 }
@@ -69,7 +69,7 @@
 .nav-short {
 	display: none;
 
-	@media (min-width: $br-m) {
+	@media (min-width: $br-s) {
 		display: inline;
 	}
 }
@@ -77,21 +77,21 @@
 .pagination .next,
 .pagination .prev {
 
-	@media (min-width: $br-l) {
+	@media (min-width: $br-m) {
 		display: block;
 	}
 }
 
 .pagination .prev {
 
-	@media (min-width: $br-l) {
+	@media (min-width: $br-m) {
 		margin: 0 auto 0 0;
 	}
 }
 
 .pagination .next {
 
-	@media (min-width: $br-l) {
+	@media (min-width: $br-m) {
 		text-align: right;
 		margin: 0 0 0 auto;
 	}
