@@ -82,6 +82,7 @@ class EcrannoirWPTheme
 			require_once __DIR__ . '/setup/clean.php';
 			require_once __DIR__ . '/setup/theme.php';
 			require_once __DIR__ . '/setup/menu.php';
+			require_once __DIR__ . '/setup/starter-content.php';
 
 		});
 
