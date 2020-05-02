@@ -27,8 +27,6 @@ register_sidebar(
             'name'          => __('Footer Top', 'ecrannoir'),
             'id'            => 'widget-footer-top',
             'description' => __( 'Widgets in this area will be displayed on the top of the footer.', 'ecrannoir' ),
-            'before_title'  => '<div class="section-inner"><h3 class="widget-title subheading heading-size-3">',
-            'after_title'   => '</h3><a class="button btn-noline" href="https://www.instagram.com/jehannemoll/"><i>@jehannemoll</i></a></div>',
         )
     )
 );

@@ -80,7 +80,7 @@ if ( ! class_exists( 'Admin\Admin' ) ) {
             remove_submenu_page('index.php', 'update-core.php');
             
             // Comments
-            remove_menu_page('edit-comments.php');
+            // remove_menu_page('edit-comments.php');
             // Appearance
             // remove_menu_page('themes.php');
             remove_submenu_page('themes.php', 'theme-editor.php');
