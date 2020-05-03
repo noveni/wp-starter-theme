@@ -38,6 +38,7 @@ if ( ! class_exists( 'Admin\Admin' ) ) {
 
             add_action('wp_before_admin_bar_render', [\Admin\Admin::class, 'removeToolbarItems']);
             
+            require_once get_stylesheet_directory() . '/app/setup/blocks.php';
             
         }
 
