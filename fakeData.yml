@@ -1,0 +1,5 @@
+Trendwerk\Faker\Entity\Post:
+  post{1..100}:
+    post_content: <paragraphs(4, true)>
+    post_title: '<sentence()>'
+    post_type: 'app_custom_post_type'
