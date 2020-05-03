@@ -105,7 +105,9 @@ function ecrannoirwptheme_allowed_block_types( $allowed_blocks, $post ) {
         'core/list',
         'core/gallery',
         'core/list',
-        'core/quote'
+        'core/quote',
+        'ecrannoir/blocks-example-editable',
+        'ecrannoir/blocks-example-dynamic'
     );
 
     

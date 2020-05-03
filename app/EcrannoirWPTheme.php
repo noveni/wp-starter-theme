@@ -55,7 +55,6 @@ class EcrannoirWPTheme
 		require_once __DIR__ . '/helpers/assets.php';
 		require_once __DIR__ . '/helpers/svg-icons.php';
 		require_once __DIR__ . '/helpers/meta.php';
-		require_once __DIR__ . '/helpers/blocks.php';
 		require_once __DIR__ . '/helpers/content.php';
 
 		$this->setup();
@@ -121,14 +120,14 @@ class EcrannoirWPTheme
 		/**
 		 * Enqueue editor assets.
 		 */
-		add_action('enqueue_block_editor_assets', function($hook) {
+		add_action('init', function($hook) {
 			// Skip block registration if Gutenberg is not enabled/merged.
 			if ( ! function_exists( 'register_block_type' ) ) {
 				return;
 			}
 
 			Scripts::toRegisterScript('editor', 'ecrannoir-blocks-editor');
-			register_block_type( 'ecrannoir/blocks', array( 'editor_script' => 'ecrannoir-blocks-editor'));
+			require_once __DIR__ . '/helpers/blocks.php';
 			Scripts::toEnqueueStyle( 'editor', 'ecrannoir-block-editor-styles' );
 		});
 
