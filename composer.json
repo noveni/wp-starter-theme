@@ -11,11 +11,24 @@
         "filp/whoops": "^2.7"
     },
     "scripts": {
-        "clean-plugin": [
-            "cd .. && docker-compose run --rm wpcli plugin delete akismet hello"
+        "clean-default": [
+            "cd .. && docker-compose run --rm wpcli plugin delete akismet hello",
+            "cd .. && docker-compose run --rm wpcli theme delete twentynineteen twentyseventeen twentysixteen"
+        ],
+        "remove-content": [
+            "cd .. && docker-compose run --rm wpcli bash -c \"wp site empty --yes && wp option update fresh_site 1\"",
+            "@wpflush"
         ],
         "generate-data": [
-            "cd .. && docker-compose run --user=www-data --rm wpcli bash -c \"php -d memory_limit=512M /usr/local/bin/wp package install trendwerk/faker && php -d memory_limit=512M /usr/local/bin/wp faker fake wp-content/themes/wp-starter-theme/fakeData.yml \""
+            "cd .. && docker-compose run --user=www-data --rm wpcli bash -c \"php -d memory_limit=512M /usr/local/bin/wp package install trendwerk/faker && cd wp-content/themes/wp-starter-theme/src/fake-data && php -d memory_limit=512M /usr/local/bin/wp faker fake image.yml post-dummy.yml\"",
+            "cd .. && docker-compose run --user=www-data --rm wpcli bash -c \"php -d memory_limit=512M /usr/local/bin/wp package install trendwerk/faker && cd wp-content/themes/wp-starter-theme/src/fake-data && php -d memory_limit=512M /usr/local/bin/wp faker fake image.yml custom-post-type-example.yml\"",
+            "@wpflush"
+        ],
+        "wpflush": "cd .. && docker-compose run --rm wpcli rewrite flush",
+        "clean-and-seed": [
+            "@clean-default",
+            "@remove-content",
+            "@generate-data"
         ]
     }
 }
