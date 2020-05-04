@@ -33,7 +33,7 @@ class ExampleCpt extends \PostType\BasePostType
             'not_found_in_trash'        => __( 'No custom types found in trash', 'app' ),
             'all_items'                 => __( 'All Custom Types', 'ecrannoir'),
             'archives'                  => __( 'Custom Type Archives ', 'ecrannoir'),
-            'menu_name'                 => __( 'Custom Type Menu Name', 'ecrannoir'),
+            'menu_name'                 => __( 'Custom Types', 'ecrannoir'),
             'items_list_navigation'     => __( 'Custom Types list navigation', 'ecrannoir'),
             'items_list'                => __( 'Custom Types list', 'ecrannoir'),
             'item_published'            => __( 'Custom Type published.', 'ecrannoir'),
@@ -50,14 +50,16 @@ class ExampleCpt extends \PostType\BasePostType
             'menu_position'             => 5, 
             'menu_icon'                 => 'dashicons-admin-post',
             'supports'                  => array( 'title', 'editor', 'thumbnail', 'page-attributes', 'excerpt', 'revisions' ),
-            'has_archive' => true,
+            'taxonomies'                => array('category', 'post_tag', 'term_' . $this->type ),
+            'has_archive'               => true,
             'exclude_from_search'       => false,
             'show_ui'                   => true,
             'capability_type'           => 'post',
             'hierarchical'              => false,
             '_edit_link'                => 'post.php?post=%d',
             'query_var'                 => true,
-            
+            'template'                  => $this::getTemplateBlock(),
+            // 'template_lock'             => 'all', // Verrouiller le modèle pour empêcher les modifications
             'rewrite'                   => array(
                 'slug'       => 'custom-post-type',
                 'with_front' => false,
@@ -69,6 +71,8 @@ class ExampleCpt extends \PostType\BasePostType
     }
 
     public function getTaxonomyConfiguration() {
+
+        $this->taxonomy_slug = 'term_';
         
         // Taxonomy Declaration
         $labels = array(
@@ -106,15 +110,56 @@ class ExampleCpt extends \PostType\BasePostType
         return $args;
     }
 
-    public function registerMetaBoxes()
-    {
-        // Color metabox
-        add_meta_box(
-            'car-color-metabox',
-            __('Color', 'my-plugin'),
-            [$this, 'colorMetabox'],
-            'car'
+    public static function getTemplateBlock() {
+        return array(
+            array( 'core/heading',
+                array(
+                    'align' => 'center',
+                    'level' => 2,
+                    'placeholder' => 'Titre du cpt'
+                )
+            ),
+            array( 'core/paragraph', 
+                array(
+                'placeholder' => 'Contenus',
+                )
+            ),
+            array( 
+                'core/media-text', 
+                array(
+                    'align' => 'full',
+                    'mediaPosition' => 'right',
+                    'mediaType' => 'image',
+                    'imageFill' => false),
+                array(
+                    array( 'core/heading', array(
+                        'level' => 3,
+                        'placeholder' => 'Titre du Block'
+                    )),
+                    array( 'core/paragraph', array(
+                        'placeholder' => 'Contenus',
+                    )),
+                ),
+            ),
+            array( 'core/media-text', 
+                array(
+                    'align' => 'full',
+                    'mediaPosition' => 'left',
+                    'mediaType' => 'image',
+                    'imageFill' => false
+                ),
+                array(
+                    array( 'core/heading', array(
+                        'level' => 3,
+                        'placeholder' => 'Titre du block'
+                    )),
+                    array( 'core/paragraph', array(
+                        'placeholder' => 'Contenus',
+                    )),
+                )
+            ),
         );
     }
+    
 
 }

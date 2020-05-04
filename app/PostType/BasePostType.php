@@ -19,6 +19,14 @@ abstract class BasePostType {
      */
     public $type;
 
+
+    /**
+     * The prefix for custom taxonomy
+     * public $taxonomy_slug;
+     */
+    public $taxonomy_slug;
+
+
     /**
      * Determines whether a class has already been instanciated.
      *
@@ -49,6 +57,8 @@ abstract class BasePostType {
      */
     public function __construct() {
 
+        $this->taxonomy_slug = 'term_';
+
         // Set our properties based upon the arrays defined within a view
         $this->setConfigurations();
 
@@ -64,7 +74,9 @@ abstract class BasePostType {
     public function initPostType()
     {
         register_post_type( $this->type, $this->getPostTypeConfiguration());
-        register_taxonomy( 'type_' . $this->type, $this->type, $this->getTaxonomyConfiguration() );
+        if ($this->hasTaxonomy()) {
+            register_taxonomy( $this->taxonomy_slug . $this->type, $this->type, $this->getTaxonomyConfiguration() );
+        }
     }
 
     public function getPostTypeConfiguration() {
@@ -74,6 +86,11 @@ abstract class BasePostType {
     
     public function getTaxonomyConfiguration() {
         return $this->configuration_taxonomy;
+    }
+    
+    public function hasTaxonomy()
+    {
+        return !empty($this->configuration_taxonomy) ? true : false;
     }
 
 }
