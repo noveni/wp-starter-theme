@@ -9,7 +9,7 @@ Based on TwentyTwenty Theme
 - [ ] Let away TwentyTwenty Theme Markup and Style
   - [ ] Make Footer agnostic from TwentyTwenty
   - [ ] Make Header agnostic from TwentyTwenty
-  - [ ] Make Modal Menu agnostic
+  - [x] Make Modal Menu agnostic
 - [ ] Add CSS Framework
 - [ ] Make Theme Fn in OOP
   - [x] Make Main Class and Namespace
@@ -17,8 +17,8 @@ Based on TwentyTwenty Theme
   - [ ] Make defines file to store constant
 - [ ] Add Twig Templating
 - [ ] Make theme accessible with API
-- [ ] Add Admin Page Control
-- [ ] Make Components Structure style for Gutenberg Blocks
+- [x] Add Admin Page Control
+- [x] Make Components Structure style for Gutenberg Blocks
 - [ ] Add Coming Soon Page Toggle
 - [ ] Add Coming Soon Page Template
 - [ ] Add Maintenance Mode Toggle
@@ -26,7 +26,26 @@ Based on TwentyTwenty Theme
 - [ ] Add Test to Theme Class
 - [ ] Add Instagram Fields in Admin
 - [ ] Add Google Analytics in Admin
-- [ ] Make class for Easy Custom Post Type
+- [x] Make class for Easy Custom Post Type
+- [ ] Store in sass Var breakpoints config
+  - [ ] Use Mixins to handle Breakpoint
+- [ ] Add My Hamburger Button
+- [ ] Class Icon:
+  - [ ] Put markup aways from Class
+  - [ ] Handle autoloading of theme icon with Webpack and give info to Theme
+- [ ] Gutenberge Block
+  - [ ] Make components Oriented for blocks
+  - [x] Make starter Blocks
+  - [ ] Filter Allowed Blocks
+    - [x] Filter the blocks
+    - [ ] Add a config file in JSON
+    - [ ] Improve Function
+    - [ ] Change the Hook Call
+- [ ] WP Cli
+  - [x] Command to generate fake Data with wp cli pkg
+
+- [ ] Custom-Fields
+  - [x] Handle Meta Fields
 
 ## Build With
 
