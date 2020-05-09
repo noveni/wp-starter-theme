@@ -74,7 +74,12 @@ add_theme_support('starter-content', array(
 		'options'     => array(
 			'show_on_front'  => 'page',
 			'page_on_front'  => '{{front}}',
-			'page_for_posts' => '{{blog}}',
+            'page_for_posts' => '{{blog}}',
+            'blogdescription' => '',
+            'users_can_register' => 0,
+            'posts_per_page' => 20,
+            'permalink_structure' => '/%postname%/',
+            'show_avatars' => 0,
 		),
         // Set up nav menus for each of the two areas registered in the theme.
         'nav_menus'   => array(
