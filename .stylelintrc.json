@@ -2,6 +2,9 @@
 	"extends": [
 		"stylelint-config-wordpress"
 	],
+	"ignoreFiles": [
+        "vendor/**/*.scss"
+    ],
 	"plugins": [
 		"stylelint-scss",
 		"stylelint-a11y"
