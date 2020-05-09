@@ -1,7 +1,7 @@
 Trendwerk\Faker\Entity\Post:
-  post{1..25}:
+  post{1..15}:
     post_content: <paragraphs(4, true)>
-    post_title: '<sentence()>'
+    post_title: '<sentence(3, true)>'
     post_type: 'post'
     meta:
       _thumbnail_id: '@image*->id'

@@ -51,7 +51,7 @@ class EcrannoirWPTheme
 		load_theme_textdomain('ecrannoir', $path);
 
 		// Load Utilities
-		require_once (__DIR__ . '/helpers/config.php');
+		require_once __DIR__ . '/helpers/config.php';
 		require_once __DIR__ . '/helpers/assets.php';
 		require_once __DIR__ . '/helpers/svg-icons.php';
 		require_once __DIR__ . '/helpers/meta.php';
@@ -82,8 +82,9 @@ class EcrannoirWPTheme
 			require_once __DIR__ . '/setup/theme.php';
 			require_once __DIR__ . '/setup/menu.php';
 			require_once __DIR__ . '/setup/starter-content.php';
-
 		});
+
+		require_once __DIR__ . '/setup/carbon-fields.php';
 
 		ExampleCpt::instance();
 
