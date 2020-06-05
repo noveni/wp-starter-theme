@@ -84,32 +84,32 @@ if ( ! class_exists( 'Admin\Admin' ) ) {
             remove_submenu_page('index.php', 'update-core.php');
             
             // Comments
-            // remove_menu_page('edit-comments.php');
+            remove_menu_page('edit-comments.php');
             // Appearance
-            // remove_menu_page('themes.php');
+            remove_menu_page('themes.php');
             remove_submenu_page('themes.php', 'theme-editor.php');
             // Plugins
-            /* remove_menu_page('plugins.php');
-            remove_submenu_page('plugins.php', 'plugin-install.php'); */
+            remove_menu_page('plugins.php');
+            remove_submenu_page('plugins.php', 'plugin-install.php');
             remove_submenu_page('plugins.php', 'plugin-editor.php');
             // Users
-            /* remove_menu_page('users.php');
+            remove_menu_page('users.php');
             remove_submenu_page('users.php', 'user-new.php');
             remove_menu_page('profile.php');
-            remove_submenu_page('users.php', 'profile.php'); */
+            remove_submenu_page('users.php', 'profile.php');
             // Tools
-            /* remove_menu_page('tools.php');
+            remove_menu_page('tools.php');
             remove_submenu_page('tools.php', 'import.php');
-            remove_submenu_page('tools.php', 'export.php'); */
+            remove_submenu_page('tools.php', 'export.php');
             // Settings
-            /* remove_menu_page('options-general.php');
+            remove_menu_page('options-general.php');
             remove_submenu_page('options-general.php', 'options-writing.php');
             remove_submenu_page('options-general.php', 'options-reading.php');
             remove_submenu_page('options-general.php', 'options-media.php');
             remove_submenu_page('options-general.php', 'options-permalink.php');
             remove_submenu_page('options-general.php', 'options-discussion.php');
             remove_submenu_page('options-general.php', 'options-media.php');
-            remove_submenu_page('options-general.php', 'disable_comments_settings'); */
+            remove_submenu_page('options-general.php', 'disable_comments_settings');
             // // Advanced Custom Fields
             // if (in_array('acf', $this->config) || in_array('all', $this->config) || in_array('danger-zone', $this->config)) {
             //     remove_menu_page('edit.php?post_type=acf-field-group');
