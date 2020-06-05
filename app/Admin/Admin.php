@@ -22,24 +22,27 @@ if ( ! class_exists( 'Admin\Admin' ) ) {
             // Clean the Dashboard
             add_action('wp_dashboard_setup', [\Admin\Admin::class, 'cleanDashboard']);
 
-            add_action('admin_init', function() {
-                remove_submenu_page('index.php', 'update-core.php');
-                remove_filter('update_footer', 'core_update_footer');
-                self::removeMenuItems();
-            });
+            if (!is_super_admin()) {
+                add_action('admin_init', function() {
+                    remove_submenu_page('index.php', 'update-core.php');
+                    remove_filter('update_footer', 'core_update_footer');
+                    self::removeMenuItems();
+                });
+                add_action('admin_menu', function() {
+                    remove_action('admin_notices', 'update_nag', 3);
+                });
 
-            add_action('admin_menu', function() {
-                remove_action('admin_notices', 'update_nag', 3);
-            });
+                add_action('wp_before_admin_bar_render', [\Admin\Admin::class, 'removeToolbarItems']);
+
+            }
 
             add_filter('admin_footer_text', function() {
                 return "<span id=\"footer-thankyou\">Propuslé par <a href=\"https://wpfr.net\">WordPress</a> - Avec  <a href=\"https://ecrannoir.be\">Ecran Noir</a>.</span>";
             });
 
-            add_action('wp_before_admin_bar_render', [\Admin\Admin::class, 'removeToolbarItems']);
-            
             require_once get_stylesheet_directory() . '/app/setup/blocks.php';
             
+            add_filter('login_errors',[\Admin\Admin::class, 'customLoginErrorMsg']);
         }
 
 
@@ -120,6 +123,22 @@ if ( ! class_exists( 'Admin\Admin' ) ) {
             // if (in_array('acf-updates', $this->config)) {
             //     remove_submenu_page('edit.php?post_type=acf-field-group', 'acf-settings-updates');
             // }
+        }
+
+        /*
+        * Replace WP default login error messages
+        */
+        public static function customLoginErrorMsg( $error )
+        {
+            // we will override only the above errors and not anything else
+            if ( is_int( strpos( $error, 'le mot de passe que vous avez saisi pour') ) || 
+                is_int( strpos( $error, 'Adresse e-mail inconnue' ) ) || 
+                is_int( strpos( $error, 'Identifiant inconnu' ) ) 
+            ) {
+                $error = '<strong>Erreur:</strong> Oops. Informations de connexion incorrectes.<br /><a href="' . wp_lostpassword_url() . '">Mot de passe perdu ?</a>';
+            }
+
+            return $error;
         }
     }
 }
