@@ -30,6 +30,10 @@ if ( ! class_exists( 'Admin\Admin' ) ) {
                 });
                 add_action('admin_menu', function() {
                     remove_action('admin_notices', 'update_nag', 3);
+
+                    add_filter( 'allow_dev_auto_core_updates', '__return_false' );           // Enable development updates
+                    add_filter( 'allow_minor_auto_core_updates', '__return_true' );         // Enable minor updates
+                    add_filter( 'allow_major_auto_core_updates', '__return_false' );         // Enable major updates
                 });
 
                 add_action('wp_before_admin_bar_render', [\Admin\Admin::class, 'removeToolbarItems']);

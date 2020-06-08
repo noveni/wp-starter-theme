@@ -58,6 +58,7 @@ class EcrannoirWPTheme
 		require_once __DIR__ . '/helpers/content.php';
 
 		$this->setup();
+		$this->comment();
 		$this->adminSetup();
 
 		/**
@@ -247,6 +248,66 @@ class EcrannoirWPTheme
                 
             });
         }   
+	}
+
+	public function comment() {
+
+		$disable_comment = true;
+		
+		if ($disable_comment) {
+
+			add_action( 'widgets_init', function() {
+
+				unregister_widget( 'WP_Widget_Recent_Comments' );
+				/**
+				 * The widget has added a style action when it was constructed - which will
+				 * still fire even if we now unregister the widget... so filter that out
+				 */
+				add_filter( 'show_recent_comments_widget_style', '__return_false' );
+			} );
+
+			add_filter( 'wp_headers', function( $headers ) {
+				unset( $headers['X-Pingback'] );
+				return $headers;
+			} );
+
+			add_action( 'template_redirect', function() {
+				if ( is_comment_feed() ) {
+					wp_die( __( 'Comments are closed.', 'disable-comments' ), '', array( 'response' => 403 ) );
+				}
+			}, 9 );   // before redirect_canonical.
+
+			// Admin bar filtering has to happen here since WP 3.6.
+			add_action( 'template_redirect', [ self::class, 'comment_disable_admin_bar' ] );
+			add_action( 'admin_init', [ self::class, 'comment_disable_admin_bar' ] );
+
+			// Disable Comments REST API Endpoint
+			add_filter( 'rest_endpoints', function( $endpoints ) {
+				unset( $endpoints['comments'] );
+				return $endpoints;
+			} );
+
+			add_action('wp_before_admin_bar_render', [\Admin\Admin::class, 'removeToolbarItems']);
+		}
+	}
+
+	public static function comment_disable_admin_bar() {
+		if ( is_admin_bar_showing() ) {
+			// Remove comments links from admin bar.
+			remove_action( 'admin_bar_menu', 'wp_admin_bar_comments_menu', 60 );
+			if ( is_multisite() ) {
+				add_action( 'admin_bar_menu', function( $wp_admin_bar ) {
+					if ( $this->networkactive && is_user_logged_in() ) {
+						foreach ( (array) $wp_admin_bar->user->blogs as $blog ) {
+							$wp_admin_bar->remove_menu( 'blog-' . $blog->userblog_id . '-c' );
+						}
+					} else {
+						// We have no way to know whether the plugin is active on other sites, so only remove this one.
+						$wp_admin_bar->remove_menu( 'blog-' . get_current_blog_id() . '-c' );
+					}
+				}, 500 );
+			}
+		}
 	}
 
 }
