@@ -32,24 +32,24 @@ if ( ! class_exists( 'Assets\Scripts' ) ) {
 			return $tag;
         }
         
-        public static function toEnqueueScript($scriptName, $customHandleScriptName = '') {
+        public static function toEnqueueScript($scriptName, $customHandleScriptName = false) {
 
             $script_asset_path = get_template_directory() . '/dist/scripts/' . $scriptName . '.asset.php';
 			$script_asset = file_exists($script_asset_path) ? require($script_asset_path) : array('dependencies' => array(), 'version' => filemtime( $script_path ));
 			
-			$handleFileName = $customHandleScriptName !== '' ?? 'ecrannoir-wptheme-' . $styleName . '-scripts';
+			$handleFileName = $customHandleScriptName ?: 'ecrannoir-wptheme-' . $scriptName . '-scripts';
             // Enqueue Scripts
             wp_enqueue_script($handleFileName, get_template_directory_uri() . '/dist/scripts/' . $scriptName . '.js', $script_asset['dependencies'], $script_asset['version'], true);
         }
 
-        public static function toEnqueueStyle($styleName, $customHandleStyleName = '') {
+        public static function toEnqueueStyle($styleName, $customHandleStyleName = false, $deps = array()) {
 
             $script_asset_path = get_template_directory() . '/dist/scripts/' . $styleName . '.asset.php';
 			$script_asset = file_exists($script_asset_path) ? require($script_asset_path) : array('dependencies' => array(), 'version' => filemtime( $script_path ));
 			
-			$handleFileName = $customHandleStyleName !== '' ?? 'ecrannoir-wptheme-' . $styleName . '-styles';
+			$handleFileName = $customHandleStyleName ?: 'ecrannoir-wptheme-' . $styleName . '-styles';
             // Enqueue Style
-            wp_enqueue_style($handleFileName, get_template_directory_uri() . '/dist/' . $styleName . '.css', array(), $script_asset['version'], 'all');
+            wp_enqueue_style($handleFileName, get_template_directory_uri() . '/dist/' . $styleName . '.css', $deps, $script_asset['version'], 'all');
 		}
 		
 		public static function toRegisterScript($scriptName, $customHandleScriptName) {
