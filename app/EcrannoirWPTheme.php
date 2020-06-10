@@ -6,6 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 use Assets\Scripts;
 use Admin\Admin;
+use Features\Popup\Popup;
 use PostType\ExampleCpt;
 use WP_Error as WP_Error;
 
@@ -60,6 +61,8 @@ class EcrannoirWPTheme
 		$this->setup();
 		$this->comment();
 		$this->adminSetup();
+		
+		Popup::instance();
 
 		/**
          * Flush our rewrite rules for new posts

@@ -18,6 +18,8 @@ module.exports = {
     admin: './src/scripts/admin/index.js',
     editor: './src/scripts/editor/index.js',
     login: './src/scripts/login/index.js',
+    adminPopup: './src/scripts/popup/admin.js',
+    popup: './src/scripts/popup/index.js',
   },
   devtool: 'source-map',
   output: {

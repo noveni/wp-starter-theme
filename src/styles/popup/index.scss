@@ -1,0 +1,98 @@
+// We assume we enqueue script after theme
+@import "../common/variable";
+@import "../common/fonts";
+
+$background-modal-color: $white;
+$padding-inner: 8rem;
+
+.popup-modal {
+	background: transparent;
+	display: none;
+	opacity: 0;
+	overflow-y: auto;
+	overflow-x: hidden;
+	position: fixed;
+	bottom: 0;
+	left: -99999rem;
+	right: 99999rem;
+	top: 0;
+	transition: opacity 0.25s ease-in, left 0s 0.25s, right 0s 0.25s;
+	z-index: $menu-modal-zindex;
+
+
+	&::before {
+		content: "";
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		display: block;
+		background: $almost-black;
+		background-color: rgba(0, 0, 0, 0.25);
+		animation-name: appear;
+		animation-duration: 300ms;
+	}
+
+	&.show-modal {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&.active {
+		left: 0;
+		opacity: 1;
+		right: 0;
+		transition: opacity 0.25s ease-out;
+	}
+}
+
+.popup-modal-inner {
+	max-width: $wide-width;
+	width: calc(100% - #{$padding-inner * 2});
+	background: $background-modal-color;
+	position: relative;
+	height: calc(100% - #{$padding-inner * 2});
+	max-height: 76rem;
+	overflow: hidden;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	animation-name: slide-in;
+	animation-duration: 0.5s;
+}
+
+.popup-content {
+	overflow-x: scroll;
+	height: calc(100% - 82px);
+	padding-bottom: 3rem;
+}
+
+button.helper-toggle-popup {
+	position: absolute;
+	top: 2rem;
+	left: 2rem;
+	background-color: $white;
+	padding: 2rem;
+	z-index: 1000;
+}
+
+button.close-popup-toggle {
+	align-items: center;
+	display: flex;
+	font-size: 1.6rem;
+	font-weight: 500;
+	justify-content: flex-end;
+	padding: 3.1rem 0;
+	width: 100%;
+}
+
+@keyframes appear {
+
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
