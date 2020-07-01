@@ -218,6 +218,28 @@ if ( ! class_exists( 'Assets\Meta' ) ) {
             $date = '';
         }
 
+        public static function addAnalytics($ga_measurement_id)
+        {
+            ob_start();
+            ?>
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $ga_measurement_id; ?>"></script>
+            <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', '<?php echo $ga_measurement_id; ?>>');
+            </script>
+            <?php
+
+            $meta_output = ob_get_clean();
+            // If there is meta to output, return it.
+            if ( $meta_output ) {
+                echo $meta_output;
+            }
+        }
+
        
     }
     
