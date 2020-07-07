@@ -34,7 +34,7 @@ add_theme_support('starter-content', array(
                     '',
                     array(
                         '<!-- wp:heading {"level":2} -->',
-						'<h2>' . __( 'Media Portal', 'twentytwenty' ) . '</h3>',
+						'<h2>' . __( 'Hello World', 'ecrannoir' ) . '</h2>',
 						'<!-- /wp:heading -->',
                     )
                 ),
@@ -50,7 +50,7 @@ add_theme_support('starter-content', array(
                     array(
                         '<!-- wp:group {"align":"wide"} -->',
                         '<div class="wp-block-group alignwide"><div class="wp-block-group__inner-container"><!-- wp:heading {"align":"center"} -->',
-                        '<h2 class="has-text-align-center">' . __( 'WP Block Group.', 'twentytwenty' ) . '</h2>',
+                        '<h2 class="has-text-align-center">' . __( 'WP Block Group.', 'ecrannoir' ) . '</h2>',
 						'<!-- /wp:heading --></div></div>',
 						'<!-- /wp:group -->',
                     )
@@ -63,7 +63,7 @@ add_theme_support('starter-content', array(
                     '',
                     array(
                         '<!-- wp:heading {"level":2} -->',
-						'<h2>' . __( 'Style Guide', 'twentytwenty' ) . '</h3>',
+						'<h2>' . __( 'Style Guide', 'ecrannoir' ) . '</h2>',
 						'<!-- /wp:heading -->',
                     )
                 ),
@@ -85,14 +85,9 @@ add_theme_support('starter-content', array(
         'nav_menus'   => array(
             // Assign a menu to the "primary" location.
             'primary'  => array(
-				'name'  => __( 'Primary Media', 'twentytwenty' ),
+				'name'  => __( 'Primary', 'ecrannoir' ),
 				'items' => array(
-					'link_home-media', // Note that the core "home" page is actually a link in case a static front page is not used.
-					'pages_brochures-media' => array(
-                        'type' => 'post_type',
-						'object' => 'page',
-						'object_id' => '{{brochures-media}}',
-                    ),
+					'front', // Note that the core "home" page is actually a link in case a static front page is not used.
 					'page_about',
 					'page_blog',
                     'page_contact',
@@ -110,7 +105,7 @@ add_theme_support('starter-content', array(
             ),
             // Assign a menu to the "social" location.
 			'social'   => array(
-				'name'  => __( 'Social Links Menu', 'twentytwenty' ),
+				'name'  => __( 'Social Links Menu', 'ecrannoir' ),
 				'items' => array(
 					'link_facebook',
 					'link_instagram',
