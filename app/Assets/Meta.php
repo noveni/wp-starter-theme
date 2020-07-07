@@ -232,7 +232,7 @@ if ( ! class_exists( 'Assets\Meta' ) ) {
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
-            gtag('config', '<?php echo $ga_measurement_id; ?>>');
+            gtag('config', '<?php echo $ga_measurement_id; ?>');
             </script>
             <?php
 
