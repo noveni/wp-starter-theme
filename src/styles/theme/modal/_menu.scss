@@ -236,7 +236,6 @@ button.close-nav-toggle {
 	& > li > .ancestor-wrapper > a {
 		font-size: 2rem;
 		font-weight: 700;
-		letter-spacing: 0;
 
 		@media (min-width: $br-s) {
 			font-size: 2.4rem;
@@ -378,23 +377,5 @@ button.sub-menu-toggle.active svg {
 	ul.social-icons {
 		width: 100%;
 		margin: 0;
-	}
-}
-
-.menu-copyright {
-	display: none;
-	font-size: 1.6rem;
-	font-weight: 500;
-	margin: 0;
-
-	@media (min-width: $br-s) {
-		display: block;
-		flex-shrink: 0;
-		margin-right: 4rem;
-	}
-
-	a:focus,
-	a:hover {
-		text-decoration: underline;
 	}
 }

@@ -39,7 +39,6 @@
 	border-bottom: 0.15rem solid currentColor;
 	font-size: 1.4rem;
 	font-weight: 700;
-	letter-spacing: 0.036666667em;
 	margin: 0.5rem 0 0 1rem;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -81,7 +80,6 @@ h2.entry-title {
 
 .singular .intro-text {
 	font-size: 2rem;
-	letter-spacing: -0.0315em;
 	line-height: 1.4;
 
 	@media (min-width: $br-s) {
@@ -94,7 +92,6 @@ h2.entry-title {
 
 	@media (min-width: $br-xl) {
 		font-size: 3.2rem;
-		letter-spacing: -0.03125em;
 		line-height: 1.375;
 	}
 }
@@ -135,7 +132,6 @@ h2.entry-title {
 
 .post-meta li {
 	flex-shrink: 0;
-	letter-spacing: -0.016875em;
 	margin: 1rem 0 0 2rem;
 	max-width: calc(100% - 2rem);
 

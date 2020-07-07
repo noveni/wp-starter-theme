@@ -3,14 +3,6 @@
 ul,
 ol {
 	margin: 0 0 3rem 3rem;
-
-	@media ( max-width: 479px ) {
-		margin: 0 0 3rem 2rem;
-	}
-
-	@media ( min-width: $br-s ) {
-		margin-bottom: 4rem;
-	}
 }
 
 ul {
@@ -35,20 +27,6 @@ ol ol {
 
 ol ol ol {
 	list-style: lower-roman;
-}
-
-li {
-	line-height: 1.5;
-	margin: 0.5rem 0 0 2rem;
-
-	@media ( max-width: 479px ) {
-		margin: 0.5rem 0 0 1rem;
-	}
-}
-
-li > ul,
-li > ol {
-	margin: 1rem 0 0 2rem;
 }
 
 .reset-list-style,

@@ -28,6 +28,4 @@ ecrannoir_get_theme_header();
 
 </main><!-- #site-content -->
 
-<?php get_template_part( 'templates/template-parts/footer-menus-widgets' ); ?>
-
 <?php ecrannoir_get_theme_footer(); ?>

@@ -47,7 +47,6 @@
 .footer-menu {
 	font-size: 1.8rem;
 	font-weight: 700;
-	letter-spacing: -0.0277em;
 
 	@media (min-width: $br-s) {
 		font-size: 2.4rem;
@@ -328,23 +327,6 @@ ul.footer-social {
 /* Footer Bottom ----------------------------- */
 #site-footer {
 	padding: 1.1rem 0 1.1rem;
-	font-size: 1rem;
-
-	@media (min-width: $br-s) {
-		font-size: 1.8rem;
-		padding: 4.3rem 0;
-	}
-
-
-	@media (min-width: $br-xl) {
-		font-size: 1.6rem;
-	}
-
-	.section-inner {
-		align-items: baseline;
-		display: flex;
-		justify-content: space-between;
-	}
 
 	a {
 		text-decoration: none;
@@ -357,14 +339,8 @@ ul.footer-social {
 }
 
 .footer-credits {
-	flex-grow: 1;
 	text-align: center;
-	font-family: $font-third;
-	font-weight: 500;
-
-	@media (min-width: $br-s) {
-		display: flex;
-	}
+	font-weight: 400;
 }
 
 .footer-copyright {
@@ -376,17 +352,8 @@ ul.footer-social {
 	}
 }
 
-.powered-by-wordpress {
-	display: none;
-	margin: 0 0 0 2.4rem;
-
-	@media (min-width: $br-s) {
-		display: block;
-	}
-}
-
 .to-the-top {
-	color: #6d6d6d;
+	color: $grey;
 }
 
 a.to-the-top > * {
