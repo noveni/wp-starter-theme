@@ -30,18 +30,20 @@ if (version_compare('4.7.0', get_bloginfo('version'), '>=')) {
 
 
 define( 'THEME_ROOT_DIR', dirname( __DIR__ ) . DIRECTORY_SEPARATOR );
+define( 'THEME_ROOT_DIR_THEME', dirname(__FILE__) . DIRECTORY_SEPARATOR);
 define( 'THEME_ROOT_URI', get_theme_root_uri('wp-starter-theme', 'wp-starter-theme') . DIRECTORY_SEPARATOR );
 define( 'GA_MEASUREMENT_ID', false );
+define( 'ECRANNOIR_POST_REVISIONS', 0 );
 
 // https://github.com/makeitworkpress/wordpress-autoload-class/blob/master/functions.php
-spl_autoload_register( function($classname) {
+spl_autoload_register( function($classnames) {
 
     // Regular
-    $class      = str_replace( '\\', DIRECTORY_SEPARATOR, strtolower($classname) ); 
+    $class      = str_replace( '\\', DIRECTORY_SEPARATOR, strtolower($classnames) ); 
     $classpath  = dirname(__FILE__) .  DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . $class . '.php';
 
     // WordPress
-    $parts      = explode('\\', $classname);
+    $parts      = explode('\\', $classnames);
     $class      = 'class-' . strtolower( array_pop($parts) );
     $folders    = strtolower( implode(DIRECTORY_SEPARATOR, $parts) );
     $wppath     = dirname(__FILE__) .  DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . $folders . DIRECTORY_SEPARATOR . $class . '.php';

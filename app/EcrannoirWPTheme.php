@@ -51,11 +51,11 @@ class EcrannoirWPTheme
 		load_theme_textdomain('ecrannoir', $path);
 
 		// Load Utilities
-		require_once __DIR__ . '/helpers/config.php';
 		require_once __DIR__ . '/helpers/assets.php';
-		require_once __DIR__ . '/helpers/svg-icons.php';
-		require_once __DIR__ . '/helpers/meta.php';
+		require_once __DIR__ . '/helpers/config.php';
 		require_once __DIR__ . '/helpers/content.php';
+		require_once __DIR__ . '/helpers/meta.php';
+		require_once __DIR__ . '/helpers/svg-icons.php';
 
 		$this->setup();
 		$this->comment();
@@ -80,20 +80,31 @@ class EcrannoirWPTheme
 
 		add_action('after_setup_theme', function () {
 			require_once __DIR__ . '/setup/clean.php';
-			require_once __DIR__ . '/setup/theme.php';
 			require_once __DIR__ . '/setup/menu.php';
 			require_once __DIR__ . '/setup/starter-content.php';
+			require_once __DIR__ . '/setup/theme.php';
 		});
 
-		require_once __DIR__ . '/setup/carbon-fields.php';
+		require_once __DIR__ . '/PostType/_carbon-fields.php';
 
 		ExampleCpt::instance();
 
 		$this::enqueueScripts();
 
 		add_action('widgets_init', function() {
-			require_once __DIR__ . '/setup/widgets.php';
+			require_once __DIR__ . '/Widgets/widgets.php';
 		});
+
+		add_filter( 'wp_revisions_to_keep', function( $num, $post ) {
+
+			if (defined('ECRANNOIR_POST_REVISIONS')) {
+				$num = ECRANNOIR_POST_REVISIONS;// Limit revisions otherwise
+			}
+			
+			return $num;
+		}, 10, 2 );
+
+		add_image_size( 'custom-size', 220, 180 );
 	}
 
 	/**
@@ -129,7 +140,11 @@ class EcrannoirWPTheme
 			}
 
 			Scripts::toRegisterScript('editor', 'ecrannoir-blocks-editor');
-			require_once __DIR__ . '/helpers/blocks.php';
+			require_once (THEME_ROOT_DIR_THEME . 'dist/blocks/dynamicblock.php');
+
+			register_block_type( 'ecrannoir/blocks', array( 
+				'editor_script' => 'ecrannoir-blocks-editor',
+			));
 			Scripts::toEnqueueStyle( 'editor', 'ecrannoir-block-editor-styles' );
 		});
 

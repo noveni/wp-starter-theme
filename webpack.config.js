@@ -8,6 +8,7 @@ const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const DependencyExtractionWebpackPlugin = require( '@wordpress/dependency-extraction-webpack-plugin' );
+const CopyPlugin = require('copy-webpack-plugin');
 
 const devMode = process.env.NODE_ENV !== 'production';
 
@@ -131,6 +132,14 @@ module.exports = {
       failOnError: false,
     }),
     new DependencyExtractionWebpackPlugin(),
+    new CopyPlugin({
+      patterns: [
+        { 
+          from: 'src/scripts/editor/**/*.php', 
+          to: 'blocks/[name].[ext]'
+        },
+      ]
+    }),
   ],
   optimization: {
     minimizer: [

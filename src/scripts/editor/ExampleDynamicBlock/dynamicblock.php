@@ -1,19 +1,5 @@
 <?php
-/**
- * Blocks helpers.
- */
 
-// /**
-//  * Change the render of latest blog post
-//  */
-// function ecrannoir_theme_render_block_latests_posts( $attributes ) {
-//     # code
-// }
-// function ecrannoir_theme_register_block() {
-//     register_block_type( 'core/latest-posts', array(
-// 		'render_callback' => 'ecrannoir_theme_render_block_latests_posts',
-// 	));
-// }
 /**
  * Renders the `core/latest-posts` block on server.
  *
@@ -23,7 +9,7 @@
  */
 function ecrannoirwptheme_example_dynamic_block_render_callback( $attributes ) {
 	$args = array(
-        'post_type'        => 'app_custom_post_type',
+        'post_type'        => 'theme_publication',
 		'posts_per_page'   => $attributes['postsToShow'],
 		'post_status'      => 'publish',
 		'order'            => $attributes['order'],
@@ -125,9 +111,6 @@ function ecrannoirwptheme_example_dynamic_block_render_callback( $attributes ) {
 	);
 }
 
-register_block_type( 'ecrannoir/blocks', array( 
-    'editor_script' => 'ecrannoir-blocks-editor',
-));
 register_block_type( 
     'ecrannoir/blocks-example-dynamic', 
     array(
