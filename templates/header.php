@@ -68,8 +68,6 @@
                         // Site title or logo.
                         ecrannoir_theme_site_logo();
 
-                        // Site description.
-                        // twentytwenty_site_description();
                     ?>
 
                 </div><!-- .header-titles -->
@@ -113,7 +111,6 @@
                                         'match_menu_classes' => true,
                                         'show_sub_menu_icons' => true,
                                         'title_li' => false,
-                                        // 'walker'   => new TwentyTwenty_Walker_Page(),
                                     )
                                 );
 

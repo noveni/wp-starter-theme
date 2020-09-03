@@ -18,7 +18,7 @@
 	$color_overlay_style   = '';
 	$color_overlay_classes = '';
 
-	$image_url = ! post_password_required() ? get_the_post_thumbnail_url( get_the_ID(), 'twentytwenty-fullscreen' ) : '';
+	$image_url = ! post_password_required() ? get_the_post_thumbnail_url( get_the_ID(), 'ecrannoir-fullscreen' ) : '';
 
 	if ( $image_url ) {
 		$cover_header_style   = ' style="background-image: url( ' . esc_url( $image_url ) . ' );"';
@@ -61,7 +61,7 @@
 							 *
 							 * @param bool Whether to show the categories in article header, Default true.
 							 */
-							$show_categories = apply_filters( 'twentytwenty_show_categories_in_entry_header', true );
+							$show_categories = apply_filters( 'ecrannoir_show_categories_in_entry_header', true );
 
 							if ( true === $show_categories && has_category() ) {
 								?>
