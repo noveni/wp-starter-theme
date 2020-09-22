@@ -31,6 +31,11 @@
 		}],
 		"at-rule-no-unknown": null,
 		"scss/at-rule-no-unknown": true,
-    	"number-leading-zero": null
+		"number-leading-zero": null,
+		"max-line-length": [
+			130, {
+				"ignore": ["comments", "non-comments"]
+			}
+		]
 	}
 }
