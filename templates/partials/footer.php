@@ -30,7 +30,7 @@ $sep = function() {
 							<?php $sep() ?>
 							<span>Tous droits réservés</span>
 							<?php $sep() ?>
-							<span><?php _e( 'Site crée par', 'ecrannoir' ); ?> <a href="https://tampala.be/">Tampala Studio</a> & <a href="https://ecrannoir.be/">Ecran Noir</a></span>
+							<span><?php _e( 'Site créé par', 'ecrannoir' ); ?> <a href="https://tampala.be/">Tampala Studio</a> & <a href="https://ecrannoir.be/">Ecran Noir</a></span>
 							<?php $sep() ?>
 							<span class="cgv"><a href="#">Politique de confidentialité</a></span>
 							<?php $sep() ?>

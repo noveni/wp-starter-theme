@@ -96,7 +96,7 @@ function getConfigValue($key = false) {
 * Replaces the standard get_header call that WordPress uses
  */
 function ecrannoir_get_theme_header() {
-    get_template_part('templates/header');
+    get_template_part('templates/partials/header');
 }
 
 /**
@@ -104,5 +104,5 @@ function ecrannoir_get_theme_header() {
  * Replaces the standard get_footer call that WordPress uses
  */
 function ecrannoir_get_theme_footer() {
-    get_template_part('templates/footer');
+    get_template_part('templates/partials/footer');
 }
