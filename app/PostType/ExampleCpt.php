@@ -15,7 +15,7 @@ class ExampleCpt extends \PostType\BasePostType
     protected function setConfigurations() {
         $this->type = 'app_custom_post_type';
         $this->configuration_post_type = $this->getConfiguration();
-        $this->configuration_taxonomy = $this->getTaxonomyConfiguration();
+        $this->configuration_taxonomies = $this->getTaxonomiesConfiguration();
     }
 
     public function getConfiguration() {
@@ -50,7 +50,7 @@ class ExampleCpt extends \PostType\BasePostType
             'menu_position'             => 5, 
             'menu_icon'                 => 'dashicons-admin-post',
             'supports'                  => array( 'title', 'editor', 'thumbnail', 'page-attributes', 'excerpt', 'revisions' ),
-            'taxonomies'                => array('category', 'post_tag', 'term_' . $this->type ),
+            'taxonomies'                => array('category', 'post_tag', $this->type . '_term' ),
             'has_archive'               => true,
             'exclude_from_search'       => false,
             'show_ui'                   => true,
@@ -70,34 +70,31 @@ class ExampleCpt extends \PostType\BasePostType
 
     }
 
-    public function getTaxonomyConfiguration() {
+    public function getTaxonomiesConfiguration() {
 
-        $this->taxonomy_slug = 'term_';
-        
-        // Taxonomy Declaration
-        $labels = array(
-            'name'                          => __( 'Custom Taxonomies', 'app' ),
-            'singular_name'                 => __( 'Custom Taxonomy', 'app' ),
-            'search_items'                  => __( 'Search Custom Taxonomies', 'app' ),
-            'all_items'                     => __( 'All Custom Taxonomies', 'app' ),
-            'popular_items'                 => __( 'Popular Custom Taxonomies', 'app' ),
-            'parent_item'                   => __( 'Parent Custom Taxonomy', 'app' ),
-            'edit_item'                     => __( 'Edit Custom Taxonomy', 'app' ),
-            'view_item'                     => __( 'View Custom Taxonomy', 'app' ),
-            'update_item'                   => __( 'Update Custom Taxonomy', 'app' ),
-            'add_new_item'                  => __( 'Add New Custom Taxonomy', 'app' ),
-            'new_item_name'                 => __( 'New Custom Taxonomy Name', 'app' ),
-            'menu_name'                     => __( 'Custom Taxonomies', 'app' ),
-            'separate_items_with_commas'    => __( 'Separate Custom Taxonomy with commas', 'app'),
-            'add_or_remove_items'           => __( 'Add or remove Custom Taxonomy', 'ecrannoir' ),
-            'choose_from_most_used'         => __( 'Choose from the most used Custom Taxonomy', 'ecrannoir' ),
-            'not_found'                     => __( 'No Custom Taxonomy found', 'ecrannoir' ),
-            'no_terms'                      => __( 'No Custom Taxonomy', 'ecrannoir' ),
-            'most_used'                     => __( 'Most Used', 'ecrannoir' ),
-        );
-        
-        $args = array( 
-            'labels'            => $labels,
+        $taxonomies = array();
+
+        $taxonomies['_term'] = array( 
+            'labels' => array(
+                'name'                          => __( 'Custom Taxonomies', 'app' ),
+                'singular_name'                 => __( 'Custom Taxonomy', 'app' ),
+                'search_items'                  => __( 'Search Custom Taxonomies', 'app' ),
+                'all_items'                     => __( 'All Custom Taxonomies', 'app' ),
+                'popular_items'                 => __( 'Popular Custom Taxonomies', 'app' ),
+                'parent_item'                   => __( 'Parent Custom Taxonomy', 'app' ),
+                'edit_item'                     => __( 'Edit Custom Taxonomy', 'app' ),
+                'view_item'                     => __( 'View Custom Taxonomy', 'app' ),
+                'update_item'                   => __( 'Update Custom Taxonomy', 'app' ),
+                'add_new_item'                  => __( 'Add New Custom Taxonomy', 'app' ),
+                'new_item_name'                 => __( 'New Custom Taxonomy Name', 'app' ),
+                'menu_name'                     => __( 'Custom Taxonomies', 'app' ),
+                'separate_items_with_commas'    => __( 'Separate Custom Taxonomy with commas', 'app'),
+                'add_or_remove_items'           => __( 'Add or remove Custom Taxonomy', 'ecrannoir' ),
+                'choose_from_most_used'         => __( 'Choose from the most used Custom Taxonomy', 'ecrannoir' ),
+                'not_found'                     => __( 'No Custom Taxonomy found', 'ecrannoir' ),
+                'no_terms'                      => __( 'No Custom Taxonomy', 'ecrannoir' ),
+                'most_used'                     => __( 'Most Used', 'ecrannoir' ),
+            ),
             'public'            => true, 
             'hierarchical'      => true,
             'show_ui'           => true,
@@ -107,7 +104,7 @@ class ExampleCpt extends \PostType\BasePostType
             'rewrite'           => array( 'slug' => 'custom-taxonomy' ),
         );
 
-        return $args;
+        return $taxonomies;
     }
 
     public static function getTemplateBlock() {

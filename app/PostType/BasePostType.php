@@ -39,7 +39,7 @@ abstract class BasePostType {
      * @access protected
      */
     protected $configuration_post_type;
-    protected $configuration_taxonomy;
+    protected $configuration_taxonomies = array();
     
 
     public static function instance()
@@ -57,8 +57,6 @@ abstract class BasePostType {
      */
     public function __construct() {
 
-        $this->taxonomy_slug = 'term_';
-
         // Set our properties based upon the arrays defined within a view
         $this->setConfigurations();
 
@@ -74,8 +72,10 @@ abstract class BasePostType {
     public function initPostType()
     {
         register_post_type( $this->type, $this->getPostTypeConfiguration());
-        if ($this->hasTaxonomy()) {
-            register_taxonomy( $this->taxonomy_slug . $this->type, $this->type, $this->getTaxonomyConfiguration() );
+        if ($this->hasTaxonomies()) {
+            foreach ($this->configuration_taxonomies as $slug => $tax_args) {
+                register_taxonomy( $this->type . $slug, $this->type, $tax_args);
+            }
         }
     }
 
@@ -84,13 +84,13 @@ abstract class BasePostType {
 
     }
     
-    public function getTaxonomyConfiguration() {
-        return $this->configuration_taxonomy;
+    public function getTaxonomiesConfiguration() {
+        return $this->configuration_taxonomies;
     }
     
-    public function hasTaxonomy()
+    public function hasTaxonomies()
     {
-        return !empty($this->configuration_taxonomy) ? true : false;
+        return !empty($this->configuration_taxonomies) ? true : false;
     }
 
 }
