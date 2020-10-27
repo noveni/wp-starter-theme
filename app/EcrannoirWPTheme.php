@@ -133,7 +133,7 @@ class EcrannoirWPTheme
 		/**
 		 * Enqueue editor assets.
 		 */
-		add_action('init', function($hook) {
+		add_action('enqueue_block_editor_assets', function($hook) {
 			// Skip block registration if Gutenberg is not enabled/merged.
 			if ( ! function_exists( 'register_block_type' ) ) {
 				return;
@@ -147,6 +147,11 @@ class EcrannoirWPTheme
 			));
 			Scripts::toEnqueueStyle( 'editor', 'ecrannoir-block-editor-styles' );
 		});
+
+		add_action( 'init', function($hook) {
+
+			// require_once (THEME_ROOT_DIR_THEME . 'dist/blocks/dynamicblock.php');
+		} );
 
 		/**
 		 * Enqueue Login Assets
