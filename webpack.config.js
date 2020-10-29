@@ -10,9 +10,8 @@ const StylelintPlugin = require('stylelint-webpack-plugin');
 const DependencyExtractionWebpackPlugin = require( '@wordpress/dependency-extraction-webpack-plugin' );
 const CopyPlugin = require('copy-webpack-plugin');
 
-const devMode = process.env.NODE_ENV !== 'production';
 
-module.exports = {
+var config = {
   context: __dirname,
   entry: {
     theme: './src/scripts/theme/index.js',
@@ -20,7 +19,6 @@ module.exports = {
     editor: './src/scripts/editor/index.js',
     login: './src/scripts/login/index.js',
   },
-  devtool: 'source-map',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'scripts/[name].js',
@@ -124,7 +122,6 @@ module.exports = {
     ]
   },
   plugins: [
-    () => !devMode && new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].css',
     }),
@@ -141,14 +138,26 @@ module.exports = {
       ]
     }),
   ],
-  optimization: {
-    minimizer: [
-      // new UglifyJsPlugin(),
-      new OptimizeCSSAssetsPlugin()
-    ]
-  },
   externals: {
     $: '$',
     jquery: 'jQuery'
-  },
+  }
 }
+
+module.exports = (env, argv) => {
+
+  if (argv.mode === 'development') {
+    config.devtool = 'source-map';
+  }
+
+  if (argv.mode === 'production') {
+    config.devtool = 'none';
+    config.plugins.push(new CleanWebpackPlugin())
+    config.optimization = {
+      minimize: true,
+      minimizer: [new UglifyJsPlugin(), new OptimizeCSSAssetsPlugin({})],
+    }
+  }
+
+  return config;
+};
