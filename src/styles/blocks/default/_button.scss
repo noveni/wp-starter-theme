@@ -46,7 +46,7 @@
 	background: none;
 	position: relative;
 
-	& span {
+	span {
 		display: block;
 		// padding: 1.1rem 5rem;
 	}
@@ -61,8 +61,8 @@
 		background: $primary;
 	}
 
-	& span::before,
-	& span::after {
+	span::before,
+	span::after {
 		content: "";
 		width: 1px;
 		height: 0;
@@ -99,13 +99,13 @@
 		transition-delay: 0.2s;
 	}
 
-	& span::before {
+	span::before {
 		transition-delay: 0s;
 		left: 0;
 		bottom: 0;
 	}
 
-	& span::after {
+	span::after {
 		transition-delay: 0.4s;
 		right: 0;
 		bottom: 0;
@@ -162,7 +162,7 @@
 		overflow: hidden;
 	}
 
-	& span {
+	span {
 		display: block;
 
 		@media (min-width: $br-s) {
@@ -180,8 +180,8 @@
 		background: $primary;
 	}
 
-	& span::before,
-	& span::after {
+	span::before,
+	span::after {
 		content: "";
 		width: 1px;
 		height: 0;
@@ -218,13 +218,13 @@
 		transition-delay: 0.2s;
 	}
 
-	& span::before {
+	span::before {
 		transition-delay: 0s;
 		left: 0;
 		bottom: 0;
 	}
 
-	& span::after {
+	span::after {
 		transition-delay: 0.4s;
 		right: 0;
 		bottom: 0;
@@ -254,7 +254,7 @@
 
 	@media (min-width: $br-s) {
 
-		& span {
+		span {
 			display: block;
 			padding: 1.1rem 5rem;
 		}
@@ -269,8 +269,8 @@
 			background: $primary;
 		}
 
-		& span::before,
-		& span::after {
+		span::before,
+		span::after {
 			content: "";
 			width: 1px;
 			height: 0;
@@ -300,7 +300,7 @@
 			transition-delay: 0.6s;
 		}
 
-		& span::after {
+		span::after {
 			transition-delay: 0.4s;
 			right: 0;
 			bottom: 0;
@@ -312,7 +312,7 @@
 			transition-delay: 0.2s;
 		}
 
-		& span::before {
+		span::before {
 			transition-delay: 0s;
 			left: 0;
 			top: 0;

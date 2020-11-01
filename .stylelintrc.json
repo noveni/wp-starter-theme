@@ -17,7 +17,7 @@
 		"a11y/no-outline-none": true,
 		"a11y/selector-pseudo-class-focus": null,
 		"function-url-quotes": "always",
-		"color-hex-length": "long",
+		"color-hex-length": ["long", "short"],
 		"font-family-name-quotes": "always-where-recommended",
 		"value-keyword-case":[ "lower", {
 			"ignoreKeywords": [

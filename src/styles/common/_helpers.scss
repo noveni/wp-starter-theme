@@ -383,7 +383,7 @@ ul.social-icons li {
 		flex-wrap: wrap;
 	}
 
-	& > * {
+	> * {
 		flex: 1 1 auto;
 
 		@media (min-width: $br-s) {

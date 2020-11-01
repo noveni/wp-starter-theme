@@ -77,9 +77,9 @@ body.template-full-width {
 
 	[class*="wp-block"].alignfull [class*="__inner-container"] {
 
-		& > .alignleft,
-		& > p .alignleft,
-		& > .wp-block-image .alignleft {
+		> .alignleft,
+		> p .alignleft,
+		> .wp-block-image .alignleft {
 
 			@media (min-width: $br-s) {
 
@@ -88,9 +88,9 @@ body.template-full-width {
 			}
 		}
 
-		& > .alignright,
-		& > p .alignright,
-		& > .wp-block-image .alignright {
+		> .alignright,
+		> p .alignright,
+		> .wp-block-image .alignright {
 
 			@media (min-width: $br-s) {
 

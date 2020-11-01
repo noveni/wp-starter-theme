@@ -458,7 +458,7 @@ ul.primary-menu {
 		position: relative;
 	}
 
-	& > li {
+	> li {
 		margin: 0.8rem 0 0 1.6rem;
 
 		@media (min-width: $br-xl) {
@@ -466,11 +466,11 @@ ul.primary-menu {
 		}
 	}
 
-	& > li.menu-item-has-children > a {
+	> li.menu-item-has-children > a {
 		padding-right: 2rem;
 	}
 
-	& > li > .icon {
+	> li > .icon {
 		right: -0.5rem;
 		top: calc(50% - 0.4rem);
 	}
@@ -490,15 +490,15 @@ ul.primary-menu {
 
 	li.current-menu-item {
 
-		& > a,
-		& > .link-icon-wrapper > a {
+		> a,
+		> .link-icon-wrapper > a {
 			text-decoration: underline;
 		}
 
-		& > a:hover,
-		& > .link-icon-wrapper > a:hover,
-		& > a:focus,
-		& > .link-icon-wrapper > a:focus {
+		> a:hover,
+		> .link-icon-wrapper > a:hover,
+		> a:focus,
+		> .link-icon-wrapper > a:focus {
 			text-decoration: underline;
 		}
 	}

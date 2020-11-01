@@ -32,7 +32,7 @@
 		color: inherit;
 	}
 
-	& + .post-inner {
+	+ .post-inner {
 
 		@media (min-width: $br-xl) {
 			padding-top: 10rem;

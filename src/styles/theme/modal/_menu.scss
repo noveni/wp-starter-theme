@@ -232,8 +232,8 @@ button.close-nav-toggle {
 		margin: 0;
 	}
 
-	& > li > a,
-	& > li > .ancestor-wrapper > a {
+	> li > a,
+	> li > .ancestor-wrapper > a {
 		font-size: 2rem;
 		font-weight: 700;
 
@@ -243,7 +243,7 @@ button.close-nav-toggle {
 		}
 	}
 
-	& > li:last-child {
+	> li:last-child {
 		border-bottom-width: 0.1rem;
 	}
 
@@ -260,21 +260,21 @@ button.close-nav-toggle {
 		width: 100%;
 	}
 
-	& a:focus,
-	& a:hover,
-	& li.current-menu-item > .ancestor-wrapper > a,
-	& li.current_page_ancestor > .ancestor-wrapper > a {
+	a:focus,
+	a:hover,
+	li.current-menu-item > .ancestor-wrapper > a,
+	li.current_page_ancestor > .ancestor-wrapper > a {
 		text-decoration: underline;
 	}
 
-	& > li > .ancestor-wrapper > button.sub-menu-toggle {
+	> li > .ancestor-wrapper > button.sub-menu-toggle {
 
 		@media (min-width: $br-s) {
 			padding: 0 3rem;
 		}
 	}
 
-	& > li > .ancestor-wrapper > button.sub-menu-toggle svg {
+	> li > .ancestor-wrapper > button.sub-menu-toggle svg {
 
 		@media (min-width: $br-s) {
 			height: 1.1rem;

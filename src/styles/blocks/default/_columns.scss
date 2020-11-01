@@ -81,7 +81,7 @@
 			margin-right: 0;
 		}
 
-		& *:last-child {
+		*:last-child {
 
 			@media (min-width: $br-s) {
 				margin-top: 0;
@@ -149,13 +149,13 @@
 				width: 100%;
 				height: 100%;
 
-				& span {
+				span {
 					display: none;
 					visibility: hidden;
 				}
 
-				& span::before,
-				& span::after,
+				span::before,
+				span::after,
 				&::before,
 				&::after {
 					content: none;
