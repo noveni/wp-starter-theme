@@ -39,12 +39,12 @@ define( 'ECRANNOIR_POST_REVISIONS', 0 );
 spl_autoload_register( function($classnames) {
 
     // Regular
-    $class      = str_replace( '\\', DIRECTORY_SEPARATOR, strtolower($classnames) ); 
+    $class      = str_replace( '\\', DIRECTORY_SEPARATOR, $classnames ); 
     $classpath  = dirname(__FILE__) .  DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . $class . '.php';
 
     // WordPress
     $parts      = explode('\\', $classnames);
-    $class      = 'class-' . strtolower( array_pop($parts) );
+    $class      = 'class-' . array_pop($parts);
     $folders    = strtolower( implode(DIRECTORY_SEPARATOR, $parts) );
     $wppath     = dirname(__FILE__) .  DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . $folders . DIRECTORY_SEPARATOR . $class . '.php';
     
