@@ -9,7 +9,7 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const DependencyExtractionWebpackPlugin = require( '@wordpress/dependency-extraction-webpack-plugin' );
 const CopyPlugin = require('copy-webpack-plugin');
-
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 var config = {
   context: __dirname,
@@ -137,6 +137,26 @@ var config = {
         },
       ]
     }),
+    new FaviconsWebpackPlugin({
+      logo: './src/favicon.png',
+      prefix: path.join('wp-content/themes', path.basename(__dirname), 'dist/icons'),
+      outputPath: 'icons/',
+      inject: false,
+      favicons: {
+        appName: 'Ecran Noir',
+        appDescription: 'Site Vitrine',
+        developerName: null,
+        developerURL: null, // prevent retrieving from the nearest package.json
+        background: '#1D1D1B',
+        theme_color: '#1D1D1B',
+        icons: {
+          coast: false,
+          appleStartup: false,
+          yandex: false,
+          firefox: false
+        }
+      }
+    })
   ],
   externals: {
     $: '$',

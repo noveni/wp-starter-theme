@@ -196,6 +196,7 @@ class EcrannoirWPTheme
 	public static function actions()
 	{
 		add_action( 'wp_head', [\Assets\Meta::class, 'print_meta'], 5);
+		add_action( 'wp_head', [\Assets\Meta::class, 'printFavicon'], 101);
 		add_action( 'wp_head', function() {
 			if (defined('GA_MEASUREMENT_ID')) {
 				\Assets\Meta::addAnalytics(GA_MEASUREMENT_ID);
