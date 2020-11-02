@@ -61,3 +61,10 @@ function ecrannoir_theme_filter_body_class(array $classes) {
 function ecrannoir_theme_filter_the_content_more_link($html) {
     return preg_replace( '/<a(.*)>(.*)<\/a>/iU', sprintf( '<div class="read-more-button-wrap"><a$1><span class="faux-button">$2</span> <span class="screen-reader-text">"%1$s"</span></a></div>', get_the_title( get_the_ID() ) ), $html );
 }
+
+/**
+ * Return a separator Character ' | '
+ */
+function ecsep($class = false) {
+	echo '<span class="separator '.$class.'"> | </span>';
+}

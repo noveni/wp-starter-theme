@@ -15,14 +15,30 @@ ecrannoir_get_theme_header();
 
 	<?php
 
-	if ( have_posts() ) {
+	if ( have_posts() ) :
 
-		while ( have_posts() ) {
+		while ( have_posts() ) :
 			the_post();
 
-			get_template_part( 'templates/template-parts/content', get_post_type() );
-		}
-	}
+			?>
+			<div class="post-inner">
+
+			<div class="entry-content">
+
+				<?php
+				if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
+					the_excerpt();
+				} else {
+					the_content( __( 'Continue reading', 'ecrannoir' ) );
+				}
+				?>
+
+			</div><!-- .entry-content -->
+
+			</div><!-- .post-inner -->
+			<?php
+		endwhile;
+	endif;
 
 	?>
 

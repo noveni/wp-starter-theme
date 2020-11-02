@@ -15,14 +15,12 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 
 $locations = array(
-    'primary'  => __( 'Header Menu', 'ecrannoir' ),
-    'expanded' => __( 'Desktop Expanded Menu', 'ecrannoir' ),
-    'mobile'   => __( 'Mobile Menu', 'ecrannoir' ),
-    'footer'   => __( 'Footer Menu', 'ecrannoir' ),
-    'social'   => __( 'Social Menu', 'ecrannoir' ),
-    'header-secondary' =>  __( 'Header Secondary Menu', 'ecrannoir' ),
-    'lang' => __('Langue Menu', 'ecrannoir'),
-    'menu404' => 'Page 404 Menu'
+    'primary'   => __( 'Header Menu', 'ecrannoir' ),
+    'mobile'    => __( 'Mobile Menu', 'ecrannoir' ),
+    'footer'    => __( 'Footer Menu', 'ecrannoir' ),
+    'social'    => __( 'Social Menu', 'ecrannoir' ),
+    // 'lang' => __('Langue Menu', 'ecrannoir'),
+    'menu404'   => __( '404 Menu', 'ecrannoir' ),
 );
 
 register_nav_menus( $locations );

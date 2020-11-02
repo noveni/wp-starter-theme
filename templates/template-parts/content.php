@@ -25,12 +25,12 @@
 
 	?>
 
-	<div class="post-inner <?php echo is_page_template( 'templates/template-full-width.php' ) ? '' : 'thin'; ?> ">
+	<div class="post-inner">
 
 		<div class="entry-content">
 
 			<?php
-			if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
+			if ( is_search() || ! is_singular() ) {
 				the_excerpt();
 			} else {
 				the_content( __( 'Continue reading', 'ecrannoir' ) );
@@ -73,21 +73,6 @@
 
 	}
 
-	/**
-	 *  Output comments wrapper if it's a post, or if comments are open,
-	 * or if there's a comment number – and check for password.
-	 * */
-	if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
-		?>
-
-		<div class="comments-wrapper section-inner">
-
-			<?php comments_template(); ?>
-
-		</div><!-- .comments-wrapper -->
-
-		<?php
-	}
 	?>
 
 </article><!-- .post -->
