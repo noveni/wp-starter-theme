@@ -1,1 +1,1 @@
-import 'img/logo.svg';
+import '../../img/logo.svg';

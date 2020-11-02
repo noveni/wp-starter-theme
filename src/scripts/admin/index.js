@@ -1,1 +1,1 @@
-import 'styles/admin/index.scss';
+// import 'styles/admin/index.scss';

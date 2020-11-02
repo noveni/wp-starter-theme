@@ -1,4 +1,4 @@
-import 'styles/editor/index.scss';
+// import 'styles/editor/index.scss';
 import domReady from '@wordpress/dom-ready';
 
 import { unregisterBlockStyle, registerBlockStyle } from '@wordpress/blocks';

@@ -1,8 +1,8 @@
-import 'styles/theme/_main.scss';
+// import 'styles/theme/_main.scss';
 import './assets'
 
-import { ecrannoirDomReady } from 'scripts/utils/dom';
-import Router from 'scripts/utils/Router';
+import { ecrannoirDomReady } from '../utils/dom';
+import Router from '../utils/Router';
 
 
 import common from './routes/common';
