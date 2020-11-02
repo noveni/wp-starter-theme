@@ -3,11 +3,8 @@
 namespace Admin;
 
 /**
- * Custom icons for this theme.
+ * Configuration of the Admin
  *
- * @package WordPress
- 
- * @since 1.0.0
  */
 
 if ( ! class_exists( 'Admin\Admin' ) ) {

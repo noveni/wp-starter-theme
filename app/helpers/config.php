@@ -17,7 +17,7 @@ function ecrannoir_theme_redirect() {
 /**
  * Activate WordPress Maintenance Mode
  */
-function ecrannoir_theme_maintenance_mode(){
+function ecrannoir_theme_maintenance_mode() {
     if(!current_user_can('edit_themes') || !is_user_logged_in()){
         $site_title = get_bloginfo( 'name' );
         wp_die('<div style="text-align:center"><h1 style="color:black">' . $site_title . '</h1><p>Nous effectuons une maintenance. Nous serons de retour en ligne sous peu!</p></div>');
@@ -95,14 +95,20 @@ function getConfigValue($key = false) {
  * Retrieves the theme header
 * Replaces the standard get_header call that WordPress uses
  */
-function ecrannoir_get_theme_header() {
-    get_template_part('templates/partials/header');
+function ecrannoir_get_theme_header( $name = null, $args = array() ) {
+
+    do_action( 'get_header', $name, $args );
+
+    get_template_part('templates/partials/header', null, $args);
 }
 
 /**
  * Retrieves the theme footer
  * Replaces the standard get_footer call that WordPress uses
  */
-function ecrannoir_get_theme_footer() {
-    get_template_part('templates/partials/footer');
+function ecrannoir_get_theme_footer( $name = null, $args = array() ) {
+
+    do_action( 'get_footer', $name, $args );
+
+    get_template_part('templates/partials/footer', null, $args);
 }

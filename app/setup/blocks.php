@@ -127,4 +127,4 @@ function ecrannoirwptheme_allowed_block_types( $allowed_blocks, $post ) {
 
 }
 
-add_filter( 'allowed_block_types', 'ecrannoirwptheme_allowed_block_types', 10, 2 );
+// add_filter( 'allowed_block_types', 'ecrannoirwptheme_allowed_block_types', 10, 2 );

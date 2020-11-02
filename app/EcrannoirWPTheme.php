@@ -6,12 +6,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 use Assets\Scripts;
 use Admin\Admin;
+use Admin\Options;
 use PostType\ExampleCpt;
 use WP_Error as WP_Error;
 
 
 class EcrannoirWPTheme
 {
+
+	private $theme_settings;
 	/**
      * Determines whether a class has already been instanciated.
      *
@@ -38,6 +41,9 @@ class EcrannoirWPTheme
 	}
 	
 	public function init() {
+
+		// Retrieve Theme Settings From Database
+		$this->theme_settings = get_option( 'ecrannoir-settings-option' );
 
 		/**
          * Loads our translations before loading anything else
@@ -68,7 +74,7 @@ class EcrannoirWPTheme
             flush_rewrite_rules(); 
         });
 
-		$this::generalActions();
+		$this->generalActions();
 
 		$this::actions();
 		$this::filters();
@@ -181,16 +187,23 @@ class EcrannoirWPTheme
 
 	public function adminSetup() {
 		Admin::init();
+
+		if (is_admin()) {
+			$theme_setting = new Options();
+		}
 	}
 
-	public static function generalActions()
+	public function generalActions()
 	{
 		/**
 		 * non theme action
 		 */
 
 		add_action('template_redirect', 'ecrannoir_theme_redirect' );
-		// add_action('get_header', 'ecrannoir_theme_maintenance_mode');
+		$maintenance_mode = boolval( $this->theme_settings['maintenance_mode'] ?? false);
+		if ($maintenance_mode === true) {
+			add_action('get_header', 'ecrannoir_theme_maintenance_mode');
+		}
 	}
 
 	public static function actions()
