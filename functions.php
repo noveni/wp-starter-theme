@@ -32,7 +32,6 @@ if (version_compare('4.7.0', get_bloginfo('version'), '>=')) {
 define( 'THEME_ROOT_DIR', dirname( __DIR__ ) . DIRECTORY_SEPARATOR );
 define( 'THEME_ROOT_DIR_THEME', dirname(__FILE__) . DIRECTORY_SEPARATOR);
 define( 'THEME_ROOT_URI', get_theme_root_uri('wp-starter-theme', 'wp-starter-theme') . DIRECTORY_SEPARATOR );
-define( 'GA_MEASUREMENT_ID', false );
 define( 'ECRANNOIR_POST_REVISIONS', 0 );
 
 // https://github.com/makeitworkpress/wordpress-autoload-class/blob/master/functions.php

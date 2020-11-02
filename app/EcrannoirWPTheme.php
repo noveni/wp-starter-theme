@@ -206,15 +206,17 @@ class EcrannoirWPTheme
 		}
 	}
 
-	public static function actions()
+	public function actions()
 	{
 		add_action( 'wp_head', [\Assets\Meta::class, 'print_meta'], 5);
 		add_action( 'wp_head', [\Assets\Meta::class, 'printFavicon'], 101);
-		add_action( 'wp_head', function() {
-			if (defined('GA_MEASUREMENT_ID')) {
-				\Assets\Meta::addAnalytics(GA_MEASUREMENT_ID);
-			}
-		}, 100);
+
+		if (isset($this->theme_settings['ga_measurement_id'])) {
+			add_action( 'wp_head', function() {
+				\Assets\Meta::addAnalytics($this->theme_settings['ga_measurement_id']);
+			}, 102);
+		}
+		
 		
 	}
 

@@ -67,6 +67,14 @@ if ( ! class_exists( 'Admin\Options' ) ) {
             );
 
             add_settings_field(
+                'ga_measurement_id', // ID
+                'Google Analytics Code', // Title 
+                array( $this, 'googleAnalyticsFieldHtml' ), // Callback
+                'ecrannoir-theme-settings', // Page
+                'setting_section_general' // Section           
+            );  
+
+            add_settings_field(
                 'maintenance_mode', // ID
                 'Maintenance Mode', // Title 
                 array( $this, 'maintenanceModeCallback' ), // Callback
@@ -103,6 +111,9 @@ if ( ! class_exists( 'Admin\Options' ) ) {
 
             if( isset( $input['header_layout'] ) )
                 $new_input['header_layout'] = sanitize_text_field( $input['header_layout'] );
+                
+            if( isset( $input['ga_measurement_id'] ) )
+                $new_input['ga_measurement_id'] = sanitize_text_field( $input['ga_measurement_id'] );
 
             return $new_input;
         }
@@ -135,7 +146,6 @@ if ( ! class_exists( 'Admin\Options' ) ) {
         {
             $field_value = isset( $this->options['header_layout'] ) ? esc_attr( $this->options['header_layout']) : '';
             ?>
-            <label for="header-layout-select">Header Layout:</label>
             <select name="ecrannoir-settings-option[header_layout]" id="header-layout-select">
                 <option value="">--Please choose an option--</option>
                 <option value="style-1" <?php echo $field_value === 'style-1' ? 'selected' : '' ?>>Style 1</option>
@@ -145,6 +155,17 @@ if ( ! class_exists( 'Admin\Options' ) ) {
             <?php
         }
 
+
+        public function googleAnalyticsFieldHtml()
+        {
+            $field_value = $this->options['ga_measurement_id'] ?? '';
+
+            printf(
+                '<input type="text" id="ga_measurement_id" name="ecrannoir-settings-option[ga_measurement_id]" value="%s" />',
+                esc_attr( $field_value )
+            );
+
+        }
 
     }
     
