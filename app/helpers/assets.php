@@ -25,7 +25,7 @@ function ecrannoir_theme_site_logo( $args = array(), $echo = true, $color = fals
 		'title'       => '<a href="%1$s">%2$s</a>',
 		'title_class' => 'site-title',
 		'home_wrap'   => '<h1 class="%1$s">%2$s</h1>',
-		'single_wrap' => '<div class="%1$s faux-heading">%2$s</div>',
+		'single_wrap' => '<div class="%1$s">%2$s</div>',
 		'condition'   => ( is_front_page() || is_home() ) && ! is_page(),
     );
     
