@@ -1,4 +1,4 @@
-@import "../common/variable";
-@import "../common/fonts";
-@import "./editor-style-block";
-@import "./editor-style-theme-blocks";
+@import "../shared/variable";
+@import "../shared/fonts";
+@import "../shared/mixins";
+@import "~normalize.css";

@@ -1,0 +1,37 @@
+// @font-face {
+// 	font-family: Butler;
+// 	src:
+// 		url("~fonts/Butler.woff2") format("woff2"),
+// 		url("~fonts/Butler.woff") format("woff");
+// 	font-weight: 400;
+// 	font-style: normal;
+// }
+
+// @font-face {
+// 	font-family: Butler;
+// 	src:
+// 		url("~fonts/Butler-Medium.woff2") format("woff2"),
+// 		url("~fonts/Butler-Medium.woff") format("woff");
+// 	font-weight: 500;
+// 	font-style: normal;
+// }
+
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+
+$family-montserrat:         "Montserrat";
+$family-open_sans:     				"Open Sans";
+
+$font-primary:          $family-open_sans, "Helvetica Neue", helvetica, arial, sans-serif;
+$font-secondary:        $family-montserrat, "Helvetica Neue", helvetica, arial, sans-serif;
+
+@mixin menu-text-style {
+  font-family: $font-secondary;
+  font-weight: 500;
+  font-size: 14px;
+  color: $grey;
+  letter-spacing: 1.4px;
+  line-height: 23px;
+  text-transform: uppercase;
+}

@@ -1,0 +1,41 @@
+/* Sections ---------------------------------- */
+
+section {
+  padding: 5rem 0;
+  width: 100%;
+
+  @media (min-width: $br-s) {
+    padding: 8rem 0;
+  }
+}
+
+.section-inner {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $br-hd;
+  width: calc(100% - 4rem);
+
+  @media (min-width: $br-s) {
+    width: calc(100% - 8rem);
+  }
+}
+
+.section-inner.max-percentage {
+  width: 100%;
+}
+
+.section-inner.thin {
+  max-width: $section-thin;
+}
+
+.section-inner.small {
+  max-width: $section-small;
+}
+
+.section-inner.medium {
+  max-width: $section-medium;
+}
+
+.section-inner.no-margin {
+  margin: 0;
+}

@@ -1,14 +1,17 @@
 /* Default Color ------------------------------------- */
-$white:     #ffffff !default;
-$black:     #000000 !default;
+$white:     #fff !default;
+$black:     #000 !default;
 $grey:      #979797 !default;
 $red:       #a6554d !default;
+$blue:       #2536f4 !default;
+
 
 /* Default Breakpoints ------------------------------- */
 $br-xs:     0;
 $br-s:      600;
 $br-m:      960;
 $br-l:      1280;
+$br-hd:     1440;
 $br-xl:     1920;
 
 /* Default Wp Theme Support -------------------------- */
@@ -22,44 +25,56 @@ $section-medium: 	100rem;
 $themeVariables: $variables;
 $themeColor: map_get($themeVariables, color);
 $breakpoints: map_get($themeVariables, breakpoints);
-$editorFontSize: map_get($themeVariables, fontSize); /* stylelint-disable-line */
+$editorFontSize: map_get($themeVariables, fontsize); /* stylelint-disable-line */
 
 /* Color ------------------------------------- */
 $white:     map_get($themeColor, white); /* stylelint-disable-line */
 $black:     map_get($themeColor, black); /* stylelint-disable-line */
 $grey:      map_get($themeColor, grey); /* stylelint-disable-line */
+$lightgrey:      map_get($themeColor, lightgrey); /* stylelint-disable-line */
 $red:       map_get($themeColor, red); /* stylelint-disable-line */
 $green:     map_get($themeColor, green); /* stylelint-disable-line */
+$blue:     map_get($themeColor, blue); /* stylelint-disable-line */
+$yellow:     map_get($themeColor, yellow); /* stylelint-disable-line */
 
 $primary:     $black;
 $secondary:   $grey;
-$body-background:  #f5efe0;
+$body-background:  $white;
+$header-background: transparent;
 
-$almost-black: rgba(0, 0, 0, 0.2);
+$almost-black: rgba(0, 0, 0, .2);
 $totaly-black: rgba(0, 0, 0, 0);
+
+$accent-color: $grey;
+
 
 /* Breakpoints ------------------------------- */
 $br-xs:     #{map_get($breakpoints, xs)}px;
 $br-s:      #{map_get($breakpoints, s)}px;
 $br-m:      #{map_get($breakpoints, m)}px;
 $br-l:      #{map_get($breakpoints, l)}px;
+$br-hd:      #{map_get($breakpoints, hd)}px;
 $br-xl:     #{map_get($breakpoints, xl)}px;
 
 /* Z-index */
 $menu-modal-zindex: 99;
 
 /* Hamburgers menu */
-$hamburger-padding-x           : 15px;
-$hamburger-padding-y           : 15px;
-$hamburger-layer-width         : 16px;
-$hamburger-layer-height        : 1px;
-$hamburger-layer-spacing       : 5px;
+$hamburger-padding-x           : 15px !default;
+$hamburger-padding-y           : 14px !default;
+$hamburger-layer-width         : 24px;
+$hamburger-layer-height        : 2px;
+$hamburger-layer-spacing       : 7px;
 $hamburger-layer-color         : $primary;
-$hamburger-layer-border-radius : 5px;
-$hamburger-hover-opacity       : 0.7;
+$hamburger-layer-border-radius : 4px;
+$hamburger-hover-opacity       : .7;
 $hamburger-active-layer-color  : $hamburger-layer-color;
 $hamburger-active-hover-opacity: $hamburger-hover-opacity;
+$hamburger-hover-use-filter   : false !default;
+$hamburger-hover-filter       : opacity(50%) !default;
+$hamburger-active-hover-filter: $hamburger-hover-filter !default;
 
+$hamburger-types     : (stand);
 
 /* Size */
 $social-icon-size: 1.8rem; //18px

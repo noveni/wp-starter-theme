@@ -1,0 +1,307 @@
+/* -------------------------------------------------------------------------- */
+
+/*	3. Helper Classes
+/* -------------------------------------------------------------------------- */
+
+
+/* Layout ------------------------------------ */
+
+.no-margin {
+  margin: 0;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.screen-height {
+  min-height: 100vh;
+}
+
+.admin-bar .screen-height {
+  min-height: calc(100vh - 32px);
+}
+
+@media (max-width: 782px) {
+  .admin-bar .screen-height {
+    min-height: calc(100vh - 46px);
+  }
+}
+
+.screen-width {
+  position: relative;
+  left: calc(50% - 50vw);
+  width: 100vw;
+}
+
+/* Toggles ----------------------------------- */
+
+.toggle {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  color: inherit;
+  cursor: pointer;
+  font-family: inherit;
+  position: relative;
+  text-align: inherit;
+  user-select: none;
+}
+
+button.toggle {
+  background: none;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  font-size: inherit;
+  font-weight: 400;
+  letter-spacing: inherit;
+  padding: 0;
+  text-transform: none;
+  outline: none;
+}
+
+/* Hiding and Showing ------------------------ */
+
+.js .show-js {
+  display: block !important;
+}
+
+.js .hide-js {
+  display: none !important;
+}
+
+.no-js .show-no-js {
+  display: block !important;
+}
+
+.no-js .hide-no-js {
+  display: none !important;
+}
+
+.hide-on-mobile {
+  @media (max-width: $br-s) {
+    display: none !important;
+  }
+}
+
+
+/* Typography -------------------------------- */
+
+.no-select {
+  user-select: none;
+}
+
+@each $fontSizeSlug, $fontSizeValue in $editorFontSize {
+  .has-#{$fontSizeSlug}-font-size {
+    font-size: #{($fontSizeValue / 10)}em;
+  }
+}
+
+
+/* Colors ------------------------------------ */
+
+/* COLOR */
+
+.color-accent,
+.color-accent-hover:focus,
+.color-accent-hover:hover {
+  color: $accent-color;
+}
+
+/* BACKGROUND COLOR */
+
+.bg-accent,
+.bg-accent-hover:focus,
+.bg-accent-hover:hover {
+  background-color: $accent-color;
+}
+
+/* BORDER COLOR */
+
+.border-color-accent,
+.border-color-accent-hover:focus,
+.border-color-accent-hover:hover {
+  border-color: $accent-color;
+}
+
+/* FILL COLOR */
+
+.fill-children-accent,
+.fill-children-accent * {
+  fill: $accent-color;
+}
+
+.fill-children-current-color,
+.fill-children-current-color * {
+  fill: currentColor;
+}
+
+/* GENERAL COLORS */
+
+.has-black-background-color {
+  background-color: $black;
+  color: $white;
+}
+
+.has-white-background-color {
+  background-color: $white;
+  color: $black;
+}
+
+.has-black-color {
+  color: $black;
+}
+
+.has-white-color {
+  color: $white;
+}
+
+@each $colorName, $colorValue in $themeColor {
+  .has-#{$colorName}-color {
+    color: $colorValue;
+  }
+}
+
+@each $colorName, $colorValue in $themeColor {
+  .has-#{$colorName}-background-color {
+    background-color: $colorValue;
+  }
+}
+
+
+/* Opacity ----------------------------------- */
+$opacityValues: 0, .05, .1, .15, .2, .25, .3, .35, .4, .45, .5, .55, .6, .65, .7, .75, .8, .85, .9;
+
+@each $opacityValue in $opacityValues {
+  .opacity-#{($opacityValue * 100)} {
+    opacity: $opacityValue;
+  }
+}
+
+.blend-mode-exclusion {
+  mix-blend-mode: exclusion;
+}
+
+.blend-mode-hue {
+  mix-blend-mode: hue;
+}
+
+.blend-mode-saturation {
+  mix-blend-mode: saturation;
+}
+
+.blend-mode-color {
+  mix-blend-mode: color;
+}
+
+.blend-mode-luminosity {
+  mix-blend-mode: luminosity;
+}
+
+
+/* Image Classes ----------------------------- */
+
+.bg-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-attachment-fixed {
+  background-attachment: fixed;
+}
+
+@supports ( -webkit-overflow-scrolling: touch ) {
+  .bg-attachment-fixed {
+    background-attachment: scroll;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-attachment-fixed {
+    background-attachment: scroll;
+  }
+}
+
+.wp-block-image.is-resized {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Cover Modals ------------------------------ */
+
+.cover-modal {
+  display: none;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+}
+
+.cover-modal::-webkit-scrollbar {
+  display: none !important;
+}
+
+.cover-modal.show-modal {
+  display: block;
+  cursor: pointer;
+}
+
+.cover-modal.show-modal > * {
+  cursor: default;
+}
+
+
+/* Ecran Noir Column Helper -------------- */
+.col-r {
+  @media (min-width: $br-s) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @media (min-width: $br-s) {
+    flex-wrap: nowrap;
+  }
+}
+
+@for $i from 1 through 12 {
+  .col-r .col-#{$i} {
+    @media (min-width: $br-m) {
+      flex-basis: 100% / 12 * $i;
+    }
+  }
+
+  .colm-#{$i} {
+    @media (min-width: $br-s) {
+      flex-basis: 100% / 12 * $i;
+    }
+  }
+
+  .col-os-#{$i} {
+    @media (min-width: $br-m) {
+      margin-left: 100% / 12 * $i;
+    }
+  }
+
+  .col-osr-#{$i} {
+    @media (min-width: $br-m) {
+      margin-right: 100% / 12 * $i;
+    }
+  }
+}
+
+[class^="col-"] {
+  @media (min-width: $br-m) {
+    padding: 0 1rem;
+  }
+}
+
+[class^="col-"]:first-of-type {
+  @media (min-width: $br-m) {
+    padding-left: 0;
+  }
+}
+
+[class^="col-"]:last-of-type {
+  @media (min-width: $br-m) {
+    padding-right: 0;
+  }
+}

@@ -1,3 +1,4 @@
-@import "../common/reset";
-@import "../common/variable";
-@import "../common/fonts";
+@import "../shared/variable";
+@import "../shared/fonts";
+@import "../shared/mixins";
+@import "~normalize.css";
