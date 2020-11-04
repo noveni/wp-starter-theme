@@ -12,12 +12,12 @@
 
 				<div class="section-inner col-r">
 					<div class="colm-12 col-4 col-osr-1 footer-titles-wrapper">
-						<a class="footer-logo" href="<?php echo esc_url( get_home_url( null, '/' ) ) ?>">
+						<h3><a class="footer-logo" href="<?php echo esc_url( get_home_url( null, '/' ) ) ?>">
 							<?php echo \Assets\Icons::get_svg('logo', 'brand'); ?>
-						</a>
+						</a></h3>
 						<div class="footer-description">
-							<?php if (is_active_sidebar('widget-footer-description')): ?>
-								<?php dynamic_sidebar( 'widget-footer-description' ); ?>
+							<?php if (is_active_sidebar('widget-footer-left')): ?>
+								<?php dynamic_sidebar( 'widget-footer-left' ); ?>
 							<?php endif; ?>
 						</div>
 						<?php if (has_nav_menu( 'footer' )) : ?>
@@ -66,8 +66,8 @@
 						<div class="footer-contact">
 							<?php 
 
-							if ( is_active_sidebar('widget-footer-description') ) :
-								dynamic_sidebar( 'widget-footer-contact' );
+							if ( is_active_sidebar('widget-footer-right') ) :
+								dynamic_sidebar( 'widget-footer-right' );
 							endif;
 
 							?>

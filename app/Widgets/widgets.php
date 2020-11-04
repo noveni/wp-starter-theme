@@ -20,16 +20,16 @@ $config = [
     'after_widget'  => '</div></div>',
 ];
 
-register_sidebar(
-    array_merge(
-        $config,
-        array(
-            'name'          => __('Footer Top', 'ecrannoir'),
-            'id'            => 'widget-footer-top',
-            'description' => __( 'Widgets in this area will be displayed on the top of the footer.', 'ecrannoir' ),
-        )
-    )
-);
+// register_sidebar(
+//     array_merge(
+//         $config,
+//         array(
+//             'name'          => __('Footer Top', 'ecrannoir'),
+//             'id'            => 'widget-footer-top',
+//             'description' => __( 'Widgets in this area will be displayed on the top of the footer.', 'ecrannoir' ),
+//         )
+//     )
+// );
 // Footer Left Column
 register_sidebar(
     array_merge(
