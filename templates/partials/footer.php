@@ -10,7 +10,7 @@
 			
 			<footer id="site-footer" role="contentinfo">
 
-				<div class="section-inner">
+				<div class="section-inner col-r">
 					<div class="colm-12 col-4 col-osr-1 footer-titles-wrapper">
 						<a class="footer-logo" href="<?php echo esc_url( get_home_url( null, '/' ) ) ?>">
 							<?php echo \Assets\Icons::get_svg('logo', 'brand'); ?>
@@ -94,12 +94,6 @@
 					</div><!-- .footer-credits -->
 
 					<a class="to-the-top" href="#site-header">
-						<span class="to-the-top-long">
-							<?php
-							/* translators: %s: HTML character for up arrow */
-							printf( __( 'To the top %s', 'ecrannoir' ), '<span class="arrow" aria-hidden="true">&uarr;</span>' );
-							?>
-						</span><!-- .to-the-top-long -->
 						<span class="to-the-top-short">
 							<?php
 							/* translators: %s: HTML character for up arrow */

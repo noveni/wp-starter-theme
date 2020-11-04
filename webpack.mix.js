@@ -1,6 +1,7 @@
 let mix = require('laravel-mix');
 var { CleanWebpackPlugin } = require('clean-webpack-plugin');
 var FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+var StylelintPlugin = require('stylelint-webpack-plugin');
 const path = require('path');
 
 require("@tinypixelco/laravel-mix-wp-blocks")
@@ -51,6 +52,9 @@ mix.webpackConfig({
     ]
   },
   plugins: [
+    new StylelintPlugin({
+      context: path.resolve(__dirname, 'src/styles'),
+    }),
     new FaviconsWebpackPlugin({
       logo: './src/favicon.png',
       prefix: mix.inProduction() ? path.join('wp-content/themes', path.basename(__dirname), 'dist/icons') : './icons',
@@ -83,6 +87,8 @@ if (mix.inProduction()) {
   })
 }
 
+mix.disableSuccessNotifications();
+
 
 mix.browserSync({
   host: 'starter.localhost',
@@ -94,5 +100,10 @@ mix.browserSync({
   https: {
     key: path.resolve(process.env.HOME, 'Work/_tools/traefik-proxy/devcerts/starter.localhost+1-key.pem'),
     cert: path.resolve(process.env.HOME, 'Work/_tools/traefik-proxy/devcerts/starter.localhost+1.pem')
-  }
+  },
+  files: [
+    "src/styles/**/*.scss",
+    "src/scripts/",
+    "templates/"
+  ]
 });

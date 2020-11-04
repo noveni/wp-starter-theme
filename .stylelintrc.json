@@ -1,41 +1,35 @@
 {
 	"extends": [
-		"stylelint-config-wordpress/scss"
+		"stylelint-config-standard"
 	],
 	"ignoreFiles": [
-        "vendor/**/*.scss"
+		"vendor/**/*.scss",
+		"src/to-del/**/*.scss"
     ],
 	"plugins": [
 		"stylelint-scss",
 		"stylelint-a11y"
 	],
 	"rules": {
+		"no-duplicate-selectors": true,
+		"color-named": "never",
+		"selector-combinator-space-after": "always",
+		"selector-attribute-operator-space-before": "never",
+		"selector-attribute-operator-space-after": "never",
+		"selector-attribute-brackets-space-inside": "never",
+		"declaration-colon-space-before": "never",
+		"declaration-colon-space-after": "always",
+		"number-leading-zero": null,
+		"function-url-quotes": "always",
+		"font-weight-notation": null,
+		"font-family-name-quotes": "always-where-required",
+		"at-rule-no-vendor-prefix": true,
+		"selector-pseudo-element-colon-notation": "double",
+		"selector-pseudo-class-parentheses-space-inside": "never",
+		"media-feature-parentheses-space-inside": "never",
+		"at-rule-no-unknown": null,
 		"no-empty-source": null,
 		"max-empty-lines": 2,
-		"font-family-no-missing-generic-family-keyword": null,
-		"no-descending-specificity": null,
-		"a11y/no-outline-none": true,
-		"a11y/selector-pseudo-class-focus": null,
-		"function-url-quotes": "always",
-		"color-hex-length": ["long", "short"],
-		"font-family-name-quotes": "always-where-recommended",
-		"value-keyword-case":[ "lower", {
-			"ignoreKeywords": [
-				"Helvetica",
-				"Arial",
-				"TimesNewRoman",
-				"Times",
-				"Baskerville",
-				"Georgia"
-			]
-		}],
-		"at-rule-no-unknown": null,
-		"scss/at-rule-no-unknown": true,
-		"number-leading-zero": null,
-		"max-line-length": [
-			130, {
-				"ignore": ["comments", "non-comments"]
-			}
-		]
+		"no-descending-specificity": null
 	}
 }

@@ -1,13 +1,16 @@
 {
     "variables": {
         "color": {
-            "black": "#000000",
+            "black": "#333333",
             "white": "#ffffff",
-            "grey": "#979797",
-            "red": "#a6554d",
-            "green": "#3aaa35"
+            "grey": "#666666",
+            "lightgrey": "#E6E6E6",
+            "red": "#FA6557",
+            "green": "#35CC62",
+            "blue": "#0ECCCC",
+            "yellow": "#FFB54C"
         },
-        "fontSize": {
+        "fontsize": {
             "xs": 10,
             "s": 12,
             "m": 16,
@@ -18,6 +21,7 @@
             "s": 600,
             "m": 960,
             "l": 1280,
+            "hd": 1440,
             "xl": 1920
         }
     }
