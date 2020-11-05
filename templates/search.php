@@ -41,7 +41,7 @@ ecrannoir_get_theme_header();
 
     ?>
 
-    <header class="archive-header has-text-align-center header-footer-group">
+    <header class="archive-header has-text-align-center">
 
         <div class="archive-header-inner section-inner medium">
 

@@ -150,6 +150,10 @@ acronym {
   cursor: help;
 }
 
+a {
+  color: $primary;
+}
+
 .header-nav a {
   @include menu-text-style;
 }
@@ -166,3 +170,13 @@ acronym {
   text-transform: initial;
 }
 
+
+.modal-menu a {
+  @include menu-text-style;
+
+  font-weight: 600;
+}
+
+.modal-menu ul li a {
+  font-size: 1.2rem;
+}

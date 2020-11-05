@@ -57,6 +57,12 @@
 }
 
 .header-nav {
+  display: none;
+
+  @media (min-width: $br-s) {
+    display: block;
+  }
+
   a {
     text-decoration: none;
     color: inherit;
@@ -92,6 +98,7 @@
 
     a {
       padding: 1rem 1.5rem;
+      white-space: nowrap;
     }
   }
 
@@ -105,7 +112,7 @@
     opacity: 0;
     left: 0;
     top: calc(100%);
-    transition: opacity 0.15s linear, transform 0.15s linear, visibility 0.15s linear;
+    transition: opacity 0.35s linear, transform 0.35s linear, visibility 0.35s linear;
     transform: translateY(0.6rem);
     visibility: hidden;
   }
@@ -136,7 +143,7 @@
       bottom: 0;
       left: -100%;
       // transform: translate3d(-300%, 0, 0);
-      transition: left 0.7s, opacity 0.7s;
+      transition: left 0.5s, opacity 0.5s;
       transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
     }
   }

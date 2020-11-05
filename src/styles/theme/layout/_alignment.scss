@@ -1,0 +1,411 @@
+.entry-content {
+  line-height: 1.5;
+  font-size: 1rem;
+  overflow: hidden;
+
+  @media (min-width: $br-s) {
+    font-size: 1.5rem;
+  }
+}
+
+.entry-content > * {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.entry-content > *:first-child {
+  margin-top: 0;
+}
+
+.entry-content > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Alignment Classes ------------------------- */
+
+.entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide):not(.is-style-wide-with-bg) {
+  max-width: $thin-width;
+  width: calc(100% - 4rem);
+
+  .post-type-archive-workshops &,
+  .blog & {
+    width: 100%;
+
+    @media (min-width: $br-s) {
+      width: calc(100% - 4rem);
+    }
+  }
+}
+
+[class*="__inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide):not(.is-style-wide-with-bg) {
+  max-width: $thin-width;
+  width: 100%;
+}
+
+.alignnone,
+.aligncenter,
+.alignleft,
+.alignright,
+.alignwide {
+  margin-top: 4rem;
+  margin-right: auto;
+  margin-bottom: 4rem;
+  margin-left: auto;
+}
+
+.alignnone,
+.aligncenter {
+  @media (min-width: $br-s) {
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+  }
+}
+
+[class*="__inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright) {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Full */
+
+.alignfull {
+  margin-top: 5rem;
+  margin-right: auto;
+  margin-bottom: 5rem;
+  margin-left: auto;
+  max-width: 100vw;
+  position: relative;
+  width: 100%;
+}
+
+[class*="__inner-container"] > .alignfull {
+  max-width: 100%;
+}
+
+/* Wide */
+
+.alignwide {
+  max-width: $wide-width;
+  position: relative;
+  width: calc(100% - 4rem);
+}
+
+[class*="__inner-container"] > .alignwide {
+  width: 100%;
+
+  @media (min-width: 1280px) {
+    max-width: $wide-width;
+    width: 100%;
+  }
+}
+
+/* Center */
+
+.aligncenter,
+.aligncenter img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Left and right */
+
+.alignleft,
+.alignright {
+  @media (min-width: 480px) {
+    max-width: 26rem;
+  }
+
+  max-width: 50%;
+}
+
+.alignleft {
+  /* rtl:ignore */
+  float: left;
+  margin: .3rem 2rem 2rem 2rem;
+
+  @media (min-width: $br-s) {
+    /* rtl:ignore */
+    margin: .3rem 2rem 2rem 0;
+  }
+}
+
+.entry-content > .alignleft {
+  @media (min-width: $br-s) {
+    /* rtl:ignore */
+    margin-left: 4rem;
+  }
+}
+
+.entry-content > p .alignleft,
+.entry-content > .wp-block-image .alignleft {
+  @media (min-width: $br-s) {
+    /* rtl:ignore */
+    margin-left: calc(( 100vw - #{$thin-width} - 8rem ) / -2);
+  }
+}
+
+.entry-content > .alignleft,
+.entry-content > p .alignleft,
+.entry-content > .wp-block-image .alignleft {
+  @media (min-width: $br-m) {
+    position: absolute;
+
+    /* rtl:ignore */
+    right: calc((100vw - #{$thin-width}) / 2 + #{$thin-width} + 2rem);
+    max-width: calc((100% - #{$thin-width}) / 2 - 6rem);
+  }
+
+  @media (min-width: $br-l) {
+    /* rtl:ignore */
+    right: calc((100vw - #{$thin-width}) / 2 + #{$thin-width} + 4rem);
+
+    /* rtl:ignore */
+    margin-left: -31rem;
+  }
+}
+
+[class*="wp-block"].alignfull:not(.has-background) [class*="__inner-container"] > .alignleft,
+[class*="wp-block"].alignfull:not(.has-background) [class*="__inner-container"] > p .alignleft,
+[class*="wp-block"].alignfull:not(.has-background) [class*="__inner-container"] > .wp-block-image .alignleft {
+  /* rtl:ignore */
+  margin-left: 2rem;
+
+  @media (min-width: $br-s) {
+    /* rtl:ignore */
+    margin-left: 4rem;
+  }
+}
+
+[class*="wp-block"]:not(.alignwide):not(.alignfull) [class*="__inner-container"] > .alignleft,
+[class*="wp-block"]:not(.alignwide):not(.alignfull) [class*="__inner-container"] > p .alignleft,
+[class*="wp-block"]:not(.alignwide):not(.alignfull) [class*="__inner-container"] > .wp-block-image .alignleft {
+  @media (min-width: $br-s) {
+    /* rtl:ignore */
+    margin-left: 0;
+  }
+
+  @media (min-width: $br-m) {
+    position: relative;
+
+    /* rtl:ignore */
+    right: inherit;
+    max-width: inherit;
+  }
+}
+
+[class*="wp-block"].alignwide [class*="__inner-container"] > .alignleft,
+[class*="wp-block"].alignwide [class*="__inner-container"] > p .alignleft,
+[class*="wp-block"].alignwide [class*="__inner-container"] > .wp-block-image .alignleft,
+[class*="wp-block"].alignfull [class*="__inner-container"] > .alignleft,
+[class*="wp-block"].alignfull [class*="__inner-container"] > p .alignleft,
+[class*="wp-block"].alignfull [class*="__inner-container"] > .wp-block-image .alignleft {
+  @media (min-width: $br-m) {
+    position: absolute;
+
+    /* rtl:ignore */
+    right: calc((100% - #{$thin-width}) / 2 + #{$thin-width} + 4rem);
+    max-width: calc((100% - #{$thin-width}) / 2 - 4rem);
+  }
+}
+
+[class*="wp-block"].alignwide.has-background [class*="__inner-container"] > .alignleft,
+[class*="wp-block"].alignwide.has-background [class*="__inner-container"] > p .alignleft,
+[class*="wp-block"].alignwide.has-background [class*="__inner-container"] > .wp-block-image .alignleft {
+  @media (min-width: $br-m) {
+    /* rtl:ignore */
+    right: calc((100% - #{$thin-width}) / 2 + #{$thin-width});
+  }
+
+  @media (min-width: $br-xl) {
+    /* rtl:ignore */
+    right: calc((100% - #{$thin-width}) / 2 + #{$thin-width} - 2rem);
+  }
+}
+
+[class*="wp-block"].alignfull [class*="__inner-container"] > .alignleft,
+[class*="wp-block"].alignfull [class*="__inner-container"] > p .alignleft,
+[class*="wp-block"].alignfull [class*="__inner-container"] > .wp-block-image .alignleft {
+  @media (min-width: $br-m) {
+    /* rtl:ignore */
+    margin-left: 4rem;
+  }
+}
+
+.alignright {
+  /* rtl:ignore */
+  float: right;
+  margin: .3rem 2rem 2rem 2rem;
+
+  @media (min-width: $br-s) {
+    /* rtl:ignore */
+    margin: .3rem 0 2rem 2rem;
+  }
+}
+
+.entry-content > .alignright {
+  @media (min-width: $br-s) {
+    /* rtl:ignore */
+    margin-right: 4rem;
+  }
+}
+
+.entry-content > p .alignright,
+.entry-content > .wp-block-image .alignright {
+  @media (min-width: $br-s) {
+    /* rtl:ignore */
+    margin-right: calc(( 100vw - #{$thin-width} - 8rem ) / -2);
+  }
+}
+
+.entry-content > .alignright,
+.entry-content > p .alignright,
+.entry-content > .wp-block-image .alignright,
+[class*="__inner-container"] > .alignright {
+  @media (min-width: $br-m) {
+    position: absolute;
+
+    /* rtl:ignore */
+    left: calc((100vw - #{$thin-width}) / 2 + #{$thin-width} + 2rem);
+    max-width: calc((100% - #{$thin-width}) / 2 - 6rem);
+  }
+}
+
+.entry-content > .alignright,
+.entry-content > p .alignright,
+.entry-content > .wp-block-image .alignright {
+  @media (min-width: $br-m) {
+    /* rtl:ignore */
+    left: calc((100vw - #{$thin-width}) / 2 + #{$thin-width} + 4rem);
+
+    /* rtl:ignore */
+    margin-right: -31rem;
+  }
+}
+
+[class*="wp-block"].alignfull:not(.has-background) [class*="__inner-container"] > .alignright,
+[class*="wp-block"].alignfull:not(.has-background) [class*="__inner-container"] > p .alignright,
+[class*="wp-block"].alignfull:not(.has-background) [class*="__inner-container"] > .wp-block-image .alignright {
+  /* rtl:ignore */
+  margin-right: 2rem;
+
+  @media (min-width: $br-s) {
+    /* rtl:ignore */
+    margin-right: 4rem;
+  }
+}
+
+[class*="wp-block"]:not(.alignwide):not(.alignfull) [class*="__inner-container"] > .alignright,
+[class*="wp-block"]:not(.alignwide):not(.alignfull) [class*="__inner-container"] > p .alignright,
+[class*="wp-block"]:not(.alignwide):not(.alignfull) [class*="__inner-container"] > .wp-block-image .alignright {
+  @media (min-width: $br-s) {
+    /* rtl:ignore */
+    margin-right: 0;
+  }
+
+  @media (min-width: $br-m) {
+    position: relative;
+
+    /* rtl:ignore */
+    left: inherit;
+    max-width: inherit;
+  }
+}
+
+[class*="wp-block"].alignwide [class*="__inner-container"] > .alignright,
+[class*="wp-block"].alignwide [class*="__inner-container"] > p .alignright,
+[class*="wp-block"].alignwide [class*="__inner-container"] > .wp-block-image .alignright,
+[class*="wp-block"].alignfull [class*="__inner-container"] > .alignright,
+[class*="wp-block"].alignfull [class*="__inner-container"] > p .alignright,
+[class*="wp-block"].alignfull [class*="__inner-container"] > .wp-block-image .alignright {
+  @media (min-width: $br-m) {
+    position: absolute;
+
+    /* rtl:ignore */
+    left: calc((100% - #{$thin-width}) / 2 + #{$thin-width} + 4rem);
+    max-width: calc((100% - #{$thin-width}) / 2 - 4rem);
+  }
+}
+
+[class*="wp-block"].alignwide.has-background [class*="__inner-container"] > .alignright,
+[class*="wp-block"].alignwide.has-background [class*="__inner-container"] > p .alignright,
+[class*="wp-block"].alignwide.has-background [class*="__inner-container"] > .wp-block-image .alignright {
+  @media (min-width: $br-m) {
+    /* rtl:ignore */
+    left: calc((100% - #{$thin-width}) / 2 + #{$thin-width} + 4rem);
+  }
+
+  @media (min-width: $br-xl) {
+    /* rtl:ignore */
+    left: calc((100% - #{$thin-width}) / 2 + #{$thin-width} + 6rem);
+  }
+}
+
+[class*="wp-block"].alignfull [class*="__inner-container"] > .alignright,
+[class*="wp-block"].alignfull [class*="__inner-container"] > p .alignright,
+[class*="wp-block"].alignfull [class*="__inner-container"] > .wp-block-image .alignright {
+  @media (min-width: $br-m) {
+    /* rtl:ignore */
+    margin-right: 4rem;
+  }
+}
+
+.entry-content > .alignwide:not(.wp-block-group.has-background),
+.entry-content > .alignfull:not(.wp-block-group.has-background) {
+  @media (min-width: $br-s) {
+    margin-bottom: 6rem;
+    margin-top: 6rem;
+  }
+
+  @media (min-width: $br-m) {
+    margin-bottom: 8rem;
+    margin-top: 8rem;
+  }
+}
+
+.entry-content > .alignwide {
+  @media (min-width: $br-s) {
+    max-width: calc(100vw - 8rem);
+    width: calc(100vw - 8rem);
+  }
+
+  @media (min-width: $br-l) {
+    max-width: $wide-width;
+    width: $wide-width;
+  }
+}
+
+.entry-content > .alignfull {
+  @media (min-width: $br-xl) {
+    margin-bottom: 10rem;
+    margin-top: 10rem;
+  }
+}
+
+.alignleft,
+.alignright,
+.entry-content > .alignleft,
+.entry-content > p .alignleft,
+.entry-content > .wp-block-image .alignleft,
+.entry-content > .alignright,
+.entry-content > p .alignright,
+.entry-content > .wp-block-image .alignright,
+[class*="wp-block"].alignwide:not(.has-background) [class*="__inner-container"] > .alignleft,
+[class*="wp-block"].alignwide:not(.has-background) [class*="__inner-container"] > p .alignleft,
+[class*="wp-block"].alignwide:not(.has-background) [class*="__inner-container"] > .wp-block-image .alignleft,
+[class*="wp-block"].alignfull [class*="__inner-container"] > .alignleft,
+[class*="wp-block"].alignfull [class*="__inner-container"] > p .alignleft,
+[class*="wp-block"].alignfull [class*="__inner-container"] > .wp-block-image .alignleft,
+[class*="wp-block"].alignwide:not(.has-background) [class*="__inner-container"] > .alignright,
+[class*="wp-block"].alignwide:not(.has-background) [class*="__inner-container"] > p .alignright,
+[class*="wp-block"].alignwide:not(.has-background) [class*="__inner-container"] > .wp-block-image .alignright,
+[class*="wp-block"].alignfull [class*="__inner-container"] > .alignright,
+[class*="wp-block"].alignfull [class*="__inner-container"] > p .alignright,
+[class*="wp-block"].alignfull [class*="__inner-container"] > .wp-block-image .alignright {
+  @media (min-width: 1280px) {
+    max-width: 25rem;
+  }
+
+  @media (min-width: 1330px) {
+    max-width: 29rem;
+  }
+}

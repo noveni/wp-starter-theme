@@ -1,0 +1,287 @@
+/* -------------------------------------------------------------------------- */
+
+/*	5. Menu Modal
+/* -------------------------------------------------------------------------- */
+
+$background-modal-color: $white;
+
+.menu-modal {
+  background: $background-modal-color;
+  display: none;
+  opacity: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: fixed;
+  bottom: 0;
+  left: -99999rem;
+  right: 99999rem;
+  top: 0;
+  transition: opacity .25s ease-in, left 0s .25s, right 0s .25s;
+  z-index: $menu-modal-zindex;
+
+  @media (min-width: $br-m) {
+    opacity: 1;
+    justify-content: flex-end;
+    padding: 0;
+    transition: background-color .3s ease-in, left 0s .3s, right 0s .3s;
+  }
+
+  .admin-bar & {
+    top: 32px;
+
+    @media (max-width: 782px) {
+      top: 46px;
+    }
+  }
+
+  &.cover-modal {
+    @media (min-width: $br-m) {
+      background: $totaly-black;
+    }
+  }
+
+  &.show-modal {
+    display: flex;
+  }
+
+  &.active {
+    left: 0;
+    opacity: 1;
+    right: 0;
+    transition: opacity .25s ease-out;
+
+    @media (min-width: $br-m) {
+      background: $almost-black;
+      transition: background-color .3s ease-out;
+    }
+  }
+}
+
+.menu-modal-inner {
+  background: $background-modal-color;
+  overflow: auto;
+  width: 100%;
+
+  @media (min-width: $br-m) {
+    box-shadow: 0 0 2rem 0 rgba(0, 0, 0, .1);
+    opacity: 0;
+    padding: 0;
+    transform: translateX(20rem);
+    transition: transform .2s ease-in, opacity .2s ease-in;
+    width: 50rem;
+  }
+
+  .section-inner {
+    @media (min-width: $br-m) {
+      width: calc(100% - 8rem);
+    }
+  }
+
+  .menu-modal.active & {
+    @media (min-width: $br-m) {
+      opacity: 1;
+      transform: translateX(0);
+      transition-timing-function: ease-out;
+    }
+  }
+}
+
+.menu-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  height: 100%;
+
+  /* Main menu animation ----------------------- */
+  .menu-item {
+    position: relative;
+  }
+
+  .active {
+    display: block;
+  }
+
+  &.is-toggling {
+    pointer-events: none;
+
+    .menu-item {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 0;
+      width: 100%;
+    }
+
+    .menu-bottom .social-menu .menu-item {
+      width: auto;
+    }
+
+    .toggling-target {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 1;
+    }
+
+    .modal-menu > li:last-child li {
+      border-top-color: transparent;
+      border-bottom-width: .1rem;
+    }
+  }
+
+  &.is-animating .menu-item,
+  &.is-animating .toggling-target {
+    transition-duration: 250ms;
+  }
+
+  &.is-animating .menu-item {
+    transition-property: transform;
+  }
+
+  &.is-animating.is-toggling .toggling-target.active {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-wrapper.is-animating .menu-item,
+  .menu-wrapper.is-animating .toggling-target {
+    transition-duration: 1ms !important;
+  }
+}
+
+button.close-nav-toggle {
+  align-items: center;
+  display: flex;
+  font-size: 1.6rem;
+  font-weight: 500;
+  justify-content: flex-end;
+  padding: 3.1rem 0;
+  width: 100%;
+
+  @media (min-width: $br-s) {
+    font-size: 1.8rem;
+    padding: 4rem 0;
+  }
+
+  svg {
+    height: 1.6rem;
+    width: 1.6rem;
+
+    @media (min-width: $br-s) {
+      height: 2rem;
+      width: 2rem;
+    }
+  }
+
+  .toggle-text {
+    margin-right: 1.6rem;
+
+    @media (min-width: $br-s) {
+      margin-right: 2.1rem;
+    }
+  }
+}
+
+.menu-modal .menu-top {
+  flex-shrink: 0;
+}
+
+
+/* Main Menu --------------------------------- */
+
+.modal-menu {
+  position: relative;
+  width: 100%;
+
+  li {
+    line-height: 1;
+    margin: 0;
+  }
+
+  a {
+    display: block;
+    padding: 2rem 2.5rem;
+    // text-align: center;
+    width: 100%;
+    text-decoration: none;
+  }
+
+  a:focus,
+  a:hover,
+  li.current-menu-item > a {
+    // text-decoration: underline;
+    color: $black;
+  }
+
+  ul {
+    margin: 0;
+    width: 100%;
+    padding-left: 2rem;
+
+    li {
+      a {
+        padding: 1.2rem 2.5rem;
+      }
+    }
+  }
+}
+
+button.sub-menu-toggle {
+  border-left: .1rem solid $white;
+  flex-shrink: 0;
+  margin: 1rem 0;
+  padding: 0 2.5rem;
+}
+
+button.sub-menu-toggle svg {
+  height: .9rem;
+  transition: transform .15s linear;
+  width: 1.5rem;
+}
+
+button.sub-menu-toggle.active svg {
+  transform: rotate(180deg);
+}
+
+
+/* Menu Bottom ------------------------------- */
+
+.menu-bottom {
+  flex-shrink: 0;
+  padding: 4rem 0;
+
+  @media (min-width: $br-s) {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+  nav {
+    width: 100%;
+  }
+
+  .social-menu {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+
+    @media (min-width: $br-m) {
+      justify-content: center;
+    }
+
+    li {
+      padding: .7rem;
+      margin: 0;
+    }
+  }
+
+  ul.social-icons {
+    width: 100%;
+    margin: 0;
+  }
+}
