@@ -17,7 +17,6 @@ ecrannoir_get_theme_header();
 			the_post();
 
 			?>
-			<div class="post-inner">
 
 			<div class="entry-content">
 
@@ -31,7 +30,6 @@ ecrannoir_get_theme_header();
 
 			</div><!-- .entry-content -->
 
-			</div><!-- .post-inner -->
 			<?php
 		endwhile;
 	endif;
