@@ -28,7 +28,7 @@
             "@wpflush"
         ],
         "generate-data": [
-            "cd .. && docker-compose run --user=www-data --rm wpcli bash -c \"php -d memory_limit=512M /usr/local/bin/wp package install trendwerk/faker && cd wp-content/themes/fnportal-theme/src/fake-data && php -d memory_limit=512M /usr/local/bin/wp faker fake image.yml posts.yml\"",
+            "cd .. && docker-compose run --user=www-data --rm wpcli bash -c \"php -d memory_limit=512M /usr/local/bin/wp package install trendwerk/faker && cd wp-content/themes/wp-starter-theme/src/fake-data && php -d memory_limit=512M /usr/local/bin/wp faker fake image.yml posts.yml\"",
             "@wpflush"
         ],
         "wpflush": "cd .. && docker-compose run --rm wpcli rewrite flush",
