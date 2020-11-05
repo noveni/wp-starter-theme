@@ -29,8 +29,10 @@ $editorFontSize: map_get($themeVariables, fontsize); /* stylelint-disable-line *
 
 /* Color ------------------------------------- */
 $white:     map_get($themeColor, white); /* stylelint-disable-line */
+$white-alt:     map_get($themeColor, white-alt); /* stylelint-disable-line */
 $black:     map_get($themeColor, black); /* stylelint-disable-line */
 $grey:      map_get($themeColor, grey); /* stylelint-disable-line */
+$grey-alt:      map_get($themeColor, grey-alt); /* stylelint-disable-line */
 $lightgrey:      map_get($themeColor, lightgrey); /* stylelint-disable-line */
 $red:       map_get($themeColor, red); /* stylelint-disable-line */
 $green:     map_get($themeColor, green); /* stylelint-disable-line */
@@ -39,7 +41,7 @@ $yellow:     map_get($themeColor, yellow); /* stylelint-disable-line */
 
 $primary:     $black;
 $secondary:   $grey;
-$body-background:  $white;
+$body-background:  $white-alt;
 $header-background: transparent;
 
 $almost-black: rgba(0, 0, 0, .2);

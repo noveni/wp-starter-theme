@@ -12,7 +12,7 @@ if ( has_post_thumbnail() && ! post_password_required() ) {
 
 	<figure class="featured-media">
 
-		<div class="featured-media-inner section-inner">
+		<div class="featured-media-inner">
 
 			<?php
 			the_post_thumbnail();

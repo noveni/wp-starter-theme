@@ -1,11 +1,5 @@
 .entry-content {
-  line-height: 1.5;
-  font-size: 1rem;
   overflow: hidden;
-
-  @media (min-width: $br-s) {
-    font-size: 1.5rem;
-  }
 }
 
 .entry-content > * {
@@ -26,15 +20,6 @@
 .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide):not(.is-style-wide-with-bg) {
   max-width: $thin-width;
   width: calc(100% - 4rem);
-
-  .post-type-archive-workshops &,
-  .blog & {
-    width: 100%;
-
-    @media (min-width: $br-s) {
-      width: calc(100% - 4rem);
-    }
-  }
 }
 
 [class*="__inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide):not(.is-style-wide-with-bg) {

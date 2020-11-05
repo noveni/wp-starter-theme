@@ -180,3 +180,37 @@ a {
 .modal-menu ul li a {
   font-size: 1.2rem;
 }
+
+.tag-wrapper {
+  .tag-term {
+    font-family: $font-secondary;
+    font-size: 12px;
+    color: $white;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+  }
+}
+
+.article-card .article-central p {
+  color: $grey;
+}
+
+.article-card .post-time {
+  font-family: $font-secondary;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1.4px;
+  line-height: 23px;
+  color: $grey-alt;
+  text-transform: uppercase;
+}
+
+.article-card .post-author {
+  font-family: $font-secondary;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1.4px;
+  line-height: 23px;
+  color: $black;
+  text-transform: uppercase;
+}

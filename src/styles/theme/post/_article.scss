@@ -1,0 +1,80 @@
+.article-wrapper-section {
+  max-width: $br-l;
+  width: calc(100% - 4rem);
+  overflow: hidden;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+
+.article-wrapper {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+
+  $default-grid-gutter: 3%;
+
+  @include grid($gutter: $default-grid-gutter, $flex-wrap: wrap);
+
+  article {
+    @include grid-col($col: 4, $gutter: $default-grid-gutter);
+  }
+}
+
+.article-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  background-color: $white;
+  // padding: 3rem 3rem 2rem;
+  padding-bottom: 2rem;
+
+  .article-inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .article-head,
+  .article-central,
+  .article-foot {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+
+  .article-image {
+    flex: 0 0 45%;
+  }
+
+  .article-head {
+    padding-top: 3rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .article-central {
+    overflow: hidden;
+    flex-grow: 1;
+    padding-bottom: 2rem;
+
+    h2 {
+      margin-bottom: 8px;
+    }
+  }
+
+  .tag-wrapper {
+    .tag-term {
+      background: rgba(0, 0, 0, .3);
+      border-radius: 100px;
+      padding: 8px 18px 7px 20px;
+    }
+  }
+
+  .article-foot {
+    border-top: 1px solid $lightgrey;
+    padding-top: 2rem;
+  }
+}
+

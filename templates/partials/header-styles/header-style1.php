@@ -46,7 +46,7 @@
 
         <!-- Toggles -->
         <div class="header-toggle-wrapper">
-            <button class="toggle search-toggle" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false">
+            <button class="toggle search-toggle mobile-search-toggle" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false">
                 <span class="toggle-inner">
                     <?php ecrannoir_the_theme_svg( 'search' ); ?>
                 </span>
@@ -59,3 +59,7 @@
             </button><!-- .nav-toggle -->
         </div>
     </div>
+    <?php
+        // get_template_part( 'templates/partials/inline-search' );
+        get_template_part( 'templates/template-parts/modal-search' );
+    ?>

@@ -1,11 +1,7 @@
 <?php
 /**
- * The template for displaying single posts and pages.
+ * The template for displaying the Front Page.
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package WordPress
- * @since 1.0.0
  */
 
 ecrannoir_get_theme_header();

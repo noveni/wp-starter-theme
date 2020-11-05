@@ -3,7 +3,9 @@
         "color": {
             "black": "#333333",
             "white": "#ffffff",
+            "white-alt": "#fafbfc",
             "grey": "#666666",
+            "grey-alt": "#999999",
             "lightgrey": "#E6E6E6",
             "red": "#FA6557",
             "green": "#35CC62",
