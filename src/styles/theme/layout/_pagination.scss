@@ -1,0 +1,107 @@
+/* -------------------------------------------------------------------------- */
+
+/*	13. Site Pagination
+/* -------------------------------------------------------------------------- */
+
+.pagination-wrapper {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.pagination .nav-links {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  margin: -1.5rem 0 0 -2.5rem;
+  width: calc(100% + 2.5rem);
+
+  @media (min-width: $br-s) {
+    margin: -2.5rem 0 0 -4rem;
+  }
+
+  @media (min-width: $br-m) {
+    justify-content: space-between;
+    margin: 0;
+    width: 100%;
+  }
+}
+
+.pagination-separator {
+  margin: 5rem 0;
+
+  @media (min-width: $br-s) {
+    margin: 8rem 0;
+  }
+}
+
+.nav-links > * {
+  margin: 1.5rem 0 0 2.5rem;
+
+  @media (min-width: $br-s) {
+    margin: 2.5rem 0 0 4rem;
+  }
+
+  @media (min-width: $br-m) {
+    margin: 0 2rem;
+  }
+}
+
+.nav-links .placeholder {
+  display: none;
+  visibility: hidden;
+}
+
+.pagination a {
+  text-decoration: none;
+}
+
+.pagination a:focus,
+.pagination a:hover {
+  text-decoration: underline;
+}
+
+.pagination .dots {
+  transform: translateY(-.3em);
+  color: $grey;
+}
+
+/* Display the full text for Newer and Older Posts. */
+.nav-short {
+  display: none;
+
+  @media (min-width: $br-s) {
+    display: inline;
+  }
+}
+
+.pagination .next,
+.pagination .prev {
+  display: flex;
+  align-items: center;
+
+  // @media (min-width: $br-m) {
+  //   display: block;
+  // }
+}
+
+.pagination .prev {
+  @media (min-width: $br-m) {
+    margin: 0 auto 0 0;
+  }
+
+  .icon-arrow {
+    margin-right: 1.5rem;
+  }
+}
+
+.pagination .next {
+  @media (min-width: $br-m) {
+    text-align: right;
+    margin: 0 0 0 auto;
+  }
+
+  .icon-arrow {
+    margin-left: 1.5rem;
+  }
+}
+

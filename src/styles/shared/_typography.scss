@@ -154,6 +154,10 @@ a {
   color: $primary;
 }
 
+a:visited {
+  color: inherit;
+}
+
 .header-nav a {
   @include menu-text-style;
 }
@@ -213,4 +217,34 @@ a {
   line-height: 23px;
   color: $black;
   text-transform: uppercase;
+}
+
+.pagination .nav-links {
+  font-family: $font-secondary;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.pagination .page-numbers {
+  color: $grey;
+}
+
+.pagination .page-numbers:focus,
+.pagination .page-numbers:hover {
+  color: $black;
+}
+
+.pagination .page-numbers.current {
+  color: $black;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: '';
+    width: 200%;
+    bottom: -5px;
+    left: -50%;
+    height: 1px;
+    background-color: $black;
+  }
 }

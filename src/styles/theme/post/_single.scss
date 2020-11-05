@@ -1,0 +1,125 @@
+.post-inner {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+
+  @media (min-width: $br-s) {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
+
+/* Post Footer ------------------------------- */
+
+/* POST NAV LINKS */
+
+.post-nav-links {
+  border-radius: .4rem;
+  display: flex;
+  font-size: .9em;
+  font-weight: 600;
+  line-height: 1;
+  margin-top: 3em;
+
+  @media (max-width: 479px) {
+    margin: 3em 0 0 0;
+  }
+
+  @media (max-width: 480px) {
+    margin: 3em 0 0 0;
+  }
+}
+
+.post-nav-links > * {
+  padding: 1em .75em;
+}
+
+.post-nav-links > .label {
+  padding: 1em .75em 1em 0;
+}
+
+/* Single Pagination ------------------------- */
+
+.pagination-single {
+  font-family: $font-secondary;
+  font-weight: 400;
+  font-size: 1.8rem;
+  margin-top: 5rem;
+
+  @media (min-width: $br-s) {
+    font-size: 2.4rem;
+    margin-top: 8rem;
+  }
+}
+
+.pagination-single-inner {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $br-s) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.pagination-single.only-next .pagination-single-inner {
+  @media (min-width: $br-s) {
+    justify-content: flex-end;
+  }
+}
+
+.pagination-single hr:first-child {
+  margin: 0 0 2.8rem 0;
+
+  @media (min-width: $br-s) {
+    margin: 0 0 4rem 0;
+  }
+}
+
+.pagination-single hr:last-child {
+  margin: 2.8rem 0 .8rem 0;
+
+  @media (min-width: $br-s) {
+    margin: 4rem 0 .8rem 0;
+  }
+}
+
+.pagination-single a {
+  align-items: baseline;
+  display: flex;
+  text-decoration: none;
+  flex: 1;
+}
+
+.pagination-single a + a {
+  margin-top: 1rem;
+
+  @media (min-width: $br-s) {
+    margin: 0 0 0 4rem;
+  }
+}
+
+.pagination-single a .arrow {
+  margin-right: 1rem;
+
+  @media (min-width: $br-s) {
+    margin: 0 2rem 0 0;
+  }
+}
+
+.pagination-single a:focus .title,
+.pagination-single a:hover .title {
+  text-decoration: underline;
+}
+
+.pagination-single .next-post {
+  @media (min-width: $br-s) {
+    flex-direction: row-reverse;
+    text-align: right;
+  }
+}
+
+.pagination-single .next-post .arrow {
+  @media (min-width: $br-s) {
+    margin: 0 0 0 2rem;
+  }
+}

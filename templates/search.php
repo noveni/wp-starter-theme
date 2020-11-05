@@ -57,6 +57,8 @@ ecrannoir_get_theme_header();
 
     </header><!-- .archive-header -->
 
+    <div class="section-inner article-wrapper-section">
+		<div class="article-wrapper">
     <?php
 
 	if ( have_posts() ) {
@@ -64,13 +66,9 @@ ecrannoir_get_theme_header();
 		$i = 0;
 
 		while ( have_posts() ) {
-			$i++;
-			if ( $i > 1 ) {
-				echo '<hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true" />';
-			}
 			the_post();
 
-			get_template_part( 'templates/template-parts/content', get_post_type() );
+			get_template_part( 'templates/template-parts/article', get_post_type() );
 
 		}
 	} elseif ( is_search() ) {
@@ -90,7 +88,9 @@ ecrannoir_get_theme_header();
 
 		<?php
 	}
-	?>
+    ?>
+        </div>
+	</div>
 
 	<?php get_template_part( 'templates/template-parts/pagination' ); ?>
 

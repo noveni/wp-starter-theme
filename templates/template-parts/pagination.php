@@ -17,13 +17,13 @@
 
 $prev_text = sprintf(
 	'%s <span class="nav-prev-text">%s</span>',
-	'<span aria-hidden="true">&larr;</span>',
+	'<span aria-hidden="true" class="icon-arrow">'. ecrannoir_get_theme_svg( 'arrow-left' ) .'</span>',
 	__( 'Newer <span class="nav-short">Posts</span>', 'ecrannoir' )
 );
 $next_text = sprintf(
 	'<span class="nav-next-text">%s</span> %s',
 	__( 'Older <span class="nav-short">Posts</span>', 'ecrannoir' ),
-	'<span aria-hidden="true">&rarr;</span>'
+	'<span aria-hidden="true" class="icon-arrow">' . ecrannoir_get_theme_svg( 'arrow-right' ) . '</span>'
 );
 
 $posts_pagination = get_the_posts_pagination(
@@ -47,8 +47,6 @@ if ( strpos( $posts_pagination, 'next page-numbers' ) === false ) {
 if ( $posts_pagination ) { ?>
 
 	<div class="pagination-wrapper section-inner">
-
-		<hr class="styled-separator pagination-separator is-style-wide" aria-hidden="true" />
 
 		<?php echo $posts_pagination; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- already escaped during generation. ?>
 

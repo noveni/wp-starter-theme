@@ -12,7 +12,6 @@ ecrannoir_get_theme_header();
 ?>
 
 <main id="site-content" role="main">
-
 	<?php
 
 	if ( have_posts() ) {
