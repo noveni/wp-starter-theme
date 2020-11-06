@@ -13,6 +13,8 @@ export const getHeaderHeight = () => {
   return 0;
 }
 
+// :TODO: Add a way to check if first block is a cover, 
+// if it is, add negative margin and check color text contrast
 const addHeaderHeightAsMarginToElement = (selector) => {
 
 	const addMargin = (elementSelector) => {
@@ -21,7 +23,7 @@ const addHeaderHeightAsMarginToElement = (selector) => {
 		const height = headerInner ? headerInner.offsetHeight : getHeaderHeight();
 	
 		if (element) {
-			element.style.marginTop = `-${height}px`;
+			element.style.marginTop = `${height}px`;
 		}
 	
 	}
@@ -50,7 +52,7 @@ export default {
 		primaryMenu();	// Primary Menu
 		touchEnabled();	// Add class to body if device is touch-enabled
 
-		// addHeaderHeightAsMarginToElement('#site-content');
+		addHeaderHeightAsMarginToElement('#site-content');
 
 	},
 	finalize() {

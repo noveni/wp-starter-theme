@@ -5,6 +5,15 @@
   @media (min-width: $br-m) {
     z-index: 2;
   }
+
+  &.sticky-header {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    // box-shadow: 0 0 9px -4px rgba(32, 33, 36, 0.18);
+  }
 }
 
 .header-inner {

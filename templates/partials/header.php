@@ -20,7 +20,7 @@
     wp_body_open();
     ?>
 
-    <header id="site-header" role="banner">
+    <header id="site-header" class="sticky-header" role="banner">
     <?php
         get_template_part( 'templates/partials/header-styles/header', 'style1' );
     ?>
