@@ -7,8 +7,8 @@ Based on TwentyTwenty Theme
 
 - [x] Refactor TwentyTwenty Javacscript
 - [ ] Let away TwentyTwenty Theme Markup and Style
-  - [ ] Make Footer agnostic from TwentyTwenty
-  - [ ] Make Header agnostic from TwentyTwenty
+  - [x] Make Footer agnostic from TwentyTwenty
+  - [x] Make Header agnostic from TwentyTwenty
   - [x] Make Modal Menu agnostic
 - [ ] Add CSS Framework
 - [ ] Make Theme Fn in OOP
@@ -21,13 +21,13 @@ Based on TwentyTwenty Theme
 - [x] Make Components Structure style for Gutenberg Blocks
 - [ ] Add Coming Soon Page Toggle
 - [ ] Add Coming Soon Page Template
-- [ ] Add Maintenance Mode Toggle
+- [x] Add Maintenance Mode Toggle
 - [ ] Add Maintenance Model Template
 - [ ] Add Test to Theme Class
 - [ ] Add Instagram Fields in Admin
-- [ ] Add Google Analytics in Admin
+- [x] Add Google Analytics in Admin
 - [x] Make class for Easy Custom Post Type
-- [ ] Store in sass Var breakpoints config
+- [x] Store in sass Var breakpoints config
   - [ ] Use Mixins to handle Breakpoint
 - [ ] Add My Hamburger Button
 - [ ] Class Icon:
@@ -44,8 +44,8 @@ Based on TwentyTwenty Theme
 - [ ] WP Cli
   - [x] Command to generate fake Data with wp cli pkg
 
-- [ ] Custom-Fields
-  - [x] Handle Meta Fields
+- ~~[ ] Custom-Fields~~
+  - ~~[x] Handle Meta Fields~~
 
 ## Build With
 
