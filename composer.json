@@ -7,8 +7,7 @@
         "starter theme"
     ],
     "require": {
-        "php": ">=5.3",
-        "htmlburger/carbon-fields": "^3.1"
+        "php": ">=5.3"
     },
     "require-dev": {
         "filp/whoops": "^2.7"

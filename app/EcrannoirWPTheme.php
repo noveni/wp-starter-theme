@@ -91,8 +91,6 @@ class EcrannoirWPTheme
 			require_once __DIR__ . '/setup/theme.php';
 		});
 
-		require_once __DIR__ . '/PostType/_carbon-fields.php';
-
 		ExampleCpt::instance();
 
 		$this::enqueueScripts();
