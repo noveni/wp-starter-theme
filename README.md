@@ -43,9 +43,9 @@ Based on TwentyTwenty Theme
     - [ ] Change the Hook Call
 - [ ] WP Cli
   - [x] Command to generate fake Data with wp cli pkg
-
-- ~~[ ] Custom-Fields~~
-  - ~~[x] Handle Meta Fields~~
+- [ ] ~~Custom-Fields~~
+  - x] ~~Handle Meta Fields~~
+- [ ] Add Preview Image of templates
 
 ## Build With
 
