@@ -247,7 +247,7 @@ if ( ! class_exists( 'Assets\Meta' ) ) {
          * Generate Favicon Html Head Code
          * 
          * It work with the Webpack config
-         * @see webpack.config.js file 
+         * @see webpack.mix.js file 
          */
         public static function printFavicon()
         {

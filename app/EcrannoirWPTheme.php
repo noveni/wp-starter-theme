@@ -76,7 +76,7 @@ class EcrannoirWPTheme
 
 		$this->generalActions();
 
-		$this::actions();
+		$this->actions();
 		$this::filters();
 
 		$this->view();
