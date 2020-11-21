@@ -219,8 +219,6 @@ class EcrannoirWPTheme
 	}
 
 	public static function filters() {
-		// add_filter( 'wp_get_attachment_image_attributes', [\Assets\Image::class, 'filterGetAttachmentImgAttributes']);
-		// add_filter('the_content', [\Assets\Image::class, 'filterTheContent'], 15);
 		
 		add_filter('body_class', 'ecrannoir_theme_filter_body_class');
 		add_filter('excerpt_more', 'ecrannoir_theme_filter_excerpt_more');
