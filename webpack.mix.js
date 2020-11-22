@@ -24,6 +24,7 @@ mix.js('src/scripts/theme/index.js', 'dist/scripts/theme.js')
     
 mix.copy('src/scripts/editor/**/*.php', 'dist/blocks/');
 mix.setPublicPath('dist/');
+mix.setResourceRoot('./');
 mix.autoload({
   jquery: ['$', 'window.jQuery', 'jQuery'], // more than one
 });
