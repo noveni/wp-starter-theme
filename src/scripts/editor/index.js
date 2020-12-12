@@ -11,7 +11,10 @@ import './ExampleDynamicBlock'
  * @since 1.0.0
  */
 domReady( () => {
-  // unregisterBlockStyle( 'core/button', [ 'outline' ] );
+  unregisterBlockStyle( 'core/button', [ 'outline', 'fill' ] );
+  unregisterBlockStyle( 'core/quote', [ 'default', 'large' ] );
+  unregisterBlockStyle( 'core/image', [ 'default', 'rounded', 'editorskit-circular', 'editorskit-rounded', 'editorskit-diagonal', 'editorskit-inverted-diagonal', 'editorskit-shadow' ] );
+  unregisterBlockStyle( 'core/columns', ['default', 'gapless']);
 
   // registerBlockStyle( 'core/cover', {
   //   name: 'bg-size-100',
